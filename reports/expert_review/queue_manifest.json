@@ -1,0 +1,14 @@
+{
+  "created_utc": "2026-09-09T14:40:39.980531+00:00",
+  "source_sha256": "f2cd1aef49e4398a419ac8f4f5fc2aea5c1db10c03041d4d81d56988e25d56d1",
+  "source_file": "data\\processed\\candidate_zone_snapshot.csv",
+  "queue_sha256": "75f75af691087860a4a42146e45a9018da1579177f83197196f613ce66ce03e6",
+  "evidence_version": "review-v1",
+  "selection": "Deterministic, at most two zones per division/cluster stratum, capped at 36 zones; six business profiles.",
+  "notes": [
+    "Not sampled by MCDA score or historical business compatibility.",
+    "Not a probability sample of all possible vendor-zone pairs.",
+    "Reference zone geometry and live capacity are not independently verified.",
+    "Expert judgments are not verified business outcomes."
+  ]
+}

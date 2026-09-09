@@ -1,0 +1,365 @@
+{
+  "generated_utc": "2026-09-09T14:04:10.304228+00:00",
+  "stage": "02_build_zone_features",
+  "version": "2.1.0",
+  "metric_crs": "EPSG:32643",
+  "buffer_radii_m": [
+    250,
+    500
+  ],
+  "geometry_semantics": "Analytical references, not official legal vending boundaries",
+  "distance_semantics": "Minimum distance from representative point to source object",
+  "count_semantics": "Distinct cleaned source records intersecting fixed-radius point buffers",
+  "landuse_semantics": "Union area within fixed 500m point buffer; mapped composition requires at least 10% classified coverage",
+  "data_limitations": [
+    "OSM coverage is incomplete",
+    "No observed footfall or sales",
+    "No live occupancy or verified vacancies",
+    "No authoritative vending polygon area",
+    "No inferred residential coordinates",
+    "Reference confidence is not verified positional accuracy"
+  ],
+  "total_zones": 308,
+  "usable_references": 258,
+  "missing_references": 50,
+  "feature_columns": [
+    "reference_geometry_area_sqm",
+    "reference_geometry_perimeter_m",
+    "distance_to_primary_road_m",
+    "distance_to_secondary_road_m",
+    "distance_to_major_road_m",
+    "distance_to_bus_access_m",
+    "distance_to_bus_station_m",
+    "distance_to_railway_station_m",
+    "commercial_poi_count_250m",
+    "market_poi_count_250m",
+    "food_poi_count_250m",
+    "retail_poi_count_250m",
+    "service_poi_count_250m",
+    "bus_count_250m",
+    "bus_station_count_250m",
+    "rail_count_250m",
+    "ambiguous_count_250m",
+    "healthcare_count_250m",
+    "education_count_250m",
+    "toilet_count_250m",
+    "parking_count_250m",
+    "road_length_250m",
+    "road_density_250m_per_km2",
+    "major_road_length_250m",
+    "major_road_density_250m_per_km2",
+    "pedestrian_road_length_250m",
+    "pedestrian_road_density_250m_per_km2",
+    "local_road_length_250m",
+    "local_road_density_250m_per_km2",
+    "commercial_poi_count_500m",
+    "market_poi_count_500m",
+    "food_poi_count_500m",
+    "retail_poi_count_500m",
+    "service_poi_count_500m",
+    "bus_count_500m",
+    "bus_station_count_500m",
+    "rail_count_500m",
+    "ambiguous_count_500m",
+    "healthcare_count_500m",
+    "education_count_500m",
+    "toilet_count_500m",
+    "parking_count_500m",
+    "road_length_500m",
+    "road_density_500m_per_km2",
+    "major_road_length_500m",
+    "major_road_density_500m_per_km2",
+    "pedestrian_road_length_500m",
+    "pedestrian_road_density_500m_per_km2",
+    "local_road_length_500m",
+    "local_road_density_500m_per_km2",
+    "residential_land_ratio_500m",
+    "commercial_land_ratio_500m",
+    "industrial_land_ratio_500m",
+    "park_land_ratio_500m",
+    "mapped_landuse_coverage_ratio_500m",
+    "classified_landuse_coverage_ratio_500m",
+    "landuse_category_overlap_ratio_500m",
+    "landuse_missing_coverage_ratio_500m",
+    "residential_mapped_share_500m",
+    "commercial_mapped_share_500m",
+    "industrial_mapped_share_500m",
+    "park_mapped_share_500m"
+  ],
+  "missing_feature_counts": {
+    "reference_geometry_area_sqm": 50,
+    "reference_geometry_perimeter_m": 50,
+    "distance_to_primary_road_m": 50,
+    "distance_to_secondary_road_m": 50,
+    "distance_to_major_road_m": 50,
+    "distance_to_bus_access_m": 50,
+    "distance_to_bus_station_m": 50,
+    "distance_to_railway_station_m": 50,
+    "commercial_poi_count_250m": 50,
+    "market_poi_count_250m": 50,
+    "food_poi_count_250m": 50,
+    "retail_poi_count_250m": 50,
+    "service_poi_count_250m": 50,
+    "bus_count_250m": 50,
+    "bus_station_count_250m": 50,
+    "rail_count_250m": 50,
+    "ambiguous_count_250m": 50,
+    "healthcare_count_250m": 50,
+    "education_count_250m": 50,
+    "toilet_count_250m": 50,
+    "parking_count_250m": 50,
+    "road_length_250m": 50,
+    "road_density_250m_per_km2": 50,
+    "major_road_length_250m": 50,
+    "major_road_density_250m_per_km2": 50,
+    "pedestrian_road_length_250m": 50,
+    "pedestrian_road_density_250m_per_km2": 50,
+    "local_road_length_250m": 50,
+    "local_road_density_250m_per_km2": 50,
+    "commercial_poi_count_500m": 50,
+    "market_poi_count_500m": 50,
+    "food_poi_count_500m": 50,
+    "retail_poi_count_500m": 50,
+    "service_poi_count_500m": 50,
+    "bus_count_500m": 50,
+    "bus_station_count_500m": 50,
+    "rail_count_500m": 50,
+    "ambiguous_count_500m": 50,
+    "healthcare_count_500m": 50,
+    "education_count_500m": 50,
+    "toilet_count_500m": 50,
+    "parking_count_500m": 50,
+    "road_length_500m": 50,
+    "road_density_500m_per_km2": 50,
+    "major_road_length_500m": 50,
+    "major_road_density_500m_per_km2": 50,
+    "pedestrian_road_length_500m": 50,
+    "pedestrian_road_density_500m_per_km2": 50,
+    "local_road_length_500m": 50,
+    "local_road_density_500m_per_km2": 50,
+    "residential_land_ratio_500m": 50,
+    "commercial_land_ratio_500m": 50,
+    "industrial_land_ratio_500m": 50,
+    "park_land_ratio_500m": 50,
+    "mapped_landuse_coverage_ratio_500m": 50,
+    "classified_landuse_coverage_ratio_500m": 50,
+    "landuse_category_overlap_ratio_500m": 50,
+    "landuse_missing_coverage_ratio_500m": 50,
+    "residential_mapped_share_500m": 234,
+    "commercial_mapped_share_500m": 234,
+    "industrial_mapped_share_500m": 234,
+    "park_mapped_share_500m": 234
+  },
+  "taxonomy": {
+    "road_major": [
+      "motorway",
+      "trunk",
+      "primary",
+      "secondary",
+      "motorway_link",
+      "trunk_link",
+      "primary_link",
+      "secondary_link"
+    ],
+    "road_primary": [
+      "motorway",
+      "trunk",
+      "primary",
+      "motorway_link",
+      "trunk_link",
+      "primary_link"
+    ],
+    "road_secondary": [
+      "secondary",
+      "secondary_link"
+    ],
+    "road_pedestrian": [
+      "pedestrian",
+      "footway",
+      "path",
+      "steps",
+      "living_street"
+    ],
+    "road_local": [
+      "residential",
+      "service",
+      "tertiary",
+      "unclassified",
+      "tertiary_link",
+      "living_street"
+    ],
+    "commercial_market": [
+      "marketplace",
+      "market",
+      "market_hall"
+    ],
+    "commercial_food": [
+      "restaurant",
+      "cafe",
+      "fast_food",
+      "food_court",
+      "food",
+      "bakery",
+      "ice_cream",
+      "shop_bakery",
+      "shop_dairy",
+      "shop_butcher",
+      "shop_cheese",
+      "shop_confectionery",
+      "shop_beverages",
+      "shop_nuts;spices"
+    ],
+    "commercial_retail": [
+      "mall",
+      "retail_area",
+      "commercial_area",
+      "shop_general",
+      "shop_yes",
+      "shop_kiosk",
+      "shop_supermarket",
+      "shop_clothes",
+      "shop_clothes (or clothes;fabric)",
+      "shop_fabric",
+      "shop_mobile_phone",
+      "shop_mobile_phone_accessories",
+      "shop_electronics",
+      "shop_electrical",
+      "shop_hardware",
+      "shop_houseware",
+      "shop_furniture",
+      "shop_jewelry",
+      "shop_stationery",
+      "shop_books",
+      "shop_cosmetics",
+      "shop_beauty",
+      "shop_florist",
+      "shop_footwear",
+      "shop_shoes",
+      "shop_bakery",
+      "shop_dairy",
+      "shop_butcher",
+      "shop_cheese",
+      "shop_confectionery",
+      "shop_beverages",
+      "shop_nuts;spices"
+    ],
+    "commercial_service": [
+      "shop_car_repair",
+      "shop_hairdresser",
+      "shop_copyshop",
+      "shop_photo_studio",
+      "shop_bicycle",
+      "shop_travel_agency",
+      "office_company",
+      "office_it",
+      "office_engineering",
+      "office_telecommunication"
+    ],
+    "transport_bus": [
+      "bus_stop",
+      "bus_station",
+      "bus_platform",
+      "bus_stand"
+    ],
+    "transport_bus_station": [
+      "bus_station",
+      "bus_stand"
+    ],
+    "transport_ambiguous": [
+      "transit_platform",
+      "transit_stop_position"
+    ],
+    "transport_rail": [
+      "railway_station",
+      "train_station",
+      "railway_halt",
+      "railway_stop",
+      "station",
+      "halt"
+    ],
+    "facility_healthcare": [
+      "hospital",
+      "clinic",
+      "doctors",
+      "dentist",
+      "healthcare",
+      "health_centre"
+    ],
+    "facility_education": [
+      "school",
+      "college",
+      "university",
+      "kindergarten",
+      "library",
+      "education"
+    ],
+    "facility_toilet": [
+      "toilets",
+      "toilet",
+      "public_toilet"
+    ],
+    "facility_parking": [
+      "parking",
+      "parking_entrance",
+      "parking_space"
+    ],
+    "landuse_residential": [
+      "residential"
+    ],
+    "landuse_commercial": [
+      "commercial",
+      "retail"
+    ],
+    "landuse_industrial": [
+      "industrial"
+    ],
+    "landuse_park": [
+      "park",
+      "garden",
+      "recreation_ground",
+      "grass",
+      "village_green"
+    ]
+  },
+  "input_manifest": [
+    {
+      "file": "data\\raw\\nmc\\official_zones.csv",
+      "sha256": "4896da86e2ad448f5598eac75c5103555dd2d808a8a0717a5d1f88f6d1a38a7a",
+      "records": 308
+    },
+    {
+      "file": "data\\raw\\nmc\\official_zones_geometries.geojson",
+      "sha256": "37093556f07c28f1c24f38c7c8c64ae8fa1a7628cee909ad6d1a8d063a71d143",
+      "records": 308
+    },
+    {
+      "file": "data\\raw\\osm\\roads_clean.gpkg",
+      "sha256": "6936105679c512dc26a710c172de0fa0655eab92ea81068381d3486e45e5d60b",
+      "records": 13988
+    },
+    {
+      "file": "data\\raw\\osm\\commercial_model_points.gpkg",
+      "sha256": "ef83db59679b572cb47abaac3ae6a1bd51e247f3bffacd2c8bab6cf58c86006d",
+      "records": 353
+    },
+    {
+      "file": "data\\raw\\osm\\landuse_clean.gpkg",
+      "sha256": "94965cb60ac44d3dca34dc34a72c4ad42f17cdf938b1fe1a14c6c2c6c86029ab",
+      "records": 401
+    },
+    {
+      "file": "data\\raw\\osm\\transport_deduplicated.gpkg",
+      "sha256": "c07151a05e989b1e248eaeff6b393db5a9e0f6ca1e0bf710d26572cbc5c7bcfd",
+      "records": 61
+    },
+    {
+      "file": "data\\raw\\osm\\facilities_deduplicated.gpkg",
+      "sha256": "070aa9f0f66ed6b55845a8cda5d4d54ffad0b4e9a306888551363bd41ad42786",
+      "records": 373
+    }
+  ],
+  "outputs": [
+    "data\\processed\\zone_features.csv",
+    "data\\processed\\zone_features.gpkg"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "status": "CANDIDATE_ONLY_NOT_TRAINED",
+  "features": [
+    "distance_to_major_road_m",
+    "road_density_250m_per_km2",
+    "pedestrian_road_density_250m_per_km2",
+    "commercial_poi_count_250m",
+    "market_poi_count_500m",
+    "food_poi_count_250m",
+    "bus_count_500m",
+    "distance_to_bus_access_m",
+    "healthcare_count_500m",
+    "education_count_500m",
+    "toilet_count_500m",
+    "parking_count_500m"
+  ],
+  "notes": [
+    "Review correlations and distributions before training.",
+    "Land-use shares excluded pending coverage assessment.",
+    "Draft geometry area and perimeter are audit-only.",
+    "Raw counts are observed OSM presence proxies, not demand.",
+    "Do not use capacity or historical associations in environmental K-Means."
+  ]
+}

@@ -1,0 +1,309 @@
+﻿zone_id,division,zone_type,official_serial_no,official_description,capacity,category,source_pages,source_dataset
+NE_F_001,Nashik East,FREE,1,Vacant platforms and open space within Phule Market.,118,A,1,zones_308_editable (1).csv
+NE_F_002,Nashik East,FREE,2,"Shivneri Chowk, Kathada Road.",10,B,1,zones_308_editable (1).csv
+NE_F_003,Nashik East,FREE,3,Roadside along the western side of 100 Feet Tigarania Company Road.,,B,1,zones_308_editable (1).csv
+NE_F_004,Nashik East,FREE,4,"Along the western compound wall of Trikoni Garden, on an 80-foot-long roadside stretch near Aathvan Hotel, Gajar Park, Tapovan Road and Saubhagya Society.",155,A,1,zones_308_editable (1).csv
+NE_F_005,Nashik East,FREE,5,"Gumshah Baba Chowk, Nanavali Road, along the NMC school wall, leaving the prescribed distance from the dargah.",33,A,1,zones_308_editable (1).csv
+NE_F_006,Nashik East,FREE,6,Along the compound wall of Jauddin Mill.,20,B,1,zones_308_editable (1).csv
+NE_F_007,Nashik East,FREE,7,"Open space opposite Survey No. 262, Rukmini Nagar, near Pakhal Road and Ashoka Marg, leaving the corner of the 150-foot road on the western side.",99,B,1,zones_308_editable (1).csv
+NE_F_008,Nashik East,FREE,8,"Inside Indiranagar Jogging Track, along the existing wall behind the NMC attendance shed near Sainath Nagar Chowfuli.",93,A,1,zones_308_editable (1).csv
+NE_F_009,Nashik East,FREE,9,"Open space on the western side of the NMC sub-office at Indiranagar, beside Lok Suvidha Kendra.",18,A,1,zones_308_editable (1).csv
+NE_F_010,Nashik East,FREE,10,Open space within Krushnakant Vegetable Market.,191,A,1,zones_308_editable (1).csv
+NE_F_011,Nashik East,FREE,11,Space at the corner of Bharat Nagar.,81,B,1,zones_308_editable (1).csv
+NE_F_012,Nashik East,FREE,12,"Shivaji Nagar, beside Reliance Mall near Datta Mandir, Datta Mandir Road.",66,B,1,zones_308_editable (1).csv
+NE_F_013,Nashik East,FREE,13,"Along the 80-foot NMC road near Makarand Colony on the Upnagar-Dasak boundary, intended for rehabilitation.",20,B,1,zones_308_editable (1).csv
+NE_F_014,Nashik East,FREE,14,Platforms constructed by NMC in the vegetable market at Old Sindhi Colony.,146,B,1,zones_308_editable (1).csv
+NE_F_015,Nashik East,FREE,15,Along one side of the road from Gosavi Nagar to the Takli boundary.,20,B,1,zones_308_editable (1).csv
+NE_F_016,Nashik East,FREE,16,Along the drain on Amardham Road.,31,B,1,zones_308_editable (1).csv
+NE_R_001,Nashik East,RESTRICTED,1,"Tractor House, road towards Laxminarayan Ghat, Old Manur Road.",123,A,1,zones_308_editable (1).csv
+NE_R_002,Nashik East,RESTRICTED,2,"Bhadrakali milk-market area, adjacent to Ganpati Temple.",10,A,1,zones_308_editable (1).csv
+NW_F_001,Nashik West,FREE,1,"Space behind Sharanpur Vegetable Market, adjacent to the gymnasium, on both sides.",115,A,2,zones_308_editable (1).csv
+NW_F_002,Nashik West,FREE,2,Space beside the MSEB compound at Sharanpur Mini Market.,50,A,2,zones_308_editable (1).csv
+NW_F_003,Nashik West,FREE,3,"Space behind Hotel Green View, along Canal Road, on both sides.",150,B,2,zones_308_editable (1).csv
+NW_F_004,Nashik West,FREE,4,"Gangawadi grass-market ground, on both sides.",130,B,2,zones_308_editable (1).csv
+NW_F_005,Nashik West,FREE,5,Stretch from Phanibaba Dargah to Gangawadi Garden.,100,B,2,zones_308_editable (1).csv
+NW_F_006,Nashik West,FREE,6,Near Hanuman Ghat.,50,B,2,zones_308_editable (1).csv
+NW_F_007,Nashik West,FREE,7,"Space beside the tennis court in D'Souza Colony, along the canal-side strip.",16,A,2,zones_308_editable (1).csv
+NW_F_008,Nashik West,FREE,8,"Space behind the Senior Citizens Association, on the canal-side land.",40,A,2,zones_308_editable (1).csv
+NW_F_009,Nashik West,FREE,9,Roadside behind City Centre Mall.,80,A,2,zones_308_editable (1).csv
+NW_F_010,Nashik West,FREE,10,Roadside space along the open space opposite Sandeep Hotel.,46,B,2,zones_308_editable (1).csv
+NW_F_011,Nashik West,FREE,11,Space beside the old NMC school building at Mumbai Naka.,60,B,2,zones_308_editable (1).csv
+NW_F_012,Nashik West,FREE,12,"Open space opposite Hindu Samaj Seva Sangh, near Jhankar Hotel.",30,B,2,zones_308_editable (1).csv
+NW_F_013,Nashik West,FREE,13,"Pumping Station Road, space adjacent to Ram Mandir Garden.",20,A,2,zones_308_editable (1).csv
+NW_F_014,Nashik West,FREE,14,"Madhav Ashram / Sai Prerna Apartment area, Vanvihar Colony, Parijat Nagar.",80,A,2,zones_308_editable (1).csv
+NW_F_015,Nashik West,FREE,15,"Road behind Kulkarni Garden, along the garden opposite Hotel Shraddha. (Zone cancelled.)",20,,2,zones_308_editable (1).csv
+NW_F_016,Nashik West,FREE,16,"Bhadrakali Taxi Stand / Matangwada area, along the stretch from Bhadrakali towards Main Road.",100,B,2,zones_308_editable (1).csv
+NW_F_017,Nashik West,FREE,17,"Bhadrakali vegetable-market ground, near Kondaji Chivda.",48,B,2,zones_308_editable (1).csv
+NW_F_018,Nashik West,FREE,18,"Open space near Boys Town, opposite Siddharth Nagar slum area.",100,C,2,zones_308_editable (1).csv
+NW_F_019,Nashik West,FREE,19,Near the ST Workshop on N. D. Patel Road.,30,B,2,zones_308_editable (1).csv
+NW_F_020,Nashik West,FREE,20,"Lane beside Hotel Priya, opposite CBS, on one side of the road.",75,A,2,zones_308_editable (1).csv
+NW_F_021,Nashik West,FREE,21,Milk Market.,5,B,2,zones_308_editable (1).csv
+NW_F_022,Nashik West,FREE,22,"Space opposite Prabhat Theatre, Bhadrakali.",18,B,2,zones_308_editable (1).csv
+NW_F_023,Nashik West,FREE,23,Saraswati Lane.,40,A,2,zones_308_editable (1).csv
+NW_F_024,Nashik West,FREE,24,"Chitramandir, Vishrambaug area.",46,B,2,zones_308_editable (1).csv
+NW_F_025,Nashik West,FREE,25,"Balaji Temple, Tilbhandeshwar Lane.",48,B,2,zones_308_editable (1).csv
+NW_F_026,Nashik West,FREE,26,Open plot near Akashvani Kendra.,300,A,2,zones_308_editable (1).csv
+NW_F_027,Nashik West,FREE,27,"Behind the Divisional Referral Hospital at Navapura, along the road from Shivaji Road to Pimpalpar.",100,A,2,zones_308_editable (1).csv
+NW_R_001,Nashik West,RESTRICTED,1,D'Souza Colony.,10,A,2,zones_308_editable (1).csv
+NW_R_002,Nashik West,RESTRICTED,2,Kalpana Nagar.,5,A,2,zones_308_editable (1).csv
+NW_R_003,Nashik West,RESTRICTED,3,Model Colony.,5,A,2,zones_308_editable (1).csv
+NW_R_004,Nashik West,RESTRICTED,4,Krushi Nagar.,5,A,2,zones_308_editable (1).csv
+NW_R_005,Nashik West,RESTRICTED,5,Utkarsh Nagar.,10,B,2,zones_308_editable (1).csv
+NW_R_006,Nashik West,RESTRICTED,6,Lavhate Nagar.,5,B,2,zones_308_editable (1).csv
+NW_R_007,Nashik West,RESTRICTED,7,Laxmi Nagar.,5,B,2,zones_308_editable (1).csv
+NW_R_008,Nashik West,RESTRICTED,8,Patil Colony.,6,B,2,zones_308_editable (1).csv
+NW_R_009,Nashik West,RESTRICTED,9,Advait Colony.,10,A,2,zones_308_editable (1).csv
+NW_R_010,Nashik West,RESTRICTED,10,Vise Mala.,10,B,2,zones_308_editable (1).csv
+NW_R_011,Nashik West,RESTRICTED,11,Jaldhara.,5,B,2,zones_308_editable (1).csv
+NW_R_012,Nashik West,RESTRICTED,12,Holaram Colony.,10,B,2,zones_308_editable (1).csv
+NW_R_013,Nashik West,RESTRICTED,13,P & T Colony.,15,B,2,zones_308_editable (1).csv
+NW_R_014,Nashik West,RESTRICTED,14,Parnashree Society.,4,B,2,zones_308_editable (1).csv
+NW_R_015,Nashik West,RESTRICTED,15,Raka Colony.,6,A,2,zones_308_editable (1).csv
+NW_R_016,Nashik West,RESTRICTED,16,Tidke Colony.,10,B,2,zones_308_editable (1).csv
+NW_R_017,Nashik West,RESTRICTED,17,Sambhaji Chowk area.,20,A,2,zones_308_editable (1).csv
+NW_R_018,Nashik West,RESTRICTED,18,Tupsakhare Lawn area.,10,B,2,zones_308_editable (1).csv
+NW_R_019,Nashik West,RESTRICTED,19,Along internal roads between ABB Circle and Jehan Circle via Mahatmanagar Road.,44,B,2,zones_308_editable (1).csv
+PAN_F_001,Panchavati,FREE,1,Adgaon Holi Chowk.,40,C,3,zones_308_editable (1).csv
+PAN_F_002,Panchavati,FREE,2,"Adgaon Bus Stop, near Samaj Mandir.",15,B,3,zones_308_editable (1).csv
+PAN_F_003,Panchavati,FREE,3,"Adjacent to Adgaon Bus Stop, beside Mahalaxmi Garden.",40,B,3,zones_308_editable (1).csv
+PAN_F_004,Panchavati,FREE,4,From Mhasrul Vegetable Market up to Samaj Mandir.,80,B,3,zones_308_editable (1).csv
+PAN_F_005,Panchavati,FREE,5,"Prabhat Nagar, along the Samaj Mandir compound wall on Makhmalabad Link Road.",50,B,3,zones_308_editable (1).csv
+PAN_F_006,Panchavati,FREE,6,NMC open space in Nandurgaon between Samaj Mandir and the Sulabh public toilet.,15,C,3,zones_308_editable (1).csv
+PAN_F_007,Panchavati,FREE,7,"Area near the water channel between Dindori Road and Peth Road, subject to final approval of the Irrigation Department.",250,A,3,zones_308_editable (1).csv
+PAN_F_008,Panchavati,FREE,8,"Tarwala Nagar, Dindori Road-Hirawadi Link Road, near Raje Sambhaji Chowk, along the reserved-garden wall at Survey No. 159.",250,B,3,zones_308_editable (1).csv
+PAN_F_009,Panchavati,FREE,9,"Canal-side footpath space on Peth Road, subject to final approval of the Irrigation Department.",350,C,3,zones_308_editable (1).csv
+PAN_F_010,Panchavati,FREE,10,"Along the MERI Office compound wall on Dindori Road, from Goraksh Nagar to the RTO Corner.",300,A,3,zones_308_editable (1).csv
+PAN_F_011,Panchavati,FREE,11,Beside Mahalaxmi Temple near Makhmalabad Bus Stop.,50,B,3,zones_308_editable (1).csv
+PAN_F_012,Panchavati,FREE,12,"Makhmalabad-Mhasrul Link Road, Irrigation Colony, along the reserved-garden compound wall opposite Hotel Manas.",40,B,3,zones_308_editable (1).csv
+PAN_F_013,Panchavati,FREE,13,"Near Nilgiri Baug and the NMC housing scheme, Survey No. 270.",150,C,3,zones_308_editable (1).csv
+PAN_F_014,Panchavati,FREE,14,"Near the Adivasi Ashram School, Borgad Colony, Dindori Road.",7,B,3,zones_308_editable (1).csv
+PAN_F_015,Panchavati,FREE,15,"Near K. K. Wagh Engineering College, along Irrigation Department land, on the road towards the bidi workers' colony.",400,A,3,zones_308_editable (1).csv
+PAN_F_016,Panchavati,FREE,16,"Shri Dattanagar Garden, Konark Nagar.",50,B,3,zones_308_editable (1).csv
+PAN_F_017,Panchavati,FREE,17,"Near Shri Swami Samarth Kendra, opposite the NMC school, at Bidi Kamgar Garden.",10,C,3,zones_308_editable (1).csv
+PAN_F_018,Panchavati,FREE,18,Road from Chamunda Chowk on Hirawadi Road towards Prashant Dada Chowk.,10,B,3,zones_308_editable (1).csv
+PAN_F_019,Panchavati,FREE,19,"Adjacent to Shri Dattanagar Garden, Peth Road.",10,D,3,zones_308_editable (1).csv
+PAN_F_020,Panchavati,FREE,20,"Savarkar Nagar, opposite Akash Petrol Pump, Dindori Road.",10,C,3,zones_308_editable (1).csv
+PAN_F_021,Panchavati,FREE,21,"Corner opposite More Mala, Hanumanwadi area.",30,B,3,zones_308_editable (1).csv
+PAN_F_022,Panchavati,FREE,22,"Near Shri Siddhivinayak Temple, along the open-space compound wall at Hirawadi.",5,B,3,zones_308_editable (1).csv
+PAN_F_023,Panchavati,FREE,23,"Near Shri Mahadev Temple, along the NMC open-space compound wall at Gunjal Baba Nagar, Hirawadi.",7,C,3,zones_308_editable (1).csv
+PAN_F_024,Panchavati,FREE,24,"Opposite Bhikusa Paper Mill, near the water channel on Hirawadi Road.",10,A,3,zones_308_editable (1).csv
+PAN_F_025,Panchavati,FREE,25,"Land reserved for market and shopping near the ST depot at Old Adgaon Naka, MSC No. 256, Survey No. 294/A.",50,A,3,zones_308_editable (1).csv
+PAN_F_026,Panchavati,FREE,26,"Opposite Aathvan Lawns, Chavan Nagar, Tapovan Shed.",10,C,3,zones_308_editable (1).csv
+PAN_F_027,Panchavati,FREE,27,NMC land beside the public toilet opposite the east gate of Shri Kalaram Temple.,19,A,3,zones_308_editable (1).csv
+PAN_F_028,Panchavati,FREE,28,Sita Gufa area.,15,A,3,zones_308_editable (1).csv
+PAN_F_029,Panchavati,FREE,29,"Adjacent to Ganeshwadi Vegetable Market, towards Waghadi Bridge.",30,A,3,zones_308_editable (1).csv
+PAN_F_030,Panchavati,FREE,30,"Road towards Varvandi, for a stretch of 125 metres from Mhasrul Vegetable Market.",20,C,3,zones_308_editable (1).csv
+PAN_F_031,Panchavati,FREE,31,"Pedestrian road in front of the Panchavati public library, opposite Indrakund, excluding the western and northern sides of the library.",30,A,3,zones_308_editable (1).csv
+PAN_F_032,Panchavati,FREE,32,"NMC open space beside Dr. Bachhav Hospital, Peth Road.",20,C,4,zones_308_editable (1).csv
+PAN_F_033,Panchavati,FREE,33,"Along Kannamwar Bridge service road, near Takle Nagar Bypass.",20,B,4,zones_308_editable (1).csv
+PAN_F_034,Panchavati,FREE,34,"NMC open space at Survey No. 295, opposite Shri Vishnudev Apartment, Takle Nagar.",10,C,4,zones_308_editable (1).csv
+PAN_F_035,Panchavati,FREE,35,"NMC open space at the Kshirsagar Colony corner, opposite Janakalyan Bank, Hirawadi Road.",15,A,4,zones_308_editable (1).csv
+PAN_F_036,Panchavati,FREE,36,"Along the northern compound wall of Maasaheb Thackeray Stadium, Hirawadi Road.",385,B,4,zones_308_editable (1).csv
+PAN_F_037,Panchavati,FREE,37,"Near Amrutdham, Sai Nagar, Survey No. 201, land reserved for market and shopping centre.",100,B,4,zones_308_editable (1).csv
+PAN_F_038,Panchavati,FREE,38,"Along the compound wall of Amrutdham Sanatorium, Bidi Kamgar Nagar Road.",40,A,4,zones_308_editable (1).csv
+PAN_R_001,Panchavati,RESTRICTED,1,"Along the Panjarpol compound on Kishor Suryawanshi Marg near Borgad, leaving 50 metres from the chowk.",30,B,4,zones_308_editable (1).csv
+PAN_R_002,Panchavati,RESTRICTED,2,"Along the Sai Baba Temple compound on Kishor Suryawanshi Marg, near Mrudgandh Apartment, Survey No. 243.",30,B,4,zones_308_editable (1).csv
+PAN_R_003,Panchavati,RESTRICTED,3,"Ramwadi, adjacent to Goda Park.",50,B,4,zones_308_editable (1).csv
+PAN_R_004,Panchavati,RESTRICTED,4,"A section on the northern side, 50 metres away from Malegaon Stand Signal.",15,A,4,zones_308_editable (1).csv
+PAN_R_005,Panchavati,RESTRICTED,5,"Proposed hawkers-zone land at Survey No. 311 beside the Godavari River and Godavari slum, adjacent to the reserved garden, opposite and beside Shraddha Lawns.",550,A,4,zones_308_editable (1).csv
+PAN_R_006,Panchavati,RESTRICTED,6,"Area near Kartik Swami Temple, Panchavati.",120,A,4,zones_308_editable (1).csv
+PAN_R_007,Panchavati,RESTRICTED,7,"Weekly market in Panchavati, Nashik.",700,A,4,zones_308_editable (1).csv
+PAN_R_008,Panchavati,RESTRICTED,8,Along the compound wall of Namco Cancer Hospital.,7,C,4,zones_308_editable (1).csv
+PAN_R_009,Panchavati,RESTRICTED,9,"Near Shri Katya Maruti Temple, Ganeshwadi Road.",13,A,4,zones_308_editable (1).csv
+PAN_R_010,Panchavati,RESTRICTED,10,"Opposite Shani Temple, near Katya Maruti Temple.",6,C,4,zones_308_editable (1).csv
+PAN_R_011,Panchavati,RESTRICTED,11,"Alongside NMC School No. 30, near Waghadi Bridge.",10,A,4,zones_308_editable (1).csv
+PAN_R_012,Panchavati,RESTRICTED,12,"NMC open space at Manur village, towards Ramghat.",50,C,4,zones_308_editable (1).csv
+NR_F_001,Nashik Road,FREE,1,"Land reserved for a market and shopping centre opposite Saitric Company near Shani Temple, Reservation No. 129, after the reserved land is taken into possession.",150,B,5,zones_308_editable (1).csv
+NR_F_002,Nashik Road,FREE,2,"Along the road in the open space at Lokhande Mala, Hanuman Nagar, opposite Shri Borhade's house.",35,C,5,zones_308_editable (1).csv
+NR_F_003,Nashik Road,FREE,3,"Rukmini Nagar, opposite Datta Mandir, along the 12-metre DP Road.",30,C,5,zones_308_editable (1).csv
+NR_F_004,Nashik Road,FREE,4,"Mangal Murti Nagar, along the 12-metre DP Road, opposite Shri Samruddhi Apartment, beside the open-space compound.",5,C,5,zones_308_editable (1).csv
+NR_F_005,Nashik Road,FREE,5,"Along the 15-metre DP Road at Gosavi Nagar, in the open space beside Canal Road.",80,C,5,zones_308_editable (1).csv
+NR_F_006,Nashik Road,FREE,6,Space along Canal Road at Janpath Society.,20,C,5,zones_308_editable (1).csv
+NR_F_007,Nashik Road,FREE,7,"Along Canal Road, on the southern side, from the raddi store to the Anganwadi.",250,C,5,zones_308_editable (1).csv
+NR_F_008,Nashik Road,FREE,8,"Open space near Samaj Mandir at Shivaji Nagar, part of Survey No. 26.",50,C,5,zones_308_editable (1).csv
+NR_F_009,Nashik Road,FREE,9,"Open space beside Gangasagar Building, along Canal Road on the eastern side of Jail Road.",50,B,5,zones_308_editable (1).csv
+NR_F_010,Nashik Road,FREE,10,Reserved land beside K. N. Kela High School.,250,A,5,zones_308_editable (1).csv
+NR_F_011,Nashik Road,FREE,11,"Pawarwadi, near the water tank, along the 12-metre DP Road.",30,C,5,zones_308_editable (1).csv
+NR_F_012,Nashik Road,FREE,12,Along the open-space compound in Bharatbhushan Society.,30,D,5,zones_308_editable (1).csv
+NR_F_013,Nashik Road,FREE,13,"Along the compound wall of the NMC naturopathy centre, Jetvan Nagar, Jai Bhavani Road.",50,C,5,zones_308_editable (1).csv
+NR_F_014,Nashik Road,FREE,14,Open space near Mhasoba Temple and behind Big Bazaar.,35,C,5,zones_308_editable (1).csv
+NR_F_015,Nashik Road,FREE,15,"Bhalerao Mala, Jai Bhavani Road, beside Tulja Temple.",100,C,5,zones_308_editable (1).csv
+NR_F_016,Nashik Road,FREE,16,"K. J. Mehta High School Road, land reserved for Children's Park.",200,A,5,zones_308_editable (1).csv
+NR_F_017,Nashik Road,FREE,17,"Somani Garden, from M. G. Road to Datta Mandir Road on the southern side.",50,A,5,zones_308_editable (1).csv
+NR_F_018,Nashik Road,FREE,18,Existing authorised vegetable market adjacent to Durga Garden.,300,A,5,zones_308_editable (1).csv
+NR_F_019,Nashik Road,FREE,19,"Kranti Chowk, near Genuji Bhavan.",30,A,5,zones_308_editable (1).csv
+NR_F_020,Nashik Road,FREE,20,Along the service road on Dr. Babasaheb Ambedkar Road.,100,A,5,zones_308_editable (1).csv
+NR_F_021,Nashik Road,FREE,21,Existing authorised vegetable market at Sinnar Phata.,106,C,5,zones_308_editable (1).csv
+NR_F_022,Nashik Road,FREE,22,"Ashwini Colony, near the water tank, along the traction-wall compound, Samangaon Road.",50,D,5,zones_308_editable (1).csv
+NR_F_023,Nashik Road,FREE,23,"Samangaon, opposite the Polytechnic College, along the 30-metre DP Road and the college compound.",300,C,5,zones_308_editable (1).csv
+NR_F_024,Nashik Road,FREE,24,"Opposite Maruti Temple, Chadegaon Gaothan.",60,D,5,zones_308_editable (1).csv
+NR_F_025,Nashik Road,FREE,25,Near the NMC property-tax and Talathi offices in Vadner Gaothan.,10,D,5,zones_308_editable (1).csv
+NR_F_026,Nashik Road,FREE,26,"Vadner-Dumala Gaothan, along the road near Sulabh toilet, Pathardi and the gaothan.",60,D,5,zones_308_editable (1).csv
+NR_F_027,Nashik Road,FREE,27,Space opposite the NMC study centre in Vadner-Dumala Gaothan.,100,D,5,zones_308_editable (1).csv
+NR_F_028,Nashik Road,FREE,28,"Mathura Chowk, part of Survey Nos. 25 and 26, Reservation No. 247 for a high school, along the 18-metre DP Road.",50,C,5,zones_308_editable (1).csv
+NR_F_029,Nashik Road,FREE,29,"Deolali village weekly market, along the compound on all three sides.",300,B,5,zones_308_editable (1).csv
+NR_F_030,Nashik Road,FREE,30,Existing authorised Yashwant Mandai and adjoining space in Deolali Gaothan.,60,A,5,zones_308_editable (1).csv
+NR_F_031,Nashik Road,FREE,31,"Bagul Nagar, reserved land for Dhobi Ghat and slaughterhouse along the Waldevi River.",200,D,5,zones_308_editable (1).csv
+NR_F_032,Nashik Road,FREE,32,"Along the compound wall of B. G. Public School Garden, Survey No. 18.",30,C,5,zones_308_editable (1).csv
+NR_F_033,Nashik Road,FREE,33,"Along the Nana-Nani Park compound wall beside Saubhagya Nagar Garden, part of Survey Nos. 19, 20 and 21.",15,C,5,zones_308_editable (1).csv
+NR_F_034,Nashik Road,FREE,34,"On the eastern side of the railway station, Survey No. 246, Reservation No. 222 for Railway Terminus and Allied Activities, along the 18-metre DP Road.",200,C,6,zones_308_editable (1).csv
+NR_F_035,Nashik Road,FREE,35,"Gajanan Park, Nashik Road.",100,C,6,zones_308_editable (1).csv
+NR_F_036,Nashik Road,FREE,36,"Survey No. 120, Mahamarg, Nashik Road.",300,C,6,zones_308_editable (1).csv
+NR_F_037,Nashik Road,FREE,37,"Survey No. 126, along the 30-metre DP Road, Nashik Road.",30,C,6,zones_308_editable (1).csv
+NR_F_038,Nashik Road,FREE,38,"Pumping Station Road, Chehdi, Nashik Road.",20,D,6,zones_308_editable (1).csv
+NR_F_039,Nashik Road,FREE,39,"Survey No. 120, playground, Nashik Road.",80,D,6,zones_308_editable (1).csv
+NR_F_040,Nashik Road,FREE,40,"Old Octroi Naka, Pune Road, Nashik Road.",50,D,6,zones_308_editable (1).csv
+NR_F_041,Nashik Road,FREE,41,"Chehdi Bhagwa Chowk, Nashik Road.",10,C,6,zones_308_editable (1).csv
+NR_F_042,Nashik Road,FREE,42,"Chehdi Gaothan, Maruti Temple, Nashik Road.",30,D,6,zones_308_editable (1).csv
+NR_F_043,Nashik Road,FREE,43,"Divisional Commissioner Office, leaving a 50-metre area, Nashik Road.",17,D,6,zones_308_editable (1).csv
+NR_F_044,Nashik Road,FREE,44,Along the 80-foot NMC road near Makarand Colony on the Upnagar-Dasak boundary.,60,B,6,zones_308_editable (1).csv
+NR_R_001,Nashik Road,RESTRICTED,1,"Jail Road, near the water tank.",50,A,6,zones_308_editable (1).csv
+NR_R_002,Nashik Road,RESTRICTED,2,Space beside the playground at Shikhrewadi.,50,A,6,zones_308_editable (1).csv
+NR_R_003,Nashik Road,RESTRICTED,3,Near Maruti Temple at Sinnar Phata.,25,B,6,zones_308_editable (1).csv
+NR_R_004,Nashik Road,RESTRICTED,4,"Gadekar Mala, Artillery Center Road, land reserved for a playground.",50,B,6,zones_308_editable (1).csv
+NR_R_005,Nashik Road,RESTRICTED,5,From Mahatma Gandhi Statue to Town Hall.,100,A,6,zones_308_editable (1).csv
+NR_R_006,Nashik Road,RESTRICTED,6,Open space opposite Sarvajanik Par Ganesh Temple to Shani Temple.,25,B,6,zones_308_editable (1).csv
+NR_R_007,Nashik Road,RESTRICTED,7,Open space opposite Hanuman Temple in Vadner Gaothan.,20,B,6,zones_308_editable (1).csv
+NR_R_008,Nashik Road,RESTRICTED,8,"Durga Temple, Mahatma Gandhi Road, for the Navratri festival.",50,A,6,zones_308_editable (1).csv
+NN_F_001,New Nashik,FREE,1,"Space near Sumit Company and opposite Nashik Castek, Ambad.",100,C,7,zones_308_editable (1).csv
+NN_F_002,New Nashik,FREE,2,Ambad Gaon Vegetable Market.,90,C,7,zones_308_editable (1).csv
+NN_F_003,New Nashik,FREE,3,"Pavan Nagar, adjacent to Ganesh Temple.",10,C,7,zones_308_editable (1).csv
+NN_F_004,New Nashik,FREE,4,"Near the water tank, on the northern side of Ambad property-tax office.",20,C,7,zones_308_editable (1).csv
+NN_F_005,New Nashik,FREE,5,Phalke Memorial Gate.,20,C,7,zones_308_editable (1).csv
+NN_F_006,New Nashik,FREE,6,"Campus Company, MIDC Ambad.",10,C,7,zones_308_editable (1).csv
+NN_F_007,New Nashik,FREE,7,"Coca-Cola Company, MIDC Ambad.",10,C,7,zones_308_editable (1).csv
+NN_F_008,New Nashik,FREE,8,"Along the compound wall opposite Gabriel Company, MIDC Ambad.",12,C,7,zones_308_editable (1).csv
+NN_F_009,New Nashik,FREE,9,"Behind Glasgow Company, MIDC Ambad.",30,C,7,zones_308_editable (1).csv
+NN_F_010,New Nashik,FREE,10,Space near Seva Auto Showroom.,20,C,7,zones_308_editable (1).csv
+NN_F_011,New Nashik,FREE,11,"Power House, MSEB, Garware Gate, MIDC Ambad.",50,C,7,zones_308_editable (1).csv
+NN_F_012,New Nashik,FREE,12,"Near Mungi Brothers Company, MIDC Ambad.",10,C,7,zones_308_editable (1).csv
+NN_F_013,New Nashik,FREE,13,"Lekha Nagar, Balbharati Office.",10,C,7,zones_308_editable (1).csv
+NN_F_014,New Nashik,FREE,14,"Open space near Bajrang Chowk Police Chowki in Khutwad Nagar, planned for a hawkers zone.",100,B,7,zones_308_editable (1).csv
+NN_F_015,New Nashik,FREE,15,Open space beside the NMC stalls behind Raje Sambhaji Stadium.,150,B,7,zones_308_editable (1).csv
+NN_F_016,New Nashik,FREE,16,"Open space at Gat No. 65/A, requested for vending after filling the pits and levelling the land.",60,B,7,zones_308_editable (1).csv
+NN_R_001,New Nashik,RESTRICTED,1,"Road towards Pathardi village, near the Mangal Karyalaya compound wall.",50,B,7,zones_308_editable (1).csv
+NN_R_002,New Nashik,RESTRICTED,2,"Pathardi Road, opposite Dhanlaxmi School, Colony Road.",80,C,7,zones_308_editable (1).csv
+NN_R_003,New Nashik,RESTRICTED,3,"Murari Nagar, Gamane Mala.",140,C,7,zones_308_editable (1).csv
+NN_R_004,New Nashik,RESTRICTED,4,"Sales Tax Bhavan, near Shani Temple.",90,C,7,zones_308_editable (1).csv
+NN_R_005,New Nashik,RESTRICTED,5,Three sub-locations: (a) Shivaji Market opposite the military quarters; (b) in front of the Maharashtra Kamgar Mandal building; (c) Shivaji Chowk east-west road.,200,,7,zones_308_editable (1).csv
+NN_R_006,New Nashik,RESTRICTED,6,State Bank Chowpatty.,60,B,7,zones_308_editable (1).csv
+NN_R_007,New Nashik,RESTRICTED,7,"Bal Udyan, Ganesh Chowk.",10,C,7,zones_308_editable (1).csv
+NN_R_008,New Nashik,RESTRICTED,8,"Datta Chowk, MSEB compound.",50,C,7,zones_308_editable (1).csv
+NN_R_009,New Nashik,RESTRICTED,9,"Pandit Nagar, near Morwadi Shani Temple.",20,B,7,zones_308_editable (1).csv
+NN_R_010,New Nashik,RESTRICTED,10,Sinhastha Nagar / Sanjay Raka Chowk.,30,B,7,zones_308_editable (1).csv
+NN_R_011,New Nashik,RESTRICTED,11,Along the eastern compound wall of MVP College.,20,C,7,zones_308_editable (1).csv
+NN_R_012,New Nashik,RESTRICTED,12,Western side of Ambad Police Station.,10,C,7,zones_308_editable (1).csv
+NN_R_013,New Nashik,RESTRICTED,13,Colony Road near MVP College.,20,C,7,zones_308_editable (1).csv
+NN_R_014,New Nashik,RESTRICTED,14,Along the compound wall of Pavan Nagar Ground.,10,A,7,zones_308_editable (1).csv
+NN_R_015,New Nashik,RESTRICTED,15,"Along the southern and western compound walls of Patil Nagar Ground, Pethe Vidyalaya.",225,A,7,zones_308_editable (1).csv
+SAT_F_001,Satpur,FREE,1,"Area behind ITI, Londhe Marg, Satpur.",200,B,8,zones_308_editable (1).csv
+SAT_F_002,Satpur,FREE,2,"Along the fire-station wall, Satpur.",17,B,8,zones_308_editable (1).csv
+SAT_F_003,Satpur,FREE,3,Along the compound wall of Victor Gasket Company.,20,B,8,zones_308_editable (1).csv
+SAT_F_004,Satpur,FREE,4,"Chhatrapati Shivaji Vegetable Market, Satpur Gaon.",190,A,8,zones_308_editable (1).csv
+SAT_F_005,Satpur,FREE,5,"Along the Satpur Mutton Market compound wall, Satpur Gaon.",248,A,8,zones_308_editable (1).csv
+SAT_F_006,Satpur,FREE,6,"Along the compound wall of Taparia Tools / ST Bus Stand, Satpur.",68,A,8,zones_308_editable (1).csv
+SAT_F_007,Satpur,FREE,7,"MHADA Colony, Housing and Area Development Board, Survey No. 105/2, Chunchale.",60,C,8,zones_308_editable (1).csv
+SAT_F_008,Satpur,FREE,8,"Open space opposite Saubhagya Lawns, Papaya Nursery, Trimbak Road.",36,C,8,zones_308_editable (1).csv
+SAT_F_009,Satpur,FREE,9,"Indira Gandhi Vegetable Market, Satpur Colony.",180,A,8,zones_308_editable (1).csv
+SAT_F_010,Satpur,FREE,10,"Sai Baba Temple, Anand Chhaya, Ashok Nagar, for sale of flowers and puja materials only.",40,A,8,zones_308_editable (1).csv
+SAT_F_011,Satpur,FREE,11,Ashok Nagar Vegetable Market.,204,A,8,zones_308_editable (1).csv
+SAT_F_012,Satpur,FREE,12,"Shramik Nagar Vegetable Market, Kedar Nagar, Shramik Nagar.",261,B,8,zones_308_editable (1).csv
+SAT_F_013,Satpur,FREE,13,"Chhatrapati Shivaji Vegetable Market, Shivaji Nagar (36 inside and 19 outside, as stated in the description).",306,B,8,zones_308_editable (1).csv
+SAT_F_014,Satpur,FREE,14,Gangapur Gaon Vegetable Market.,35,C,8,zones_308_editable (1).csv
+SAT_F_015,Satpur,FREE,15,"Someshwar Waterfall, Someshwar.",15,C,8,zones_308_editable (1).csv
+SAT_F_016,Satpur,FREE,16,"Open space at Anandvalli, Pipeline Road, opposite Reliance Petrol Pump, Satpur.",90,A,8,zones_308_editable (1).csv
+SAT_F_017,Satpur,FREE,17,"Along the compound wall of Late G. Deshpande Garden, Mahatma Nagar.",41,B,8,zones_308_editable (1).csv
+SAT_F_018,Satpur,FREE,18,"Along the MSEB compound wall, Swar Baba Nagar.",27,D,8,zones_308_editable (1).csv
+SAT_F_019,Satpur,FREE,19,Along the MICO Hospital compound wall.,22,D,8,zones_308_editable (1).csv
+SAT_F_020,Satpur,FREE,20,"Along the outer compound wall of Chhatrapati Shivaji Mandai, Shivaji Nagar.",41,B,8,zones_308_editable (1).csv
+SAT_F_021,Satpur,FREE,21,"Beside Maruti Temple, Satpur Gaon.",6,B,8,zones_308_editable (1).csv
+SAT_F_022,Satpur,FREE,22,"Gat No. 19, Sanjiv Nagar, Chunchale.",91,B,8,zones_308_editable (1).csv
+SAT_F_023,Satpur,FREE,23,"Dhruv Nagar, near the water tank, Shivaji Nagar.",18,C,8,zones_308_editable (1).csv
+SAT_F_024,Satpur,FREE,24,"Along the garden compound wall opposite Omkar Palace, Dhruv Nagar.",12,C,8,zones_308_editable (1).csv
+SAT_F_025,Satpur,FREE,25,"Mahatma Nagar, near Ganesh Temple, leaving the prescribed distance from the school.",12,A,8,zones_308_editable (1).csv
+SAT_R_001,Satpur,RESTRICTED,1,Satpur Mutton Market Road.,68,A,8,zones_308_editable (1).csv
+SAT_R_002,Satpur,RESTRICTED,2,Ashok Nagar last bus stop.,36,A,8,zones_308_editable (1).csv
+SAT_R_003,Satpur,RESTRICTED,3,"Near Manik Rama Mali Gymnasium, Kedar Nagar.",45,A,8,zones_308_editable (1).csv
+NV_001,Citywide,NO_VENDING,1,Bhadrakali Milk Market to Modak Point to Pimpalgaon Bahula.,,,9,zones_308_editable (1).csv
+NV_002,Citywide,NO_VENDING,2,Dwarka Circle to Chehdi village.,,,9,zones_308_editable (1).csv
+NV_003,Citywide,NO_VENDING,3,Dwarka Circle to Pathardi Phata to Vilholi.,,,9,zones_308_editable (1).csv
+NV_004,Citywide,NO_VENDING,4,Dwarka Circle to Old Adgaon Naka to New Adgaon Naka.,,,9,zones_308_editable (1).csv
+NV_005,Citywide,NO_VENDING,5,Dindori Naka to the University of Health Sciences.,,,9,zones_308_editable (1).csv
+NV_006,Citywide,NO_VENDING,6,Peth Naka to RTO Office to Tavli Phata.,,,9,zones_308_editable (1).csv
+NV_007,Citywide,NO_VENDING,7,Old Makhmalabad Naka to Dindori Naka to Santosh T Point (Old Adgaon Naka).,,,9,zones_308_editable (1).csv
+NV_008,Citywide,NO_VENDING,8,Ashok Stambh to Old Gangapur Naka to the NMC boundary at Gangapur Gaon.,,,9,zones_308_editable (1).csv
+NV_009,Citywide,NO_VENDING,9,Ashok Stambh to CBS to Gadkari Chowk to Mumbai Naka.,,,9,zones_308_editable (1).csv
+NV_010,Citywide,NO_VENDING,10,Canada Corner to Bhosala Military School Gate (College Road).,,,9,zones_308_editable (1).csv
+NV_011,Citywide,NO_VENDING,11,ABB Circle to Jehan Circle.,,,9,zones_308_editable (1).csv
+NV_012,Citywide,NO_VENDING,12,Shalimar to CBS Chowk to Canada Corner.,,,9,zones_308_editable (1).csv
+NV_013,Citywide,NO_VENDING,13,Old Gangapur Naka to Canada Corner to Sharanpur Police Chowki to Dakshinmukhi Hanuman Temple.,,,9,zones_308_editable (1).csv
+NV_014,Citywide,NO_VENDING,14,MICO Circle to Trimurti Chowk to CIDCO Hospital to Pathardi Phata.,,,9,zones_308_editable (1).csv
+NV_015,Citywide,NO_VENDING,15,MICO Circle to Chandak Circle to Gadkari Chowk to Sarda Circle to Dwarka Circle.,,,9,zones_308_editable (1).csv
+NV_016,Citywide,NO_VENDING,16,Chandak Circle to Sandeep Hotel.,,,9,zones_308_editable (1).csv
+NV_017,Citywide,NO_VENDING,17,Chandak Circle to Mahamarg Bus Stand.,,,9,zones_308_editable (1).csv
+NV_018,Citywide,NO_VENDING,18,"Pathardi Phata to Vadner Gate to Vadner village to Vihitgaon, Lam Road.",,,9,zones_308_editable (1).csv
+NV_019,Citywide,NO_VENDING,19,Papaya Nursery to XLO Point to Garware Point.,,,9,zones_308_editable (1).csv
+NV_020,Citywide,NO_VENDING,20,ITI Signal to Khutwad Nagar to Mauli Lawns to Ambad MIDC Road.,,,9,zones_308_editable (1).csv
+NV_021,Citywide,NO_VENDING,21,Bardana Phata (Gangapur Road) to Shramik Nagar to Ashok Nagar to Trimbak Road.,,,9,zones_308_editable (1).csv
+NV_022,Citywide,NO_VENDING,22,Shalimar to Gadge Maharaj Statue.,,,9,zones_308_editable (1).csv
+NV_023,Citywide,NO_VENDING,23,Meher Signal to Dhumal Point.,,,9,zones_308_editable (1).csv
+NV_024,Citywide,NO_VENDING,24,Ravivar Karanja to Ashok Stambh.,,,9,zones_308_editable (1).csv
+NV_025,Citywide,NO_VENDING,25,Panchavati Karanja to Dindori Naka.,,,9,zones_308_editable (1).csv
+NV_026,Citywide,NO_VENDING,26,Panchavati Karanja to Nimani Bus Stand.,,,9,zones_308_editable (1).csv
+NV_027,Citywide,NO_VENDING,27,Ravivar Karanja to Sangli Bank to Shalimar.,,,9,zones_308_editable (1).csv
+NV_028,Citywide,NO_VENDING,28,Indira Nagar to DGP Nagar to Dr. Ambedkar Nagar.,,,9,zones_308_editable (1).csv
+NV_029,Citywide,NO_VENDING,29,Mumbai Naka to Kathe Galli Signal.,,,9,zones_308_editable (1).csv
+NV_030,Citywide,NO_VENDING,30,Wadala Naka to Pakhal Road to Pathardi.,,,9,zones_308_editable (1).csv
+NV_031,Citywide,NO_VENDING,31,Fame Theatre Signal (Pune Highway) to Takli (Old Saikheda Road).,,,9,zones_308_editable (1).csv
+NV_032,Citywide,NO_VENDING,32,Fame Theatre Signal to Tapovan Chowk to Aurangabad Road.,,,9,zones_308_editable (1).csv
+NV_033,Citywide,NO_VENDING,33,ABB Circle to City Centre Mall to Indira Nagar Chowfuli.,,,9,zones_308_editable (1).csv
+NV_034,Citywide,NO_VENDING,34,Rasbihari School to Dindori Road to Peth Road to Makhmalabad Road (Ring Road).,,,9,zones_308_editable (1).csv
+NV_035,Citywide,NO_VENDING,35,Mhasrul to Makhmalabad village via Link Road.,,,9,zones_308_editable (1).csv
+NV_036,Citywide,NO_VENDING,36,Bitco Point to Saubhagya Nagar No. 6 Naka.,,,9,zones_308_editable (1).csv
+NV_037,Citywide,NO_VENDING,37,Bitco Point to Nandur Naka (Aurangabad Road).,,,9,zones_308_editable (1).csv
+NV_038,Citywide,NO_VENDING,38,Subhash Road to Dr. Ambedkar Statue.,,,9,zones_308_editable (1).csv
+NV_039,Citywide,NO_VENDING,39,Shivaji Statue to Dr. Ambedkar Statue.,,,9,zones_308_editable (1).csv
+NV_040,Citywide,NO_VENDING,40,Wadala Gaon to Rane Nagar (Ring Road).,,,9,zones_308_editable (1).csv
+NV_041,Citywide,NO_VENDING,41,All service roads of National Highway No. 3.,,,9,zones_308_editable (1).csv
+NV_042,Citywide,NO_VENDING,42,Dongre Hostel to Kulkarni Garden to MICO Circle.,,,9,zones_308_editable (1).csv
+NV_043,Citywide,NO_VENDING,43,Area near Dr. Zakir Hussain Hospital.,,,9,zones_308_editable (1).csv
+NV_044,Citywide,NO_VENDING,44,"Ravindra Vidyalaya, Kathe Galli, Nashik.",,,9,zones_308_editable (1).csv
+NV_045,Citywide,NO_VENDING,45,"NMC Water Purification Centre, Bara Bangla.",,,10,zones_308_editable (1).csv
+NV_046,Citywide,NO_VENDING,46,"Divisional Referral Hospital area, Shalimar and Indira Gandhi Chowk, and Savita Desai Hospital area.",,,10,zones_308_editable (1).csv
+NV_047,Citywide,NO_VENDING,47,Sarkarwada area.,,,10,zones_308_editable (1).csv
+NV_048,Citywide,NO_VENDING,48,Sloping road at Malegaon Stand.,,,10,zones_308_editable (1).csv
+NV_049,Citywide,NO_VENDING,49,Panchavati Karanja to Victoria Bridge.,,,10,zones_308_editable (1).csv
+NV_050,Citywide,NO_VENDING,50,Road from Ramkund to Kapaleshwar Temple to Khandve Sabhagruh to Malviya Chowk to Shivaji Chowk to Shani Temple to Sardar Chowk to Sai Temple and back to Kapaleshwar Temple.,,,10,zones_308_editable (1).csv
+NV_051,Citywide,NO_VENDING,51,Road from the south gate of Shri Kalaram Temple to Sardar Chowk.,,,10,zones_308_editable (1).csv
+NV_052,Citywide,NO_VENDING,52,Peth Naka to Chinchban Bridge.,,,10,zones_308_editable (1).csv
+NV_053,Citywide,NO_VENDING,53,Gauri Patangan on the Godavari River.,,,10,zones_308_editable (1).csv
+NV_054,Citywide,NO_VENDING,54,Mhasoba Patangan on the Godavari River and the area opposite Sai Baba Temple.,,,10,zones_308_editable (1).csv
+NV_055,Citywide,NO_VENDING,55,Gangamai Vegetable Market.,,,10,zones_308_editable (1).csv
+NV_056,Citywide,NO_VENDING,56,Ramkund parking area.,,,10,zones_308_editable (1).csv
+NV_057,Citywide,NO_VENDING,57,Within 50 metres of the Divisional Commissioner Office.,,,10,zones_308_editable (1).csv
+NV_058,Citywide,NO_VENDING,58,50-metre area from Artillery Center Gate to Jai Bhavani Road Chowk.,,,10,zones_308_editable (1).csv
+NV_059,Citywide,NO_VENDING,59,Road in front of Jairambhai Hospital.,,,10,zones_308_editable (1).csv
+NV_060,Citywide,NO_VENDING,60,Road in front of Bitco Hospital.,,,10,zones_308_editable (1).csv
+NV_061,Citywide,NO_VENDING,61,"Narayan Bapu Nagar Chowk, Old Saikheda Road.",,,10,zones_308_editable (1).csv
+NV_062,Citywide,NO_VENDING,62,"Rajarajeshwari Chowk, Old Saikheda Road.",,,10,zones_308_editable (1).csv
+NV_063,Citywide,NO_VENDING,63,Nashik Road Railway Station to Dr. Babasaheb Ambedkar Statue Chowk.,,,10,zones_308_editable (1).csv
+NV_064,Citywide,NO_VENDING,64,"CIDCO Office area, Lekha Nagar.",,,10,zones_308_editable (1).csv
+NV_065,Citywide,NO_VENDING,65,Ambad Police Station and NMC Divisional Office building area.,,,10,zones_308_editable (1).csv
+NV_066,Citywide,NO_VENDING,66,"BSNL Office area, Ashwin Nagar.",,,10,zones_308_editable (1).csv
+NV_067,Citywide,NO_VENDING,67,"Fire Brigade Centre, Old State Bank Chowk.",,,10,zones_308_editable (1).csv
+NV_068,Citywide,NO_VENDING,68,"MVP College area, Uttam Nagar.",,,10,zones_308_editable (1).csv
+NV_069,Citywide,NO_VENDING,69,"Circle near Shivaji Statue, Lekha Nagar.",,,10,zones_308_editable (1).csv
+NV_070,Citywide,NO_VENDING,70,Pavan Nagar Circle area.,,,10,zones_308_editable (1).csv
+NV_071,Citywide,NO_VENDING,71,Morwadi Chowk area.,,,10,zones_308_editable (1).csv
+NV_072,Citywide,NO_VENDING,72,Maharana Pratap Chowk area.,,,10,zones_308_editable (1).csv
+NV_073,Citywide,NO_VENDING,73,"Swami Vivekanand Chowk, Rane Nagar.",,,10,zones_308_editable (1).csv
+NV_074,Citywide,NO_VENDING,74,Bhosala Military School northern gate to Asaram Bapu Ashram.,,,10,zones_308_editable (1).csv
+NV_075,Citywide,NO_VENDING,75,"Satpur Kaman Main Road, from the Maruti Temple area to Dadoba Bridge.",,,10,zones_308_editable (1).csv
+NV_076,Citywide,NO_VENDING,76,Sakal Circle to Swar Baba Nagar Circle.,,,10,zones_308_editable (1).csv
+NV_077,Citywide,NO_VENDING,77,Swar Baba Circle to MICO Hospital.,,,10,zones_308_editable (1).csv
+NV_078,Citywide,NO_VENDING,78,Trimbak Road to Amardham Road.,,,10,zones_308_editable (1).csv
+NV_079,Citywide,NO_VENDING,79,Indian Petrol Pump to MHADA Colony.,,,10,zones_308_editable (1).csv
+NV_080,Citywide,NO_VENDING,80,XLO Point to Chunchale village.,,,10,zones_308_editable (1).csv
+NV_081,Citywide,NO_VENDING,81,"Datta Mandir Bus Stop to Vikhe Patil School, Keval Park.",,,10,zones_308_editable (1).csv
+NV_082,Citywide,NO_VENDING,82,Carbon Naka to Chitra Wire Company.,,,10,zones_308_editable (1).csv
+NV_083,Citywide,NO_VENDING,83,"Anandvalli, Gangapur Road, to Reliance Petrol Pump.",,,10,zones_308_editable (1).csv

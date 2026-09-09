@@ -1,0 +1,233 @@
+{
+  "official_zones.csv": {
+    "rows": 308,
+    "columns": 9,
+    "missing_by_column": {
+      "zone_id": 0,
+      "division": 0,
+      "zone_type": 0,
+      "official_serial_no": 0,
+      "official_description": 0,
+      "capacity": 84,
+      "category": 85,
+      "source_pages": 0,
+      "source_dataset": 0
+    }
+  },
+  "vendors.csv": {
+    "rows": 7259,
+    "columns": 22,
+    "missing_by_column": {
+      "vendor_id": 0,
+      "legacy_vendor_id": 1,
+      "source_serial_no": 0,
+      "source_page": 0,
+      "division": 0,
+      "vendor_name_english": 1,
+      "phone_number": 673,
+      "alternate_phone": 7257,
+      "residential_address_original": 72,
+      "residential_address_english": 72,
+      "business_type_original": 134,
+      "business_type_english": 0,
+      "business_category": 0,
+      "business_translation_status": 0,
+      "business_translation_note": 0,
+      "current_vending_location_original": 35,
+      "current_vending_location_english": 23,
+      "location_translation_status": 0,
+      "source_extraction_status": 0,
+      "source_extraction_note": 7213,
+      "legacy_identity_match_status": 0,
+      "registry_source": 0
+    }
+  },
+  "vendor_zone_assignments.csv": {
+    "rows": 7259,
+    "columns": 19,
+    "missing_by_column": {
+      "vendor_id": 0,
+      "source_serial_no": 0,
+      "source_page": 0,
+      "division": 0,
+      "location_group_id": 0,
+      "current_vending_location_original": 35,
+      "proposed_zone_id": 172,
+      "proposed_zone_description": 172,
+      "proposed_zone_type": 172,
+      "match_method": 0,
+      "match_score": 0,
+      "match_status": 0,
+      "candidate_zone_ids": 5345,
+      "verified_zone_id": 7259,
+      "spatial_verification_status": 0,
+      "allocation_status": 0,
+      "document_condition": 172,
+      "capacity_note": 7242,
+      "source_extraction_note": 7213
+    }
+  },
+  "zone_vendor_evidence.csv": {
+    "rows": 308,
+    "columns": 20,
+    "missing_by_column": {
+      "zone_id": 0,
+      "division": 0,
+      "zone_type": 0,
+      "official_capacity": 84,
+      "proposed_vendor_count": 0,
+      "text_associated_vendor_count": 0,
+      "review_required_vendor_count": 0,
+      "vegetable_fruit_count": 0,
+      "food_count": 0,
+      "clothing_count": 0,
+      "flower_count": 0,
+      "general_goods_count": 0,
+      "other_count": 0,
+      "unknown_count": 0,
+      "distinct_location_groups": 0,
+      "verified_occupancy": 308,
+      "verified_available_capacity": 308,
+      "evidence_status": 0,
+      "source_record_year": 0,
+      "evidence_note": 0
+    }
+  },
+  "location_zone_crosswalk.csv": {
+    "rows": 528,
+    "columns": 18,
+    "missing_by_column": {
+      "location_group_id": 0,
+      "division": 0,
+      "business_location_original": 3,
+      "business_location_normalized": 3,
+      "business_location_english": 26,
+      "english_location_status": 0,
+      "source_vendor_count": 0,
+      "proposed_zone_id": 10,
+      "proposed_zone_description": 10,
+      "proposed_zone_type": 10,
+      "match_method": 0,
+      "match_score": 0,
+      "match_status": 0,
+      "candidate_zone_ids": 103,
+      "reviewed_zone_id": 528,
+      "review_status": 0,
+      "review_notes": 528,
+      "source_pages": 10
+    }
+  },
+  "business_translation_audit.csv": {
+    "rows": 599,
+    "columns": 5,
+    "missing_by_column": {
+      "business_type_original": 1,
+      "business_type_english": 0,
+      "business_category": 0,
+      "translation_status": 0,
+      "vendor_count": 0
+    }
+  },
+  "official_zone_type_counts": {
+    "FREE": 166,
+    "NO_VENDING": 83,
+    "RESTRICTED": 59
+  },
+  "missing_official_capacity": 84,
+  "business_category_counts": {
+    "vegetable_fruit": 3176,
+    "food": 1693,
+    "general_goods": 955,
+    "other": 682,
+    "clothing": 457,
+    "unknown": 174,
+    "flower": 122
+  },
+  "translation_status_counts": {
+    "RULE_TRANSLATED": 6462,
+    "LEGACY_TRANSLATION_REVIEW": 315,
+    "EXACT_TRANSLATED": 308,
+    "MISSING": 134,
+    "AMBIGUOUS": 39,
+    "TRANSLATION_REVIEW_REQUIRED": 1
+  },
+  "assignment_verified_zone_id_counts": {
+    "": 7259
+  },
+  "assignment_allocation_status_counts": {
+    "not_assessed": 7259
+  },
+  "assignment_spatial_verification_status_counts": {
+    "not_performed": 7259
+  },
+  "assignment_match_status_counts": {
+    "text_association": 5310,
+    "needs_review": 1949
+  },
+  "proposed_vendor_count": 7087,
+  "geometry": {
+    "records": 308,
+    "non_null": 258,
+    "usable_references": 258,
+    "missing": 50,
+    "invalid": 0,
+    "source_status_counts": {
+      "REFERENCE_LIKELY": 139,
+      "REFERENCE_HIGH": 119,
+      "NO_USABLE_REFERENCE": 50
+    },
+    "area_sqm_median": 3731.563004564442
+  },
+  "roads_clean.gpkg": {
+    "records": 13988,
+    "missing_geometry": 0,
+    "invalid_geometry": 0,
+    "geometry_types": {
+      "MultiLineString": 13988
+    },
+    "crs": "EPSG:4326"
+  },
+  "commercial_model_points.gpkg": {
+    "records": 353,
+    "missing_geometry": 0,
+    "invalid_geometry": 0,
+    "geometry_types": {
+      "Point": 353
+    },
+    "crs": "EPSG:4326"
+  },
+  "landuse_clean.gpkg": {
+    "records": 401,
+    "missing_geometry": 0,
+    "invalid_geometry": 0,
+    "geometry_types": {
+      "MultiPolygon": 401
+    },
+    "crs": "EPSG:4326"
+  },
+  "transport_deduplicated.gpkg": {
+    "records": 61,
+    "missing_geometry": 0,
+    "invalid_geometry": 0,
+    "geometry_types": {
+      "Point": 61
+    },
+    "crs": "EPSG:4326"
+  },
+  "facilities_deduplicated.gpkg": {
+    "records": 373,
+    "missing_geometry": 0,
+    "invalid_geometry": 0,
+    "geometry_types": {
+      "Point": 373
+    },
+    "crs": "EPSG:4326"
+  },
+  "issues_by_severity": {
+    "WARNING": 1,
+    "INFO": 4
+  },
+  "audit_timestamp_utc": "2026-09-09T13:52:54.821777+00:00",
+  "validator_version": "1.0.0",
+  "ready_for_feature_engineering": true
+}

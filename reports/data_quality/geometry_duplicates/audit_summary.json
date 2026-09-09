@@ -1,0 +1,20 @@
+{
+  "generated_utc": "2026-09-09T14:52:29.702216+00:00",
+  "source_sha256": "37093556f07c28f1c24f38c7c8c64ae8fa1a7628cee909ad6d1a8d063a71d143",
+  "master_sha256": "4896da86e2ad448f5598eac75c5103555dd2d808a8a0717a5d1f88f6d1a38a7a",
+  "zone_count": 308,
+  "usable_reference_count": 258,
+  "unusable_reference_count": 50,
+  "unique_reference_groups": 183,
+  "shared_reference_groups": 34,
+  "zones_in_shared_reference_groups": 109,
+  "near_duplicate_candidate_pairs": 11,
+  "near_overlap_threshold": 0.9,
+  "near_distance_threshold_m": 25.0,
+  "limitations": [
+    "Topological equality of analytical references does not establish legal identity.",
+    "Near-duplicate candidates are not automatically merged.",
+    "No official zone IDs, raw geometries, features, or trained models were modified.",
+    "This audit does not resolve unknown legal boundaries or live capacity."
+  ]
+}

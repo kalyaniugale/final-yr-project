@@ -1,0 +1,6 @@
+severity,code,message,count,examples
+WARNING,BUSINESS_REVIEW,Unresolved English business categories,174.0,[]
+INFO,HISTORICAL_LEGAL_STATUS,1517 historical proposals reference RESTRICTED zones; do not treat as eligible allocation.,1517.0,[]
+INFO,DATA_SEMANTICS,"Historical proposed associations are not verified allocations, demand, sales, or live occupancy.",,[]
+INFO,GEOMETRY_SEMANTICS,Reference geometry is not an authoritative legal boundary or measured vending area.,,[]
+INFO,LABEL_REQUIREMENT,Supervised accuracy and ranking metrics require independent outcomes or expert relevance labels.,,[]

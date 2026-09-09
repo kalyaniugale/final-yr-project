@@ -1,0 +1,76 @@
+{
+  "created_utc": "2026-09-09T14:28:04.938241+00:00",
+  "stage": "03_build_training_data",
+  "version": "1.0.0",
+  "vendor_records": 7259,
+  "official_zones": 308,
+  "historical_proposed_pairs": 7087,
+  "unmapped_vendor_records": 172,
+  "historical_text_associations": 5310,
+  "historical_review_candidates": 1777,
+  "candidate_zones_before_live_capacity": 146,
+  "potential_pairs": 1059814,
+  "pairs_materialized": false,
+  "development_split_counts": {
+    "train": 5764,
+    "test": 793,
+    "validation": 702
+  },
+  "independent_suitability_labels": 0,
+  "historical_compatibility_records": 5310,
+  "historical_compatibility_alpha": 20.0,
+  "historical_compatibility_source": "text_association only; descriptive, not fitted suitability",
+  "citywide_category_shares": {
+    "vegetable_fruit": 0.4760828625235405,
+    "food": 0.22165725047080978,
+    "clothing": 0.055178907721280604,
+    "flower": 0.01431261770244821,
+    "general_goods": 0.12259887005649718,
+    "other": 0.09529190207156309,
+    "unknown": 0.01487758945386064
+  },
+  "input_manifest": [
+    {
+      "file": "data\\raw\\nmc\\official_zones.csv",
+      "sha256": "4896da86e2ad448f5598eac75c5103555dd2d808a8a0717a5d1f88f6d1a38a7a",
+      "rows": 308
+    },
+    {
+      "file": "data\\raw\\nmc\\vendors.csv",
+      "sha256": "bc9e12218657de291d759d544f6a8119ae3d495de51a0078a172a6fce71ef77f",
+      "rows": 7259
+    },
+    {
+      "file": "data\\raw\\nmc\\vendor_zone_assignments.csv",
+      "sha256": "a9a8d8ab17067f2a14629f4e1a0d538a5f93f3899249467b1e724bab5c358785",
+      "rows": 7259
+    },
+    {
+      "file": "data\\raw\\nmc\\zone_vendor_evidence.csv",
+      "sha256": "d1e8c3a45a508752f56bae385abe565c430a9e59be6b996cb8c76458d04c87ee",
+      "rows": 308
+    },
+    {
+      "file": "data\\processed\\zone_features.csv",
+      "sha256": "b79c07f7fce2110fa399ce070742402acb49f641ea50eb119ba86087db3406b7",
+      "rows": 308
+    },
+    {
+      "file": "data\\model_outputs\\kmeans\\zones_with_clusters.csv",
+      "sha256": "7df7f8949b1aa177d43e0b2cc95bc22c90c43c12a977c319d282c6f0c2450f73",
+      "rows": 308
+    }
+  ],
+  "limitations": [
+    "All candidate pairs are unlabeled for suitability.",
+    "Proposed associations are not verified successful allocations.",
+    "Unobserved pairs are not negative labels.",
+    "Historical compatibility uses the full evidence set; it is not an outcome predictor.",
+    "Compatibility must be fitted on training-only evidence during a future evaluated model.",
+    "Historical evidence derived from the same vendors can leak targets if used as an evaluation feature.",
+    "Current capacity and legal status require verified live municipal data.",
+    "Reference geometry is not an official legal boundary.",
+    "These development splits do not constitute a validated recommendation test set.",
+    "No accuracy, F1, ROC-AUC, or NDCG is claimed."
+  ]
+}

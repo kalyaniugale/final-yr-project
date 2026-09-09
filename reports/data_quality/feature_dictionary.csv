@@ -1,0 +1,63 @@
+﻿feature,unit,definition
+reference_geometry_area_sqm,square metres,OSM-derived reference-area environmental feature; see source code for spatial operator.
+reference_geometry_perimeter_m,metres,OSM-derived reference-area environmental feature; see source code for spatial operator.
+distance_to_primary_road_m,metres,OSM-derived reference-area environmental feature; see source code for spatial operator.
+distance_to_secondary_road_m,metres,OSM-derived reference-area environmental feature; see source code for spatial operator.
+distance_to_major_road_m,metres,OSM-derived reference-area environmental feature; see source code for spatial operator.
+distance_to_bus_access_m,metres,OSM-derived reference-area environmental feature; see source code for spatial operator.
+distance_to_bus_station_m,metres,OSM-derived reference-area environmental feature; see source code for spatial operator.
+distance_to_railway_station_m,metres,OSM-derived reference-area environmental feature; see source code for spatial operator.
+commercial_poi_count_250m,count,OSM-derived reference-area environmental feature; see source code for spatial operator.
+market_poi_count_250m,count,OSM-derived reference-area environmental feature; see source code for spatial operator.
+food_poi_count_250m,count,OSM-derived reference-area environmental feature; see source code for spatial operator.
+retail_poi_count_250m,count,OSM-derived reference-area environmental feature; see source code for spatial operator.
+service_poi_count_250m,count,OSM-derived reference-area environmental feature; see source code for spatial operator.
+bus_count_250m,count,OSM-derived reference-area environmental feature; see source code for spatial operator.
+bus_station_count_250m,count,OSM-derived reference-area environmental feature; see source code for spatial operator.
+rail_count_250m,count,OSM-derived reference-area environmental feature; see source code for spatial operator.
+ambiguous_count_250m,count,OSM-derived reference-area environmental feature; see source code for spatial operator.
+healthcare_count_250m,count,OSM-derived reference-area environmental feature; see source code for spatial operator.
+education_count_250m,count,OSM-derived reference-area environmental feature; see source code for spatial operator.
+toilet_count_250m,count,OSM-derived reference-area environmental feature; see source code for spatial operator.
+parking_count_250m,count,OSM-derived reference-area environmental feature; see source code for spatial operator.
+road_length_250m,source attribute,OSM-derived reference-area environmental feature; see source code for spatial operator.
+road_density_250m_per_km2,metres per square kilometre,OSM-derived reference-area environmental feature; see source code for spatial operator.
+major_road_length_250m,source attribute,OSM-derived reference-area environmental feature; see source code for spatial operator.
+major_road_density_250m_per_km2,metres per square kilometre,OSM-derived reference-area environmental feature; see source code for spatial operator.
+pedestrian_road_length_250m,source attribute,OSM-derived reference-area environmental feature; see source code for spatial operator.
+pedestrian_road_density_250m_per_km2,metres per square kilometre,OSM-derived reference-area environmental feature; see source code for spatial operator.
+local_road_length_250m,source attribute,OSM-derived reference-area environmental feature; see source code for spatial operator.
+local_road_density_250m_per_km2,metres per square kilometre,OSM-derived reference-area environmental feature; see source code for spatial operator.
+commercial_poi_count_500m,count,OSM-derived reference-area environmental feature; see source code for spatial operator.
+market_poi_count_500m,count,OSM-derived reference-area environmental feature; see source code for spatial operator.
+food_poi_count_500m,count,OSM-derived reference-area environmental feature; see source code for spatial operator.
+retail_poi_count_500m,count,OSM-derived reference-area environmental feature; see source code for spatial operator.
+service_poi_count_500m,count,OSM-derived reference-area environmental feature; see source code for spatial operator.
+bus_count_500m,count,OSM-derived reference-area environmental feature; see source code for spatial operator.
+bus_station_count_500m,count,OSM-derived reference-area environmental feature; see source code for spatial operator.
+rail_count_500m,count,OSM-derived reference-area environmental feature; see source code for spatial operator.
+ambiguous_count_500m,count,OSM-derived reference-area environmental feature; see source code for spatial operator.
+healthcare_count_500m,count,OSM-derived reference-area environmental feature; see source code for spatial operator.
+education_count_500m,count,OSM-derived reference-area environmental feature; see source code for spatial operator.
+toilet_count_500m,count,OSM-derived reference-area environmental feature; see source code for spatial operator.
+parking_count_500m,count,OSM-derived reference-area environmental feature; see source code for spatial operator.
+road_length_500m,source attribute,OSM-derived reference-area environmental feature; see source code for spatial operator.
+road_density_500m_per_km2,metres per square kilometre,OSM-derived reference-area environmental feature; see source code for spatial operator.
+major_road_length_500m,source attribute,OSM-derived reference-area environmental feature; see source code for spatial operator.
+major_road_density_500m_per_km2,metres per square kilometre,OSM-derived reference-area environmental feature; see source code for spatial operator.
+pedestrian_road_length_500m,source attribute,OSM-derived reference-area environmental feature; see source code for spatial operator.
+pedestrian_road_density_500m_per_km2,metres per square kilometre,OSM-derived reference-area environmental feature; see source code for spatial operator.
+local_road_length_500m,source attribute,OSM-derived reference-area environmental feature; see source code for spatial operator.
+local_road_density_500m_per_km2,metres per square kilometre,OSM-derived reference-area environmental feature; see source code for spatial operator.
+residential_land_ratio_500m,ratio,OSM-derived reference-area environmental feature; see source code for spatial operator.
+commercial_land_ratio_500m,ratio,OSM-derived reference-area environmental feature; see source code for spatial operator.
+industrial_land_ratio_500m,ratio,OSM-derived reference-area environmental feature; see source code for spatial operator.
+park_land_ratio_500m,ratio,OSM-derived reference-area environmental feature; see source code for spatial operator.
+mapped_landuse_coverage_ratio_500m,ratio,OSM-derived reference-area environmental feature; see source code for spatial operator.
+classified_landuse_coverage_ratio_500m,ratio,OSM-derived reference-area environmental feature; see source code for spatial operator.
+landuse_category_overlap_ratio_500m,ratio,OSM-derived reference-area environmental feature; see source code for spatial operator.
+landuse_missing_coverage_ratio_500m,ratio,OSM-derived reference-area environmental feature; see source code for spatial operator.
+residential_mapped_share_500m,source attribute,OSM-derived reference-area environmental feature; see source code for spatial operator.
+commercial_mapped_share_500m,source attribute,OSM-derived reference-area environmental feature; see source code for spatial operator.
+industrial_mapped_share_500m,source attribute,OSM-derived reference-area environmental feature; see source code for spatial operator.
+park_mapped_share_500m,source attribute,OSM-derived reference-area environmental feature; see source code for spatial operator.

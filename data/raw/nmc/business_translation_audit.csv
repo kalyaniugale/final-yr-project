@@ -1,0 +1,600 @@
+﻿business_type_original,business_type_english,business_category,translation_status,vendor_count
+भाजीपाला िवĎी,Vegetables,vegetable_fruit,RULE_TRANSLATED,1197
+भाजीपाला,Vegetables,vegetable_fruit,RULE_TRANSLATED,735
+फळ िवĎी,Fruits,vegetable_fruit,RULE_TRANSLATED,671
+इतर,Other / unspecified,other,RULE_TRANSLATED,466
+कपडे िवĎी,Clothing and garments,clothing,RULE_TRANSLATED,390
+चहा िवĎी,Tea,food,RULE_TRANSLATED,300
+भाजी पाला,Vegetables,vegetable_fruit,RULE_TRANSLATED,269
+कटलरी िवĎी,Cutlery and household goods,general_goods,RULE_TRANSLATED,216
+,Unknown / not specified,unknown,MISSING,134
+कटलरी,Cutlery and household goods,general_goods,RULE_TRANSLATED,127
+म´छी िवĎी,Fish/Meat/Chicken,food,LEGACY_TRANSLATION_REVIEW,121
+पान बीडी िवĎी,Pan and tobacco products,general_goods,RULE_TRANSLATED,95
+फुल िवĎी,Flowers,flower,RULE_TRANSLATED,90
+फाÎट फुड िवĎी,Prepared food and snacks,food,RULE_TRANSLATED,80
+सनॅकस िवĎी,Prepared food and snacks,food,RULE_TRANSLATED,70
+फळ,Fruits,vegetable_fruit,RULE_TRANSLATED,68
+"चाट, भेळ भǄा, शȂगदाणे फुटाणे िवĎी",Prepared food and snacks,food,RULE_TRANSLATED,61
+"चाट, भेळभǄा, शȂगदाणे फुटाणे",Prepared food and snacks,food,RULE_TRANSLATED,51
+खाǏपदाथ« िवĎी,Prepared food,food,EXACT_TRANSLATED,47
+जुस िवĎी,Juice and beverages,food,RULE_TRANSLATED,46
+चÃपल व बूट िवĎी,Footwear and shoe services,general_goods,RULE_TRANSLATED,44
+कॉÎमेिटक िवĎी,Cosmetics,general_goods,EXACT_TRANSLATED,42
+नाÌता,Food / Snacks Vendor,food,LEGACY_TRANSLATION_REVIEW,40
+बॅग व पस« िवĎी,Bags and purses,general_goods,RULE_TRANSLATED,40
+भाजी िवĎी,Vegetables,vegetable_fruit,RULE_TRANSLATED,33
+हंगामी,Seasonal goods,other,RULE_TRANSLATED,33
+चहा,Tea,food,RULE_TRANSLATED,32
+िसजनल वÎतू िवĎी,Seasonal goods,other,RULE_TRANSLATED,32
+नाÌता िवĎी,Food / Snacks Vendor,food,LEGACY_TRANSLATION_REVIEW,31
+भाजी-पाला,Vegetables,vegetable_fruit,RULE_TRANSLATED,30
+िवĎी,Unknown / not specified,unknown,AMBIGUOUS,30
+चायनीज,Chinese-style prepared food,food,RULE_TRANSLATED,29
+चाट भांडार,Prepared food and snacks,food,RULE_TRANSLATED,28
+"टोपी, गोगल, पƺे िवĎी",Sunglasses,general_goods,RULE_TRANSLATED,28
+पूजा सािह¾य,Puja and religious supplies,general_goods,RULE_TRANSLATED,28
+सनॅकस,Prepared food and snacks,food,RULE_TRANSLATED,27
+फळिवĎी,Fruits,vegetable_fruit,RULE_TRANSLATED,25
+िफश िवĎी,Fish and seafood,food,RULE_TRANSLATED,25
+चायनीज खाǏपदाथ« िवĎी,Chinese-style prepared food,food,RULE_TRANSLATED,22
+िसजनल वÎतू िवĎीदुगɕ,Seasonal goods,other,RULE_TRANSLATED,22
+चाट-भेळ,Prepared food and snacks,food,RULE_TRANSLATED,20
+कपडे,Clothing and garments,clothing,RULE_TRANSLATED,19
+िचकन,Chicken,food,RULE_TRANSLATED,18
+पानटपरी,Pan and tobacco products,general_goods,RULE_TRANSLATED,17
+िचकन िवĎी,Chicken,food,RULE_TRANSLATED,17
+चपल,Footwear and shoe services,general_goods,RULE_TRANSLATED,16
+Îटेशनरी िवĎी,Stationery,general_goods,EXACT_TRANSLATED,15
+आईस Ďीम िवĎी,Ice cream,food,RULE_TRANSLATED,15
+कȗबडी िवĎी,Chicken,food,RULE_TRANSLATED,15
+फुल,Flowers,flower,RULE_TRANSLATED,15
+भेळभǄा िवĎी,Prepared food and snacks,food,RULE_TRANSLATED,15
+¶युस िवĎी,Juice and beverages,food,RULE_TRANSLATED,14
+पान टपरी,Pan and tobacco products,general_goods,RULE_TRANSLATED,14
+Îनॅ¯स िवĎी,Snacks,food,EXACT_TRANSLATED,13
+कापड िवĎी,Clothing and garments,clothing,RULE_TRANSLATED,13
+केश कत«नालय,Hairdressing services,other,RULE_TRANSLATED,13
+चहा नाÌता,Tea,food,RULE_TRANSLATED,13
+सुकी मासळी,Fish and seafood,food,RULE_TRANSLATED,13
+िसजनल वÎतू,Seasonal goods,other,RULE_TRANSLATED,13
+टेलȋरग,Tailoring services,other,EXACT_TRANSLATED,12
+"सुखा मावा, काजू बदाम िवĎी",Dry fruits and nuts,food,RULE_TRANSLATED,12
+फुलिवĎी,Flowers,flower,RULE_TRANSLATED,11
+भाजीपाल,Vegetables,vegetable_fruit,RULE_TRANSLATED,11
+िसजनल वÎतु,Seasonal goods,other,RULE_TRANSLATED,11
+भाजी पाला िवĎी,Vegetables,vegetable_fruit,RULE_TRANSLATED,10
+मासे,Fish and seafood,food,RULE_TRANSLATED,10
+¶वेलरी,Jewellery and accessories,general_goods,RULE_TRANSLATED,9
+Ģसाद,Prasad / religious food,food,EXACT_TRANSLATED,9
+अंदाभूजȓ,Prepared food and snacks,food,RULE_TRANSLATED,9
+खाǏपदाथ«,Prepared food,food,EXACT_TRANSLATED,9
+डीवीडी सीडी िवĎी,CD/DVD media,general_goods,RULE_TRANSLATED,9
+पानिबडी िवĎी,Paan/Tobacco,general_goods,LEGACY_TRANSLATION_REVIEW,9
+बȗबील,Fish and seafood,food,RULE_TRANSLATED,9
+भाजीपाला िवĎी भाजीपाला िवĎी,Vegetables,vegetable_fruit,RULE_TRANSLATED,9
+भाजीपालािवĎी भाजीपाला िवĎी,Vegetables,vegetable_fruit,RULE_TRANSLATED,9
+मसाले,Spices,food,RULE_TRANSLATED,9
+चहा टपरी,Tea,food,RULE_TRANSLATED,8
+दाबेली,Prepared food and snacks,food,RULE_TRANSLATED,8
+दुध व दु±धजÂय पदाथ« िवĎी,Milk and dairy products,food,RULE_TRANSLATED,8
+बेÊट,Belts,general_goods,EXACT_TRANSLATED,8
+भाजीपाला ी ि िवĎी ी,Vegetables,vegetable_fruit,RULE_TRANSLATED,8
+भेळभǄा,Prepared food and snacks,food,RULE_TRANSLATED,8
+अंदारोल,Prepared food and snacks,food,RULE_TRANSLATED,7
+घरगुती िकरकोळ वÎतूिवĎी,Household and general goods,general_goods,RULE_TRANSLATED,7
+दुध,Milk and dairy products,food,RULE_TRANSLATED,7
+पान Îटॉल िवĎी,Paan/Tobacco,general_goods,LEGACY_TRANSLATION_REVIEW,7
+फाÎटफूड,Prepared food and snacks,food,RULE_TRANSLATED,7
+भांडी व ÃलाȎÎटक वÎतू िवĎी,Household goods,general_goods,RULE_TRANSLATED,7
+म´छी,Fish/Meat/Chicken,food,LEGACY_TRANSLATION_REVIEW,7
+मटन िवĎी,Meat,food,RULE_TRANSLATED,7
+अंडा भुजȓ,Prepared food and snacks,food,RULE_TRANSLATED,6
+अंडाभुजȓ,Prepared food and snacks,food,RULE_TRANSLATED,6
+केशकत«नालय,Hairdressing services,other,RULE_TRANSLATED,6
+खेळणी िवĎी,Toys,general_goods,RULE_TRANSLATED,6
+चÃपल व बूट िरपेȋरग,Footwear and shoe services,general_goods,RULE_TRANSLATED,6
+जूस िवĎी,Juice and beverages,food,RULE_TRANSLATED,6
+पावभाजी,Prepared food and snacks,food,RULE_TRANSLATED,6
+भाजीपाला भाजीपाला,Vegetables,vegetable_fruit,RULE_TRANSLATED,6
+रेडी मेड कपडे,Clothing and garments,clothing,RULE_TRANSLATED,6
+वडापाव,Prepared food and snacks,food,RULE_TRANSLATED,6
+वृतपĝ िवĎी,Newspapers,general_goods,RULE_TRANSLATED,6
+सलून,Hairdressing services,other,RULE_TRANSLATED,6
+"िचकन, मटन",Chicken,food,RULE_TRANSLATED,6
+िसजनल वÎतु िवĎी,Seasonal goods,other,RULE_TRANSLATED,6
+Îटेशनरी,Stationery,general_goods,EXACT_TRANSLATED,5
+गटई,Footwear and shoe services,general_goods,RULE_TRANSLATED,5
+चÃपल बुट िवĎी,Footwear,general_goods,EXACT_TRANSLATED,5
+चÃपल रेपैȋरग,Footwear Vendor,general_goods,LEGACY_TRANSLATION_REVIEW,5
+चÃपल/बुट िवĎी,Footwear Vendor,general_goods,LEGACY_TRANSLATION_REVIEW,5
+चायिनज िवĎी,Tea,food,RULE_TRANSLATED,5
+चीकेन,Fish/Meat/Chicken,food,LEGACY_TRANSLATION_REVIEW,5
+झाडू िवĎी,Brooms and household goods,general_goods,RULE_TRANSLATED,5
+नािशकभाजीपाला िवĎी,Vegetables,vegetable_fruit,RULE_TRANSLATED,5
+पान िबडी िवĎी,Paan/Tobacco,general_goods,LEGACY_TRANSLATION_REVIEW,5
+फळिवĎी फळ िवĎी,Fruits,vegetable_fruit,RULE_TRANSLATED,5
+फाÎट फुडिवĎी,Prepared food and snacks,food,RULE_TRANSLATED,5
+भेलभाǄा,Food / Snacks Vendor,food,LEGACY_TRANSLATION_REVIEW,5
+शȂगदाणे फुटाणे,Roasted snacks and packaged food,food,RULE_TRANSLATED,5
+हुसळ,Prepared food and snacks,food,RULE_TRANSLATED,5
+िमसळ पाव,Prepared food and snacks,food,RULE_TRANSLATED,5
+Îनक िवĎी,Snacks,food,EXACT_TRANSLATED,4
+अंडा रोल,Prepared food and snacks,food,RULE_TRANSLATED,4
+अंडारोल,Prepared food and snacks,food,RULE_TRANSLATED,4
+इतर इतर,Other / unspecified,other,RULE_TRANSLATED,4
+गरेज,Garage / vehicle repair,other,RULE_TRANSLATED,4
+गेरेज,Garage / vehicle repair,other,RULE_TRANSLATED,4
+चÃपल,Footwear Vendor,general_goods,LEGACY_TRANSLATION_REVIEW,4
+चÃपल िवĎी,Footwear Vendor,general_goods,LEGACY_TRANSLATION_REVIEW,4
+"चाट, भेळ भǄा, शȂगदाणे फुटाणे",Prepared food and snacks,food,RULE_TRANSLATED,4
+पाणीपुरी िवĎी,Prepared food and snacks,food,RULE_TRANSLATED,4
+फुटवेअर,Footwear and shoe services,general_goods,RULE_TRANSLATED,4
+"भǄा, शȂगदाणे",Roasted chickpeas and groundnuts,food,EXACT_TRANSLATED,4
+भेळ भǄा,Prepared food and snacks,food,RULE_TRANSLATED,4
+भेळ भǄा िवĎी,Prepared food and snacks,food,RULE_TRANSLATED,4
+मसाला िवĎी,Spices,food,RULE_TRANSLATED,4
+मसाले िवĎी,Spices,food,RULE_TRANSLATED,4
+मासे िवĎी,Fish and seafood,food,RULE_TRANSLATED,4
+मोड आलेले कडधाÂय िवĎी,Sprouted pulses,food,RULE_TRANSLATED,4
+रेडीमेड कपडे,Clothing and garments,clothing,RULE_TRANSLATED,4
+िकरकोळ िवĎी,Household and general goods,general_goods,RULE_TRANSLATED,4
+"िचकन,मटन",Chicken,food,RULE_TRANSLATED,4
+िस¶नेबळ,Seasonal goods,other,EXACT_TRANSLATED,4
+िसडकोभाजीपाला िवĎी,Vegetables,vegetable_fruit,RULE_TRANSLATED,4
+"ȋझगे, बȗबील",Fish and seafood,food,RULE_TRANSLATED,3
+कटलरी िवĎी भाजीपाला िवĎी,Vegetables,vegetable_fruit,RULE_TRANSLATED,3
+केळी,Fruits,vegetable_fruit,RULE_TRANSLATED,3
+केस कत«नालय,Hairdressing services,other,RULE_TRANSLATED,3
+घरगुती िकरकोळ वÎतू िवĎी,Household and general goods,general_goods,RULE_TRANSLATED,3
+चÃपल बुट िरपेȋरग,Footwear Vendor,general_goods,LEGACY_TRANSLATION_REVIEW,3
+चÃपल बुट िरपेअȋरग,Shoe repair,other,EXACT_TRANSLATED,3
+चÃपल बूट िवĎी,Footwear and shoe services,general_goods,RULE_TRANSLATED,3
+चÃपल व बूट,Footwear and shoe services,general_goods,RULE_TRANSLATED,3
+जनरल Îटोरे,Grocery / General Goods Vendor,general_goods,LEGACY_TRANSLATION_REVIEW,3
+थंडपेय िवĎी,Cold beverages,food,RULE_TRANSLATED,3
+दुध व दु±धजÂय पदाथ«,Milk and dairy products,food,RULE_TRANSLATED,3
+दुध िवĎी,Milk and dairy products,food,RULE_TRANSLATED,3
+दूध िवĎी,Milk and dairy products,food,RULE_TRANSLATED,3
+नाÍटा,Snacks,food,EXACT_TRANSLATED,3
+पाणीपुरी,Prepared food and snacks,food,RULE_TRANSLATED,3
+पाणीपुरी भेलभता,Prepared food and snacks,food,RULE_TRANSLATED,3
+फळ िवĎेता,Fruits,vegetable_fruit,RULE_TRANSLATED,3
+बȗबील िवĎी,Fish and seafood,food,RULE_TRANSLATED,3
+बॅग पस« िवĎी,Bags and purses,general_goods,RULE_TRANSLATED,3
+भंगार िवĎी,Scrap and recyclable goods,general_goods,RULE_TRANSLATED,3
+भाजीपाला भाजी पाला,Vegetables,vegetable_fruit,RULE_TRANSLATED,3
+भेलभǄा,Food / Snacks Vendor,food,LEGACY_TRANSLATION_REVIEW,3
+भेळपुरी,Prepared food and snacks,food,RULE_TRANSLATED,3
+मकाई भुǄ,Roasted corn,food,RULE_TRANSLATED,3
+मसाला,Spices,food,RULE_TRANSLATED,3
+रेिडमेड कपडे,Clothing and garments,clothing,RULE_TRANSLATED,3
+सोडा पाणी,Juice/Beverages,food,LEGACY_TRANSLATION_REVIEW,3
+िकरकोळ,Household and general goods,general_goods,RULE_TRANSLATED,3
+िकराणा Îटोअर,Grocery goods,general_goods,RULE_TRANSLATED,3
+िचकन शोप,Chicken,food,RULE_TRANSLATED,3
+िचकन सȂटर,Chicken,food,RULE_TRANSLATED,3
+िमसळ,Prepared food and snacks,food,RULE_TRANSLATED,3
+Îनॅ¯स,Snacks,food,EXACT_TRANSLATED,2
+Îनेक चहा िवĎी,Tea,food,RULE_TRANSLATED,2
+अंडा भुजȓ िवĎी,Prepared food and snacks,food,RULE_TRANSLATED,2
+अगरबǄी िवĎी,Incense sticks,general_goods,EXACT_TRANSLATED,2
+इतर भाजीपाला िवĎी,Vegetables,vegetable_fruit,RULE_TRANSLATED,2
+उसाचा रस,Juice/Beverages,food,LEGACY_TRANSLATION_REVIEW,2
+कटलरीिवĎी कटलरी िवĎी,Cutlery and household goods,general_goods,RULE_TRANSLATED,2
+कप बशी,Cups and household utensils,general_goods,RULE_TRANSLATED,2
+कपडे िवĎी भाजीपाला िवĎी,Vegetables,vegetable_fruit,RULE_TRANSLATED,2
+कुलूप,Locks and hardware,general_goods,RULE_TRANSLATED,2
+खारी टोस,Roasted snacks and packaged food,food,RULE_TRANSLATED,2
+गोगल,Sunglasses,general_goods,RULE_TRANSLATED,2
+गोटी सोडा,Juice/Beverages,food,LEGACY_TRANSLATION_REVIEW,2
+चपळ बूट रीपैर,Footwear and shoe services,general_goods,RULE_TRANSLATED,2
+चहा ि िवĎी ी,Tea,food,RULE_TRANSLATED,2
+"चाट, चाट, भेळभǄा, भ भǄा, शȂगदाणे फुटाणे",Prepared food and snacks,food,RULE_TRANSLATED,2
+चाट-भेळ चाटभळ,Prepared food and snacks,food,RULE_TRANSLATED,2
+चादर / बेड शीत,Bed linen,clothing,RULE_TRANSLATED,2
+चैनीस,Chinese-style prepared food,food,RULE_TRANSLATED,2
+जूस,Juice and beverages,food,RULE_TRANSLATED,2
+जेलाय«,Jewellery and accessories,general_goods,RULE_TRANSLATED,2
+झेरॉ¯स दुकान,Photocopying services,other,RULE_TRANSLATED,2
+झेरो¯स,Photocopying services,other,RULE_TRANSLATED,2
+नमकीन,Roasted snacks and packaged food,food,RULE_TRANSLATED,2
+नाÎटा,Snacks,food,EXACT_TRANSLATED,2
+नारळपाणी,Juice and beverages,food,RULE_TRANSLATED,2
+पȂटर,Painting services,other,EXACT_TRANSLATED,2
+पस« िवĎी,Purses,general_goods,EXACT_TRANSLATED,2
+"पस«, िपशËया िवĎी",Purses and bags,general_goods,EXACT_TRANSLATED,2
+पाणीपुरी भेळभǄा िवĎी,Prepared food and snacks,food,RULE_TRANSLATED,2
+पान Îटल,Paan/Tobacco,general_goods,LEGACY_TRANSLATION_REVIEW,2
+पान बीडी ीीि िवĎी ी,Pan and tobacco products,general_goods,RULE_TRANSLATED,2
+पान शॉप,Paan/Tobacco,general_goods,LEGACY_TRANSLATION_REVIEW,2
+पाववडा,Prepared food and snacks,food,RULE_TRANSLATED,2
+पुजा सािह¾य,Puja and religious supplies,general_goods,RULE_TRANSLATED,2
+पूजेचे सािह¾य,Puja and religious supplies,general_goods,RULE_TRANSLATED,2
+फरसाण,Juice/Beverages,food,LEGACY_TRANSLATION_REVIEW,2
+फल िवĎी,Fruits,vegetable_fruit,RULE_TRANSLATED,2
+फळ िवĎी फळ िवĎी,Fruits,vegetable_fruit,RULE_TRANSLATED,2
+फाÎटफडिवĎी फाÎट फुड िवĎी,Prepared food and snacks,food,RULE_TRANSLATED,2
+फुड िवĎी,Prepared food and snacks,food,RULE_TRANSLATED,2
+फूल िवĎी,Flowers,flower,RULE_TRANSLATED,2
+बेदाणा,Dry fruits and nuts,food,RULE_TRANSLATED,2
+भाजीपाला फळ िवĎी,Fruits,vegetable_fruit,RULE_TRANSLATED,2
+भेल भǄा,Food / Snacks Vendor,food,LEGACY_TRANSLATION_REVIEW,2
+मटण िवĎी,Meat,food,RULE_TRANSLATED,2
+मटन चीकेन,Meat,food,RULE_TRANSLATED,2
+मसाला Ěाय फूड,Prepared food and snacks,food,RULE_TRANSLATED,2
+मसाला डोसा,Spices,food,RULE_TRANSLATED,2
+रसवंती,Juice/Beverages,food,LEGACY_TRANSLATION_REVIEW,2
+लȗĚी,Laundry services,other,EXACT_TRANSLATED,2
+लोÂğी,Laundry services,other,EXACT_TRANSLATED,2
+वडा-पाव,Food / Snacks Vendor,food,LEGACY_TRANSLATION_REVIEW,2
+सं±लाÎसेस,Sunglasses,general_goods,EXACT_TRANSLATED,2
+सुके बȗबील,Fish and seafood,food,RULE_TRANSLATED,2
+सुखामेवा िवĎी,Dry fruits and nuts,food,RULE_TRANSLATED,2
+सुखी म´छी,Fish/Meat/Chicken,food,LEGACY_TRANSLATION_REVIEW,2
+सोडा वाटर,Juice/Beverages,food,LEGACY_TRANSLATION_REVIEW,2
+हळदीकुंकू,Puja and religious supplies,general_goods,RULE_TRANSLATED,2
+हुसळ/भाजीपाला,Prepared food and snacks,food,RULE_TRANSLATED,2
+होजेरी,Hosiery,clothing,RULE_TRANSLATED,2
+िचकन मटन. िवĎी,Chicken,food,RULE_TRANSLATED,2
+िजलेबी,Sweets,food,RULE_TRANSLATED,2
+िदवे िवĎी,Lamps and decorative lights,general_goods,RULE_TRANSLATED,2
+िबयɕणी,Biryani,food,EXACT_TRANSLATED,2
+िसजनल वÎतू िवĎीदुगɕ फळ िवĎी,Fruits,vegetable_fruit,RULE_TRANSLATED,2
+िसजनल वÎतू िवĎीदुगɕ िसजनल वÎतू िवĎीदुगɕ,Seasonal goods,other,RULE_TRANSLATED,2
+CD/DVD िवĎी,CD/DVD media,general_goods,EXACT_TRANSLATED,1
+¯टलरी िवĎी,Cutlery,general_goods,EXACT_TRANSLATED,1
+±यारेज,Services/Repair,other,LEGACY_TRANSLATION_REVIEW,1
+¶Ëलेलरी,Jewellery,general_goods,EXACT_TRANSLATED,1
+¶युस ि िवĎी ी,Juice and beverages,food,RULE_TRANSLATED,1
+ÃलाȎÎटक कटलेरी,Plastic cutlery,general_goods,EXACT_TRANSLATED,1
+ÃलॅȎÎटक वÎतू,Plastic household goods,general_goods,EXACT_TRANSLATED,1
+Îटोव / गेस रेपैȋरग,Stove and gas-appliance repair,other,EXACT_TRANSLATED,1
+Îतैणारी,Stationery,general_goods,EXACT_TRANSLATED,1
+"ğोण, पĝावली",Leaf plates and bowls,general_goods,EXACT_TRANSLATED,1
+Ģकाश मेिडकल जवळ,Unknown / not specified,unknown,AMBIGUOUS,1
+Ģसाǈ,Prasad / religious food,food,EXACT_TRANSLATED,1
+Ģसाद Ģसाद,Prasad / religious food,food,EXACT_TRANSLATED,1
+Ģेस,Pressing / printing services,other,EXACT_TRANSLATED,1
+ģुट जूस,Juice and beverages,food,RULE_TRANSLATED,1
+Ǘईपान,Paan/Tobacco,general_goods,LEGACY_TRANSLATION_REVIEW,1
+ȃ कपडे िवĎी,Clothing and garments,clothing,RULE_TRANSLATED,1
+ȎÎटल भांिड,Steel utensils,general_goods,EXACT_TRANSLATED,1
+अंडा / िचकन रोल,Chicken,food,RULE_TRANSLATED,1
+अंडा पोइंत,Prepared food and snacks,food,RULE_TRANSLATED,1
+अंडा भूǗजी,Prepared food and snacks,food,RULE_TRANSLATED,1
+अंडा िवĎी,Prepared food and snacks,food,RULE_TRANSLATED,1
+अंडा-भुजȓ,Prepared food and snacks,food,RULE_TRANSLATED,1
+अंडारोल /िचकन रोल,Chicken,food,RULE_TRANSLATED,1
+अंडी Ĥेड,Eggs,food,RULE_TRANSLATED,1
+अंडी िवĎी,Eggs,food,RULE_TRANSLATED,1
+अंडे,Eggs,food,RULE_TRANSLATED,1
+अंडे िवĎी,Eggs,food,RULE_TRANSLATED,1
+अगरबǄी,Incense sticks,general_goods,EXACT_TRANSLATED,1
+अगरबǄी /पूजेचे सािह¾य,Puja and religious supplies,general_goods,RULE_TRANSLATED,1
+आइस Ďेम,Ice cream,food,RULE_TRANSLATED,1
+आईÎĎीम,Ice cream,food,EXACT_TRANSLATED,1
+आईस Ďीम िवĎी म´छी िवĎी,Ice cream,food,RULE_TRANSLATED,1
+आईसĎीम िवĎी,Ice cream,food,RULE_TRANSLATED,1
+आईसिĎम िवĎी भाजीपाला िवĎी,Ice cream,food,RULE_TRANSLATED,1
+इडली डोसा,Idli and dosa,food,EXACT_TRANSLATED,1
+"इडली, डोसा",Idli and dosa,food,EXACT_TRANSLATED,1
+इले¯Ęॉिनक,Electronic goods,general_goods,EXACT_TRANSLATED,1
+इले¯टॉिनक,Electronic goods,general_goods,EXACT_TRANSLATED,1
+इलेȎ¯Ęक,Electrical goods,general_goods,EXACT_TRANSLATED,1
+इलेȎ¯Ęक वÎतू,Electrical goods,general_goods,EXACT_TRANSLATED,1
+उडपी कॉन«र,Unknown / not specified,unknown,AMBIGUOUS,1
+उस रस हंगामी,Seasonal goods,other,RULE_TRANSLATED,1
+उसळ,Usal / prepared pulses,food,EXACT_TRANSLATED,1
+उसळ भाजीपाला िवĎी,Vegetables,vegetable_fruit,RULE_TRANSLATED,1
+उसळ िवĎी,Usal / prepared pulses,food,EXACT_TRANSLATED,1
+ऑईल,Oil,general_goods,EXACT_TRANSLATED,1
+ओईल,Oil,general_goods,EXACT_TRANSLATED,1
+कंबल चादर,Bed linen,clothing,RULE_TRANSLATED,1
+कटलरी कटलरी,Cutlery and household goods,general_goods,RULE_TRANSLATED,1
+कटलरी व खेळणी िवĎी,Cutlery and household goods,general_goods,RULE_TRANSLATED,1
+कटलरी व पुजा सािह¾य िवĎी,Puja and religious supplies,general_goods,RULE_TRANSLATED,1
+कटलरी ी,Cutlery and household goods,general_goods,RULE_TRANSLATED,1
+कटलरी/कॉÎमेिट¯स,Cutlery and household goods,general_goods,RULE_TRANSLATED,1
+कडधाÂय िवĎी,Pulses and legumes,vegetable_fruit,EXACT_TRANSLATED,1
+कडधाÂय िवĎी भाजीपाला िवĎी,Vegetables,vegetable_fruit,RULE_TRANSLATED,1
+कडी भेल,Food / Snacks Vendor,food,LEGACY_TRANSLATION_REVIEW,1
+कडी भेळ,Prepared food and snacks,food,RULE_TRANSLATED,1
+कडीपǄा,Curry leaves,vegetable_fruit,EXACT_TRANSLATED,1
+कप बससी,Cups and household utensils,general_goods,RULE_TRANSLATED,1
+कपडा,Clothing and garments,clothing,RULE_TRANSLATED,1
+कपडा िवĎी,Clothing and garments,clothing,RULE_TRANSLATED,1
+कपडे Ģेस,Clothing and garments,clothing,RULE_TRANSLATED,1
+कपडे बेÀशीत,Clothing and garments,clothing,RULE_TRANSLATED,1
+कपडे ेि िवĎी ी,Clothing and garments,clothing,RULE_TRANSLATED,1
+कपडेिवĎी कपड िवĎी,Clothing and garments,clothing,RULE_TRANSLATED,1
+का¾लाय«,Cutlery,general_goods,EXACT_TRANSLATED,1
+काÇबल काबल,Cable goods,general_goods,EXACT_TRANSLATED,1
+कांदा / बटाटा,Vegetable Vendor,vegetable_fruit,LEGACY_TRANSLATION_REVIEW,1
+कांदा बटाटे,Vegetable Vendor,vegetable_fruit,LEGACY_TRANSLATION_REVIEW,1
+कांदा बटाटे/मसाल¬े,Vegetable Vendor,vegetable_fruit,LEGACY_TRANSLATION_REVIEW,1
+काकडी,Cucumber,vegetable_fruit,EXACT_TRANSLATED,1
+काच बागडी,Glass bangles,general_goods,EXACT_TRANSLATED,1
+काधु«रे िवĎी,Cardboard / paper goods,general_goods,EXACT_TRANSLATED,1
+कापड दुकान,Clothing and garments,clothing,RULE_TRANSLATED,1
+कापडे,Clothing and garments,clothing,RULE_TRANSLATED,1
+कुÊफी,Kulfi,food,EXACT_TRANSLATED,1
+कुÊफी िवĎेता,Kulfi,food,EXACT_TRANSLATED,1
+कुंकू Ģसाद,Kumkum and prasad,general_goods,EXACT_TRANSLATED,1
+कुशन िवĎी,Cushions,general_goods,EXACT_TRANSLATED,1
+कॉÎमाितक,Cosmetics,general_goods,EXACT_TRANSLATED,1
+कॉÎमेटीक,Cosmetics,general_goods,EXACT_TRANSLATED,1
+कॉÎमेटीक िवĎी,Cosmetics,general_goods,EXACT_TRANSLATED,1
+खाǏ पदाथ« िवĎी,Prepared food,food,EXACT_TRANSLATED,1
+खाǏस,Unknown / not specified,unknown,AMBIGUOUS,1
+खारी,Roasted snacks and packaged food,food,RULE_TRANSLATED,1
+खारी-टोÎट,Roasted snacks and packaged food,food,RULE_TRANSLATED,1
+खेळणी,Toys,general_goods,RULE_TRANSLATED,1
+खेळणी िवĎेता,Toys,general_goods,RULE_TRANSLATED,1
+गरम-मसाले,Spices,food,RULE_TRANSLATED,1
+गाडी अ¯सेसरीज,Vehicle accessories,general_goods,EXACT_TRANSLATED,1
+गारमȂ¹स,Garments / Clothing Vendor,clothing,LEGACY_TRANSLATION_REVIEW,1
+गृह उपयोगी,Household goods,general_goods,EXACT_TRANSLATED,1
+"गोÐया,िबȎÎकट",Sweets and biscuits,food,EXACT_TRANSLATED,1
+गोƺी सोडा िवĎेते,Juice/Beverages,food,LEGACY_TRANSLATION_REVIEW,1
+गोटी-सोडा,Juice/Beverages,food,LEGACY_TRANSLATION_REVIEW,1
+"गोटी-सोडा, भाजी- पाला, मका",Vegetables,vegetable_fruit,RULE_TRANSLATED,1
+गोटीसोडा,Juice/Beverages,food,LEGACY_TRANSLATION_REVIEW,1
+घरगुती िकरकोळ,Household and general goods,general_goods,RULE_TRANSLATED,1
+चÃपल दुकान,Footwear Vendor,general_goods,LEGACY_TRANSLATION_REVIEW,1
+चÃपल बूट,Footwear and shoe services,general_goods,RULE_TRANSLATED,1
+चÃपल बूट दुǗÎती,Footwear and shoe services,general_goods,RULE_TRANSLATED,1
+चÃपल व बूट ि िवĎी ी,Footwear and shoe services,general_goods,RULE_TRANSLATED,1
+चÃपल व बूट िवĎी पान बीडी िवĎी,Footwear and shoe services,general_goods,RULE_TRANSLATED,1
+चÃपल शूज,Footwear,general_goods,RULE_TRANSLATED,1
+चÃपल सोÎ¯स,Footwear Vendor,general_goods,LEGACY_TRANSLATION_REVIEW,1
+चÃपलबटिरपेअȋरग चपल बुट िरपअȋरग,Footwear and shoe services,general_goods,RULE_TRANSLATED,1
+चÃपलबूट हंगामी,Footwear and shoe services,general_goods,RULE_TRANSLATED,1
+चणे,Roasted snacks and packaged food,food,RULE_TRANSLATED,1
+चणे फुटाणे,Roasted snacks and packaged food,food,RULE_TRANSLATED,1
+चणे फुटाने,Roasted snacks and packaged food,food,RULE_TRANSLATED,1
+"चणे, फुटाणे",Roasted snacks and packaged food,food,RULE_TRANSLATED,1
+चणे-फुटाणे/ भेळभǄाके.एन,Prepared food and snacks,food,RULE_TRANSLATED,1
+चणे/शȂगदाणे,Roasted snacks and packaged food,food,RULE_TRANSLATED,1
+चने फुटाने,Roasted snacks and packaged food,food,RULE_TRANSLATED,1
+चने-फुटाणे,Roasted snacks and packaged food,food,RULE_TRANSLATED,1
+चहा /नाÌता,Tea,food,RULE_TRANSLATED,1
+चहा नÎता,Tea,food,RULE_TRANSLATED,1
+चहा नाÍटा,Tea,food,RULE_TRANSLATED,1
+चहा नाÍटा िवĎी,Tea,food,RULE_TRANSLATED,1
+चहा िवĎी चहा िवĎी,Tea,food,RULE_TRANSLATED,1
+चहा िवĎी िसजनल वÎतू िवĎीदुगɕ,Tea,food,RULE_TRANSLATED,1
+"चहा, नाÌता",Tea,food,RULE_TRANSLATED,1
+चहािवĎी,Tea,food,RULE_TRANSLATED,1
+चाट भेळ,Prepared food and snacks,food,RULE_TRANSLATED,1
+चाट भेळ भǄा,Prepared food and snacks,food,RULE_TRANSLATED,1
+चाट भेळ शȂगदाणे,Prepared food and snacks,food,RULE_TRANSLATED,1
+"चाट, भेळभǄा,",Prepared food and snacks,food,RULE_TRANSLATED,1
+"चाट, भेळभǄा, शȂगदाणे िवĎी",Prepared food and snacks,food,RULE_TRANSLATED,1
+"चाट, भेळभǄा, शȂगदाणे े फुटाणे",Prepared food and snacks,food,RULE_TRANSLATED,1
+चाट-भेळ भǄा,Prepared food and snacks,food,RULE_TRANSLATED,1
+चादर/बेड शीत,Bed linen,clothing,RULE_TRANSLATED,1
+चापल,Footwear,general_goods,EXACT_TRANSLATED,1
+चायनीस,Tea,food,RULE_TRANSLATED,1
+चायिनज गाडा,Tea,food,RULE_TRANSLATED,1
+चायिनज वÎतु,Tea,food,RULE_TRANSLATED,1
+चीकेन िवĎी,Fish/Meat/Chicken,food,LEGACY_TRANSLATION_REVIEW,1
+चीकेन/मटन,Meat,food,RULE_TRANSLATED,1
+जंगम,Unknown / not specified,unknown,AMBIGUOUS,1
+जनरल,Grocery / General Goods Vendor,general_goods,LEGACY_TRANSLATION_REVIEW,1
+जनरल Îटोअर,Grocery / General Goods Vendor,general_goods,LEGACY_TRANSLATION_REVIEW,1
+जनरल Îटोर,Grocery / General Goods Vendor,general_goods,LEGACY_TRANSLATION_REVIEW,1
+जळगावभाजीपाला िवĎी,Vegetables,vegetable_fruit,RULE_TRANSLATED,1
+जुस ि िवĎी ी,Juice and beverages,food,RULE_TRANSLATED,1
+जूस सȂटर,Juice and beverages,food,RULE_TRANSLATED,1
+झाडू,Brooms and household goods,general_goods,RULE_TRANSLATED,1
+टपरी,Unknown / not specified,unknown,AMBIGUOUS,1
+टी-Îटोल,Tea stall,food,EXACT_TRANSLATED,1
+टू Ëहीलर कुशÂस,Two-wheeler accessories,general_goods,EXACT_TRANSLATED,1
+टेलȋसग,Tailoring services,other,EXACT_TRANSLATED,1
+टेलर,Tailoring services,other,RULE_TRANSLATED,1
+"टोपी, गो±गले",Fashion accessories,general_goods,RULE_TRANSLATED,1
+"टोपी, गोगल, पƺे ि िवĎी ी",Sunglasses,general_goods,RULE_TRANSLATED,1
+डोरमȂट,Doormats,general_goods,EXACT_TRANSLATED,1
+डोसा,Dosa,food,EXACT_TRANSLATED,1
+तेलेफोने बूथ,Telephone booth services,other,EXACT_TRANSLATED,1
+थंड पेय,Cold beverages,food,EXACT_TRANSLATED,1
+दध दुध,Milk and dairy products,food,RULE_TRANSLATED,1
+दु±ध पदाथ« िवĎी,Milk and dairy products,food,RULE_TRANSLATED,1
+दु±धजÂय,Milk and dairy products,food,RULE_TRANSLATED,1
+दु±धजÂय पदाथ«,Milk and dairy products,food,RULE_TRANSLATED,1
+दु±धजÂयपदाथ«,Milk and dairy products,food,RULE_TRANSLATED,1
+दुध व दु±धजÂय पदाथ«िवĎी,Milk and dairy products,food,RULE_TRANSLATED,1
+दुध/पदाथ« िवĎी,Milk and dairy products,food,RULE_TRANSLATED,1
+दूध,Milk and dairy products,food,RULE_TRANSLATED,1
+दूधिवĎी,Milk and dairy products,food,RULE_TRANSLATED,1
+नकाशा,Maps and printed material,general_goods,RULE_TRANSLATED,1
+नकाशे,Maps and printed material,general_goods,EXACT_TRANSLATED,1
+नगरकटलरी,Cutlery and household goods,general_goods,RULE_TRANSLATED,1
+नगरभाजीपाला िवĎी,Vegetables,vegetable_fruit,RULE_TRANSLATED,1
+नाËहीकाम,Barber services,other,EXACT_TRANSLATED,1
+नाÌता /भाजीपाला,Vegetables,vegetable_fruit,RULE_TRANSLATED,1
+नाÌता जेवण,Food / Snacks Vendor,food,LEGACY_TRANSLATION_REVIEW,1
+नाÌता नाÌता,Food / Snacks Vendor,food,LEGACY_TRANSLATION_REVIEW,1
+नाÌता ि िवĎी ी,Food / Snacks Vendor,food,LEGACY_TRANSLATION_REVIEW,1
+नाÎत िवĎी,Snacks,food,EXACT_TRANSLATED,1
+नाÎता िवĎी,Food / Snacks Vendor,food,LEGACY_TRANSLATION_REVIEW,1
+नारळ,Coconuts,vegetable_fruit,EXACT_TRANSLATED,1
+नारळ पाणी,Juice and beverages,food,RULE_TRANSLATED,1
+नारळपाणी िवĎी,Juice and beverages,food,RULE_TRANSLATED,1
+नारीयल पाणी,Coconut water,food,EXACT_TRANSLATED,1
+पराठा,Prepared food and snacks,food,RULE_TRANSLATED,1
+पाणी-पुरी,Food / Snacks Vendor,food,LEGACY_TRANSLATION_REVIEW,1
+पाणीपरी पाणीपुरी,Prepared food and snacks,food,RULE_TRANSLATED,1
+पान Îटाल,Paan/Tobacco,general_goods,LEGACY_TRANSLATION_REVIEW,1
+पान बीडी िवĎी कपडे िवĎी,Pan and tobacco products,general_goods,RULE_TRANSLATED,1
+पान शोप,Paan/Tobacco,general_goods,LEGACY_TRANSLATION_REVIEW,1
+पानबीडीिवĎी पान बीडी िवĎी,Pan and tobacco products,general_goods,RULE_TRANSLATED,1
+पानिबडी िवĎी पान बीडी िवĎी,Pan and tobacco products,general_goods,RULE_TRANSLATED,1
+पापड,Packaged and preserved food,food,RULE_TRANSLATED,1
+पापड िवĎी,Packaged and preserved food,food,RULE_TRANSLATED,1
+पाळणा/चĎी,Children's rides and toys,other,EXACT_TRANSLATED,1
+पुरी भाजी,Vegetables,vegetable_fruit,RULE_TRANSLATED,1
+पूजा सामान/मेहंदी,Puja and religious supplies,general_goods,RULE_TRANSLATED,1
+पोपकोन«,Popcorn,food,RULE_TRANSLATED,1
+पोळीभाजी कȂ ğ,Vegetables,vegetable_fruit,RULE_TRANSLATED,1
+फलिवĎी फुल िवĎी,Fruits,vegetable_fruit,RULE_TRANSLATED,1
+फळ फळ,Fruits,vegetable_fruit,RULE_TRANSLATED,1
+फळ भाजी िवĎी,Fruits,vegetable_fruit,RULE_TRANSLATED,1
+फळ ि िवĎी ी,Fruits,vegetable_fruit,RULE_TRANSLATED,1
+फळ ि िवĎी ी फळ िवĎी,Fruits,vegetable_fruit,RULE_TRANSLATED,1
+फळ ि िवĎी ी िसजनल वÎतू िवĎीदुगɕ,Fruits,vegetable_fruit,RULE_TRANSLATED,1
+फळ िव¯Ďी,Fruits,vegetable_fruit,RULE_TRANSLATED,1
+फळ िवĎी भाजीपाला िवĎी,Fruits,vegetable_fruit,RULE_TRANSLATED,1
+फळ िवĎी िसजनल वÎतु,Fruits,vegetable_fruit,RULE_TRANSLATED,1
+फळ िवĎी िसजनल वÎतू िवĎीदुगɕ,Fruits,vegetable_fruit,RULE_TRANSLATED,1
+फळभाजी व भाजीपाला िवĎी,Fruits,vegetable_fruit,RULE_TRANSLATED,1
+फळिवĎी भाजीपाला िवĎी,Fruits,vegetable_fruit,RULE_TRANSLATED,1
+फळे/भाजीपाला,Fruits,vegetable_fruit,RULE_TRANSLATED,1
+फळेिवĎी,Fruits,vegetable_fruit,RULE_TRANSLATED,1
+फाÎट फुड,Prepared food and snacks,food,RULE_TRANSLATED,1
+फाटािसजनल वÎतू िवĎी,Seasonal goods,other,RULE_TRANSLATED,1
+फुटाणे,Roasted snacks and packaged food,food,RULE_TRANSLATED,1
+फुल ि िवĎी ी,Flowers,flower,RULE_TRANSLATED,1
+"फुल, नारळ",Flowers,flower,RULE_TRANSLATED,1
+फुले,Flowers,flower,RULE_TRANSLATED,1
+फुले िवĎी,Flowers,flower,RULE_TRANSLATED,1
+फोटोģेम,Photo frames,general_goods,EXACT_TRANSLATED,1
+बÏजीपाÊला,Vegetables,vegetable_fruit,EXACT_TRANSLATED,1
+बȗबील ȋझगे,Fish and seafood,food,RULE_TRANSLATED,1
+बȗबील बȗबील,Fish and seafood,food,RULE_TRANSLATED,1
+बȗबील सुकी मासळी िवĎी,Fish and seafood,food,RULE_TRANSLATED,1
+बȗबीलȋझगे बȗबील ȋझग,Fish and seafood,food,RULE_TRANSLATED,1
+बग िवĎी,Bags,general_goods,EXACT_TRANSLATED,1
+बफ« गोला,Ice gola,food,EXACT_TRANSLATED,1
+बफ« गोळा,Ice gola,food,EXACT_TRANSLATED,1
+बांगǹा,Bangles,general_goods,EXACT_TRANSLATED,1
+बांगडी,Grocery / General Goods Vendor,general_goods,LEGACY_TRANSLATION_REVIEW,1
+बांगडी दुकान,Grocery / General Goods Vendor,general_goods,LEGACY_TRANSLATION_REVIEW,1
+बांगडीवाला,Grocery / General Goods Vendor,general_goods,LEGACY_TRANSLATION_REVIEW,1
+बाजीपाÊला,Vegetables,vegetable_fruit,EXACT_TRANSLATED,1
+बीडी िवĎी,Paan/Tobacco,general_goods,LEGACY_TRANSLATION_REVIEW,1
+बुट पॉिलश,Footwear Vendor,general_goods,LEGACY_TRANSLATION_REVIEW,1
+बॅग « व पस« ि िवĎी ी,Bags and purses,general_goods,RULE_TRANSLATED,1
+बॅग व पस«,Bags and purses,general_goods,RULE_TRANSLATED,1
+बॅग िवĎी,Bags and purses,general_goods,RULE_TRANSLATED,1
+बॅगवपस« बग व पस िवĎी िवĎी,Bags and purses,general_goods,RULE_TRANSLATED,1
+बेकरी आयटम,Bakery products,food,EXACT_TRANSLATED,1
+बेकरी ी आयटÇस,Bakery products,food,EXACT_TRANSLATED,1
+बेग,Bags,general_goods,EXACT_TRANSLATED,1
+बेट,Unknown / not specified,unknown,AMBIGUOUS,1
+बेड शीट,Bed linen,clothing,EXACT_TRANSLATED,1
+"भǄा, शȂगदाणे फुटाण",Roasted chickpeas and groundnuts,food,EXACT_TRANSLATED,1
+भंगार रǈी,Scrap and recyclable goods,general_goods,RULE_TRANSLATED,1
+भाÊभाǄा,Bhel and roasted snacks,food,EXACT_TRANSLATED,1
+भांडी ंी व ÃलाȎÎटक Ȏ वÎतू िवĎी,Household goods,general_goods,RULE_TRANSLATED,1
+भांडी व ÃलाȎÎटक वÎतूिवĎी,Household goods,general_goods,RULE_TRANSLATED,1
+"भाजी-पाला, फुल",Vegetables,vegetable_fruit,RULE_TRANSLATED,1
+भाजी-फळ,Fruits,vegetable_fruit,RULE_TRANSLATED,1
+भाजीपÊला,Vegetables,vegetable_fruit,RULE_TRANSLATED,1
+भाजीपाल ी,Vegetables,vegetable_fruit,RULE_TRANSLATED,1
+भाजीपाला /फळिवĎी,Fruits,vegetable_fruit,RULE_TRANSLATED,1
+भाजीपाला /बफ« गोला िस¶नेबळ,Vegetables,vegetable_fruit,RULE_TRANSLATED,1
+भाजीपाला /हंगामी,Vegetables,vegetable_fruit,RULE_TRANSLATED,1
+भाजीपाला िवĎी Ëयवसाय,Vegetables,vegetable_fruit,RULE_TRANSLATED,1
+भाजीपाला िवĎी इतर,Vegetables,vegetable_fruit,RULE_TRANSLATED,1
+भाजीपाला िवĎी कटलरी िवĎी,Vegetables,vegetable_fruit,RULE_TRANSLATED,1
+भाजीपाला िवĎी फाÎट फुड िवĎी,Vegetables,vegetable_fruit,RULE_TRANSLATED,1
+भाजीपाला िवĎी भाजीपाला,Vegetables,vegetable_fruit,RULE_TRANSLATED,1
+भाजीपाला िवĎी भेळभǄा िवĎी,Vegetables,vegetable_fruit,RULE_TRANSLATED,1
+भाजीपाला िस¶नेबल,Vegetables,vegetable_fruit,RULE_TRANSLATED,1
+भाजीपाला ी,Vegetables,vegetable_fruit,RULE_TRANSLATED,1
+भाजीपाला/फळ,Fruits,vegetable_fruit,RULE_TRANSLATED,1
+भाजीपाला/रसवंती,Vegetables,vegetable_fruit,RULE_TRANSLATED,1
+भेÊभाǄा,Bhel and roasted snacks,food,EXACT_TRANSLATED,1
+भेल पुरी पाणी पुरी,Food / Snacks Vendor,food,LEGACY_TRANSLATION_REVIEW,1
+भेल भाǄा,Food / Snacks Vendor,food,LEGACY_TRANSLATION_REVIEW,1
+भेळ,Prepared food and snacks,food,RULE_TRANSLATED,1
+भेळ गाडा,Prepared food and snacks,food,RULE_TRANSLATED,1
+भेळभǄािवĎी भळभǄा िवĎी,Prepared food and snacks,food,RULE_TRANSLATED,1
+म´ची िवĎी,Fish,food,EXACT_TRANSLATED,1
+म´छीिवĎी मछी िवĎी,Fish/Meat/Chicken,food,LEGACY_TRANSLATION_REVIEW,1
+मका,Roasted corn,food,RULE_TRANSLATED,1
+मका िवĎी,Roasted corn,food,RULE_TRANSLATED,1
+मटका कुÊफी,Matka kulfi,food,EXACT_TRANSLATED,1
+मटण शॉप,Meat,food,RULE_TRANSLATED,1
+मटन,Meat,food,RULE_TRANSLATED,1
+मटन शॉप,Meat,food,RULE_TRANSLATED,1
+मडके,Earthen pots,general_goods,EXACT_TRANSLATED,1
+मसालािवĎी,Spices,food,RULE_TRANSLATED,1
+माकȃ ट नािशकरोड,Unknown / not specified,unknown,AMBIGUOUS,1
+मुंगभ¶जी,Moong fritters,food,EXACT_TRANSLATED,1
+मुतȓिवĎी,Idols and religious goods,general_goods,EXACT_TRANSLATED,1
+मोची,Shoe repair,other,EXACT_TRANSLATED,1
+मोड आलेले,Sprouted pulses,food,RULE_TRANSLATED,1
+मोमोज/Îनेक,Prepared food and snacks,food,RULE_TRANSLATED,1
+रǈी पेपर,Scrap paper,general_goods,EXACT_TRANSLATED,1
+रस,Juice/Beverages,food,LEGACY_TRANSLATION_REVIEW,1
+रस िवĎी,Juice/Beverages,food,LEGACY_TRANSLATION_REVIEW,1
+रेडीमेड,Clothing and garments,clothing,RULE_TRANSLATED,1
+रेिदमेट कपडे,Clothing and garments,clothing,RULE_TRANSLATED,1
+लÎसी,Lassi,food,EXACT_TRANSLATED,1
+लाँĚी,Laundry services,other,EXACT_TRANSLATED,1
+लाकडी खेळणी,Toys,general_goods,RULE_TRANSLATED,1
+लेमन गोÐया,Lemon sweets,food,EXACT_TRANSLATED,1
+लॉĚी,Laundry services,other,EXACT_TRANSLATED,1
+लोहार काम,Blacksmith services,other,EXACT_TRANSLATED,1
+व पस« िवĎी,Purses,general_goods,EXACT_TRANSLATED,1
+वÎतू िवĎी,Unspecified goods,other,EXACT_TRANSLATED,1
+वÎतू िवĎी भाजीपाला िवĎी,Vegetables,vegetable_fruit,RULE_TRANSLATED,1
+शȂगदाणे फुटाणे भाजीपाला िवĎी,Vegetables,vegetable_fruit,RULE_TRANSLATED,1
+शȂगा काकडी,Groundnuts and cucumber,food,EXACT_TRANSLATED,1
+शȂगा िवĎी,Groundnuts / legumes,food,EXACT_TRANSLATED,1
+शȂगािवĎी,Groundnuts / legumes,food,EXACT_TRANSLATED,1
+शेगदाणे,Groundnuts,food,EXACT_TRANSLATED,1
+सÁया वÎतू,Other goods,other,EXACT_TRANSLATED,1
+सȚदय« Ģसादने,Unknown / not specified,unknown,AMBIGUOUS,1
+सनॅकसिवĎी सनकस िवĎी,Prepared food and snacks,food,RULE_TRANSLATED,1
+समोसा,Food / Snacks Vendor,food,LEGACY_TRANSLATION_REVIEW,1
+साईकल रेपोȋरग,Bicycle repair,other,EXACT_TRANSLATED,1
+सातपुरभाजीपाला,Vegetables,vegetable_fruit,RULE_TRANSLATED,1
+सातपुरभाजीपाला िवĎी,Vegetables,vegetable_fruit,RULE_TRANSLATED,1
+सामोसा िजलेबी,Sweets,food,RULE_TRANSLATED,1
+सायकल पंचर,Bicycle puncture repair,other,EXACT_TRANSLATED,1
+सायकल रेपैȋरग,Bicycle repair,other,EXACT_TRANSLATED,1
+सायकल िरपेȋरग,Bicycle repair,other,RULE_TRANSLATED,1
+सी डी,CD media,general_goods,EXACT_TRANSLATED,1
+सुकट मासे बȗबील िवĎी,Fish and seafood,food,RULE_TRANSLATED,1
+सुखामावा िवĎी,Dry fruits and nuts,food,RULE_TRANSLATED,1
+"सुखामावा, काजूबदाम ि िवĎी ी",Dry fruits and nuts,food,RULE_TRANSLATED,1
+सेवेई आिण तोस,Roasted snacks and packaged food,food,RULE_TRANSLATED,1
+सॉ¯स,Socks,clothing,EXACT_TRANSLATED,1
+सॉ¯स िवĎी,Unclassified / translation required,unknown,TRANSLATION_REVIEW_REQUIRED,1
+सो¯स िवĎी,Socks,clothing,EXACT_TRANSLATED,1
+सोडा,Juice/Beverages,food,LEGACY_TRANSLATION_REVIEW,1
+हंगामी/चहा िवĎी,Tea,food,RULE_TRANSLATED,1
+हळद,Turmeric / spices,food,EXACT_TRANSLATED,1
+हुÊफी,Kulfi,food,EXACT_TRANSLATED,1
+हुजेअरी,Hosiery,clothing,EXACT_TRANSLATED,1
+"हुसळ,शȂगदाणे",Prepared food and snacks,food,RULE_TRANSLATED,1
+हूसळ िवĎी,Usal / prepared pulses,food,EXACT_TRANSLATED,1
+हॉटेल,Food service / eatery,food,EXACT_TRANSLATED,1
+ि भाजीपाला,Vegetables,vegetable_fruit,RULE_TRANSLATED,1
+िचकन शॉप,Chicken,food,RULE_TRANSLATED,1
+िचकन हंडी,Chicken,food,RULE_TRANSLATED,1
+िचकन िबयɕणी,Chicken,food,RULE_TRANSLATED,1
+िचकेण,Chicken,food,EXACT_TRANSLATED,1
+िबयɕणी Îनक िवĎी,Biryani and snacks,food,EXACT_TRANSLATED,1
+िमठाई जलेबी,Sweets and jalebi,food,EXACT_TRANSLATED,1
+िमसळ-नाÌता,Prepared food and snacks,food,RULE_TRANSLATED,1
+िरपेȋरगǛǉा चÃपल व बूट,Footwear and shoe services,general_goods,RULE_TRANSLATED,1
+िवĎी फाÎट फुड,Prepared food and snacks,food,RULE_TRANSLATED,1
+िवĎी भाजीपाला िवĎी,Vegetables,vegetable_fruit,RULE_TRANSLATED,1
+िवĎीमोरे िसजनल वÎतू,Seasonal goods,other,RULE_TRANSLATED,1
+िशलाई,Tailoring services,other,EXACT_TRANSLATED,1
+िशवणकाम,Tailoring services,other,EXACT_TRANSLATED,1
+िशवाजी मंडी,Unknown / not specified,unknown,AMBIGUOUS,1
+िसजनल,Seasonal goods,other,RULE_TRANSLATED,1
+िसजनल ËÎतु िवĎी,Seasonal goods,other,RULE_TRANSLATED,1
+िसजनल वÎतु िवĎीदुगɕ,Seasonal goods,other,RULE_TRANSLATED,1
+िसजनल वÎतू िवĎी नाÍटा,Seasonal goods,other,RULE_TRANSLATED,1
+िसजनल वÎतू िवĎीदुगɕ भाजीपाला,Vegetables,vegetable_fruit,RULE_TRANSLATED,1
+िसजनल वÎतू िवĎीदुगɕ भाजीपाला िवĎी,Vegetables,vegetable_fruit,RULE_TRANSLATED,1
+िसजनल वÎतू िवĎीदुगɕ सनॅकस िवĎी,Prepared food and snacks,food,RULE_TRANSLATED,1
+ॉ इतर,Other / unspecified,other,RULE_TRANSLATED,1
+ॉ भाजीपाला िवĎी,Vegetables,vegetable_fruit,RULE_TRANSLATED,1

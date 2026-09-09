@@ -1,0 +1,28 @@
+{
+  "generated_utc": "2026-09-09T14:20:42.893752+00:00",
+  "input_sha256": "b79c07f7fce2110fa399ce070742402acb49f641ea50eb119ba86087db3406b7",
+  "baseline_model": "models\\kmeans\\zone_kmeans.joblib",
+  "training_rows": 258,
+  "k_values": [
+    2,
+    4
+  ],
+  "seeds": [
+    11,
+    23,
+    37,
+    53,
+    71
+  ],
+  "preprocessing": "Exact saved baseline parameters; no refitting.",
+  "selection": "Minimum-inertia representative run for each K. No final K selected.",
+  "original_baseline_vs_k2_ari": 1.0,
+  "k2_vs_k4_ari": 0.5322829422052848,
+  "limitations": [
+    "Metrics measure environmental clustering, not suitability accuracy.",
+    "Random-seed stability is not spatial, bootstrap, or source-data stability.",
+    "K=4 is not automatically better because it has more clusters.",
+    "Source confidence and geometry-method sensitivity remain to be evaluated.",
+    "Historical vendor evidence and legal/capacity constraints are not training inputs."
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "generated_utc": "2026-09-09T14:13:16.653895+00:00",
+  "input_sha256": "b79c07f7fce2110fa399ce070742402acb49f641ea50eb119ba86087db3406b7",
+  "training_rows": 258,
+  "selected_k": 2,
+  "selection_note": "Silhouette among stable, non-tiny cluster solutions.",
+  "variant": "balanced",
+  "features": [
+    "distance_to_major_road_m",
+    "road_density_250m_per_km2",
+    "pedestrian_road_density_250m_per_km2",
+    "commercial_poi_count_250m",
+    "market_poi_count_500m",
+    "food_poi_count_250m",
+    "bus_count_500m",
+    "distance_to_bus_access_m",
+    "healthcare_count_500m",
+    "education_count_500m",
+    "toilet_count_500m",
+    "parking_count_500m"
+  ],
+  "active_features": [
+    "distance_to_major_road_m",
+    "road_density_250m_per_km2",
+    "pedestrian_road_density_250m_per_km2",
+    "commercial_poi_count_250m",
+    "market_poi_count_500m",
+    "food_poi_count_250m",
+    "bus_count_500m",
+    "distance_to_bus_access_m",
+    "healthcare_count_500m",
+    "education_count_500m",
+    "toilet_count_500m",
+    "parking_count_500m"
+  ],
+  "excluded_features": [
+    "official_capacity",
+    "zone_type",
+    "reference_geometry_area_sqm",
+    "reference_geometry_perimeter_m",
+    "all historical vendor evidence",
+    "all sparse land-use shares"
+  ],
+  "limitations": [
+    "Unsupervised metrics do not measure suitability accuracy.",
+    "OSM is incomplete; zero observed POIs does not prove zero real-world POIs.",
+    "Reference points are approximate, not verified legal vending positions.",
+    "Candidate feature groups and thresholds require sensitivity testing.",
+    "No labels, outcomes, or expert judgments were used."
+  ]
+}

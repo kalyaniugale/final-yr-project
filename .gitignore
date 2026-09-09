@@ -1,4 +1,4 @@
-# Python
+# Python environments and caches
 .venv/
 venv/
 __pycache__/
@@ -9,6 +9,15 @@ __pycache__/
 *.egg-info/
 build/
 dist/
+
+# Node / React dependencies
+node_modules/
+**/node_modules/
+**/dist/
+.vite/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
 # Environment variables and secrets
 .env
@@ -21,60 +30,20 @@ credentials.json
 service-account*.json
 secrets.json
 
-# Node / React
-node_modules/
-frontend/node_modules/
-implementation-demo/**/node_modules/
-frontend/dist/
-implementation-demo/**/dist/
-.vite/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# IDE / operating system
+# IDE and OS
 .vscode/
 .idea/
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# Raw vendor and GIS data (privacy / large files)
-data/raw/
-data/processed/
-data/outputs/
-data/model_outputs/
-
-# Trained models and serialized artifacts
-models/
-*.joblib
-*.pkl
-*.pickle
-*.h5
-*.keras
-*.pt
-*.pth
-*.onnx
-
-# Generated reports and review labels
-reports/
-!reports/README.md
-
-# GIS temporary and database sidecar files
+# Temporary files
+*.tmp
+*.log
 *.gpkg-wal
 *.gpkg-shm
 *.gpkg-journal
 *.qix
-*.shp.xml
-
-# Large archives / temporary files
-*.zip
-*.7z
-*.rar
-*.tar
-*.gz
-*.tmp
-*.log
 tmp/
 temp/
 
@@ -82,3 +51,10 @@ temp/
 *.db
 *.sqlite
 *.sqlite3
+
+# Sensitive raw vendor records
+
+
+# Private credentials or officer-maintained live records
+data/raw/nmc/zone_live_status.csv
+reports/expert_review/expert_labels.csv
