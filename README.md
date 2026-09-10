@@ -51,6 +51,46 @@ To integrate into your existing React dashboard rather than run a second shell, 
 
 Mount individual pages in your existing routes and keep your existing sidebar. ImplementationApp.jsx is optional: use it only if you want the complete supplied demo navigation. The package uses React 18, react-leaflet@4, Leaflet and lucide-react. Do not create a second BrowserRouter inside an existing router.
 
+## Run the WhatsApp Bot Locally
+
+For **Windows Git Bash**. Prerequisites: a Python virtual environment at `.venv` with project dependencies installed, ngrok installed and authenticated, and `backend/whatsapp/.env` configured.
+
+Open three Git Bash terminals at the **project root** and keep them running.
+
+**Terminal 1 — Recommendation backend:**
+
+```bash
+source .venv/Scripts/activate
+python -m uvicorn api:app --app-dir backend --port 8000
+```
+
+**Terminal 2 — WhatsApp service:**
+
+```bash
+source .venv/Scripts/activate
+set -a
+source backend/whatsapp/.env
+set +a
+python -m uvicorn backend.whatsapp.webhook:app --port 8001 --workers 1
+```
+
+**Terminal 3 — ngrok:**
+
+```bash
+ngrok http 8001
+```
+
+ngrok outputs a public HTTPS URL, such as `https://xxxx.ngrok-free.app`. Set the Meta webhook callback to that URL followed by `/webhook`: `https://xxxx.ngrok-free.app/webhook`. If the ngrok URL changes, update the Meta webhook callback.
+
+### Quick verification
+
+1. Open [http://127.0.0.1:8000/api/health](http://127.0.0.1:8000/api/health).
+2. Send **Hi** to the configured WhatsApp test number.
+3. Confirm `POST /webhook` appears in the port 8001 terminal.
+4. Confirm the bot replies with the language menu.
+
+The recommendation backend must be running before testing recommendations.
+
 ## Data and model integrity
 
 The current ranking is weighted MCDA, not XGBoost, Random Forest or a supervised predictor. K-Means K=2 is the environmental baseline; K=4 is an alternative experiment. SHAP is not used. Factor explanations are deterministic and derived from each recommendation's actual GIS/evidence fields.
