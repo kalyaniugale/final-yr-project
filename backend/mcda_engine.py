@@ -5,27 +5,73 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+try:
+    from .database import DATABASE_PATH, get_live_zone_status_map
+except ImportError:
+    from database import DATABASE_PATH, get_live_zone_status_map
+
 ROOT=Path(__file__).resolve().parents[1]
 DATA=ROOT/"data/processed"
 RAW=ROOT/"data/raw/nmc"
 OUT=ROOT/"data/outputs"
 CATEGORIES=["vegetable_fruit","food","clothing","flower","general_goods","other"]
 WEIGHTS={"business":.25,"commercial":.20,"access":.20,"facilities":.15,"preference":.10,"historical":.10}
+
+
+def derive_mcda_weights(vendor_profile=None):
+    """Derive transparent preference weights from the research baseline.
+
+    The baseline remains authoritative. Explicit vendor preferences apply only
+    mild multipliers to factor emphasis, after which all six weights are
+    renormalized. With no preferences, the baseline is reproduced exactly.
+    """
+    profile=vendor_profile or {}
+    priority=profile.get("priority_profile","BALANCED")
+    priority_factor={"COMMERCIAL":"commercial","ACCESSIBILITY":"access",
+        "FACILITIES":"facilities","BALANCED":None}.get(priority)
+    if priority not in {"BALANCED","COMMERCIAL","ACCESSIBILITY","FACILITIES"}:
+        raise ValueError("Unknown priority profile")
+    multipliers={name:1.0 for name in WEIGHTS}
+    if priority_factor:multipliers[priority_factor]*=1.25
+    if profile.get("market_preference",False):multipliers["commercial"]*=1.10
+    if profile.get("transport_preference",False):multipliers["access"]*=1.10
+    if profile.get("parking_preference",False):multipliers["facilities"]*=1.10
+    adjusted={name:WEIGHTS[name]*multipliers[name] for name in WEIGHTS}
+    total=sum(adjusted.values())
+    final={name:value/total for name,value in adjusted.items()}
+    # Correct any final binary floating-point residue without changing ratios.
+    final["historical"]+=1.0-sum(final.values())
+    return {"base_weights":dict(WEIGHTS),"multipliers":multipliers,"final_weights":final}
 # Policy-configurable, illustrative baseline parameters, not learned coefficients.
 def clip(x): return np.clip(x,0,1)
 def saturation(x,scale): return clip(np.log1p(np.maximum(x,0))/np.log1p(scale))
 def proximity(x,scale): return clip(np.exp(-np.maximum(x,0)/scale))
 def num(s): return pd.to_numeric(s,errors="coerce")
 
-def load():
+def load(use_live_status=False,database_path=None):
     z=pd.read_csv(DATA/"candidate_zone_snapshot.csv",dtype={"zone_id":str})
     v=pd.read_csv(DATA/"vendor_training_registry.csv",dtype={"vendor_id":str})
     for d,key in [(z,"zone_id"),(v,"vendor_id")]:
         if d[key].isna().any() or d[key].duplicated().any(): raise ValueError("Invalid IDs")
-    # The source file deliberately contains no verified live occupancy.
-    # An officer-maintained snapshot is a separate, optional input.
-    path=RAW/"zone_live_status.csv"
-    if path.exists():
+    if use_live_status:
+        live_map=get_live_zone_status_map(database_path or DATABASE_PATH)
+        live=pd.DataFrame(live_map.values())
+        if live.empty:
+            live=pd.DataFrame(columns=["zone_id","official_capacity","current_vendor_count",
+                "available_capacity","status","verified_at","verified_by","updated_at"])
+        live=live.rename(columns={"official_capacity":"live_official_capacity",
+            "status":"live_status","verified_at":"live_verified_at",
+            "verified_by":"live_verified_by","updated_at":"live_updated_at"})
+        z=z.merge(live,on="zone_id",how="left",validate="one_to_one")
+        # Compatibility fields preserve the existing explanation/response contract.
+        z["official_capacity"]=z["live_official_capacity"]
+        z["verified_available_capacity"]=z["available_capacity"]
+        z["status"]=z["live_status"]
+        z["verified_at"]=z["live_verified_at"]
+        z["verified_by"]=z["live_verified_by"]
+    # Static research mode retains the former optional CSV snapshot behavior.
+    elif (RAW/"zone_live_status.csv").exists():
+        path=RAW/"zone_live_status.csv"
         live=pd.read_csv(path,dtype={"zone_id":str}).fillna("")
         required={"zone_id","verified_available_capacity","status","verified_at","verified_by"}
         if not required.issubset(live): raise ValueError("Invalid live status schema")
@@ -57,8 +103,16 @@ def load():
     return z,v
 
 def recommend(business,division="",vendor_id="",top_n=3,exclude_zone="",
-              require_verified=False):
-    z,v=load()
+              require_verified=False,use_live_status=False,database_path=None,
+              factor_weights=None):
+    z,v=load(use_live_status=use_live_status,database_path=database_path)
+    weights=dict(WEIGHTS if factor_weights is None else factor_weights)
+    if set(weights)!=set(WEIGHTS) or any(value<0 for value in weights.values()):
+        raise ValueError("factor_weights must contain six nonnegative MCDA weights")
+    weight_total=sum(weights.values())
+    if weight_total<=0:raise ValueError("factor_weights must have a positive sum")
+    weights={name:value/weight_total for name,value in weights.items()}
+    weights["historical"]+=1.0-sum(weights.values())
     if vendor_id:
         found=v.loc[v.vendor_id.eq(vendor_id)]
         if len(found)!=1:raise ValueError("Unknown vendor ID")
@@ -77,6 +131,7 @@ def recommend(business,division="",vendor_id="",top_n=3,exclude_zone="",
         if exclude_zone not in set(z.zone_id):
             raise ValueError("Excluded zone is not a valid FREE reference candidate")
         z=z.loc[z.zone_id.ne(exclude_zone)]
+    candidate_count_before_live_filter=len(z)
     z["live_available"]=num(z.verified_available_capacity)
     if z.live_available.lt(0).any():
         raise ValueError("Negative verified available capacity")
@@ -86,10 +141,22 @@ def recommend(business,division="",vendor_id="",top_n=3,exclude_zone="",
     recent=age.ge(pd.Timedelta(0)) & age.le(pd.Timedelta(days=7))
     z["live_verified"]=z.live_status.eq("OPEN") & z.live_available.gt(0) & recent & (
         z.verified_by.fillna("").astype(str).str.strip().ne(""))
-    z=z.loc[~z.live_status.isin(["CLOSED","SUSPENDED","NO_VENDING","RESTRICTED"]) &
-            ~(z.live_available.notna() & z.live_available.le(0))]
+    if use_live_status:
+        # Missing operational rows are excluded: absence is never interpreted as OPEN.
+        z=z.loc[z.live_status.eq("OPEN") &
+                (z.live_available.isna() | z.live_available.gt(0))]
+    else:
+        z=z.loc[~z.live_status.isin(["CLOSED","SUSPENDED","NO_VENDING","RESTRICTED"]) &
+                ~(z.live_available.notna() & z.live_available.le(0))]
+    candidate_count_after_live_filter=len(z)
     if require_verified:z=z.loc[z.live_verified]
-    if z.empty:return pd.DataFrame()
+    metadata={"candidate_count_before_live_filter":candidate_count_before_live_filter,
+        "candidate_count_after_live_filter":candidate_count_after_live_filter,
+        "live_filter_applied":bool(use_live_status),"effective_factor_weights":dict(weights)}
+    if z.empty:
+        empty=pd.DataFrame()
+        empty.attrs.update(metadata)
+        return empty
     z=z.reset_index(drop=True)
     z["candidate_status"]=np.where(z.live_verified,"VERIFIED_SNAPSHOT","EXPLORATORY_UNVERIFIED")
     # Divisional preference is a ranking preference, not an invented hard constraint.
@@ -151,10 +218,11 @@ def recommend(business,division="",vendor_id="",top_n=3,exclude_zone="",
     for name,series in components.items():
         z[name+"_score"]=series
         valid=series.notna()
-        z[name+"_contribution"]=series.fillna(0)*WEIGHTS[name]*100
-        numerator=numerator.add(series.fillna(0)*WEIGHTS[name])
-        denominator=denominator.add(valid.astype(float)*WEIGHTS[name])
+        numerator=numerator.add(series.fillna(0)*weights[name])
+        denominator=denominator.add(valid.astype(float)*weights[name])
     z["score"]=100*numerator/denominator.replace(0,np.nan)
+    for name,series in components.items():
+        z[name+"_contribution"]=100*series.fillna(0)*weights[name]/denominator.replace(0,np.nan)
     z["score_coverage"]=denominator
     z["evidence_count"]=n
     z["evidence_method"]="TEXT_ASSOCIATIONS_LEAVE_LOCATION_GROUP_OUT" if vendor_id else "TEXT_ASSOCIATIONS_FULL_REFERENCE"
@@ -174,8 +242,9 @@ def recommend(business,division="",vendor_id="",top_n=3,exclude_zone="",
     else:result=z.head(top_n).copy().reset_index(drop=True)
     result["rank"]=np.arange(1,len(result)+1)
     result["reason"]=result.apply(lambda r:"; ".join(
-        [f"{name}: {r[name+'_score']:.2f}" for name in WEIGHTS
+        [f"{name}: {r[name+'_score']:.2f}" for name in weights
          if pd.notna(r[name+"_score"])])+("; outside preferred division" if r.fallback_used else ""),axis=1)
+    result.attrs.update(metadata)
     return result
 
 def main():
@@ -186,9 +255,11 @@ def main():
     p.add_argument("--exclude-zone",default="")
     p.add_argument("--top-n",type=int,default=3)
     p.add_argument("--require-verified",action="store_true")
+    p.add_argument("--use-live-status",action="store_true",
+                   help="Filter candidates using the operational SQLite database")
     args=p.parse_args()
     result=recommend(args.business,args.division,args.vendor_id,args.top_n,
-                     args.exclude_zone,args.require_verified)
+                     args.exclude_zone,args.require_verified,args.use_live_status)
     OUT.mkdir(parents=True,exist_ok=True)
     if result.empty:
         pd.DataFrame(columns=["rank","zone_id","zone_division","score","candidate_status",
@@ -204,6 +275,9 @@ def main():
     print("\nSaved:",OUT/"recommendations.csv")
     print("Scores are illustrative decision-support values, not probabilities or permits.")
     print("Only a municipal-authorized, recent status snapshot can establish verified availability.")
+    if args.use_live_status:
+        print("Live filter:",result.attrs.get("candidate_count_before_live_filter"),"->",
+              result.attrs.get("candidate_count_after_live_filter"),"candidates")
 
 if __name__=="__main__":
     main()

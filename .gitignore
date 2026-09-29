@@ -51,6 +51,10 @@ temp/
 *.db
 *.sqlite
 *.sqlite3
+data/operational/*.db
+data/operational/*.db-journal
+data/operational/*.db-wal
+data/operational/*.db-shm
 
 # Sensitive raw vendor records
 

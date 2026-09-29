@@ -1,0 +1,38 @@
+*{box-sizing:border-box}
+.auth-page{min-height:100vh;display:grid;grid-template-rows:auto 1fr auto;background:#f5f7fa;color:#263746;font-family:"Noto Sans","Noto Sans Devanagari",Arial,sans-serif}
+.auth-government-header{min-height:104px;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px clamp(22px,6vw,88px);background:#fff;border-top:4px solid #173f67;border-bottom:1px solid #d7e0e8}
+.auth-government-header .municipal-brand-mark{width:70px;height:70px}
+.auth-government-header .municipal-wordmark strong{font-size:19px;font-weight:600}
+.auth-government-header .municipal-wordmark>span{font-size:14px}
+.auth-government-header .municipal-wordmark small{font-size:10px}
+.auth-language{display:flex;align-items:center;gap:8px;padding:7px 9px;color:#516678;background:#f7f9fb;border:1px solid #d5dee6;border-radius:6px;font-size:12px;font-weight:500}
+.auth-language select{border:0;background:transparent;color:#243d52;font:inherit;outline:0}
+.auth-panel{display:flex;flex-direction:column;align-items:center;padding:46px 20px 56px}
+.auth-service-heading{width:min(470px,100%);margin-bottom:18px;text-align:left}
+.auth-service-heading h1{margin:0;color:#20384e;font-size:24px;font-weight:600;line-height:1.3}
+.auth-service-heading p{margin:5px 0 0;color:#687b8b;font-size:13px;line-height:1.5}
+.auth-card{width:min(470px,100%);padding:25px;background:#fff;border:1px solid #d6dfe7;border-top:3px solid #c67a20;border-radius:9px;box-shadow:0 8px 22px #1b39520d}
+.auth-choice{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:24px;padding:4px;background:#eef2f6;border-radius:6px}
+.auth-choice button{min-height:41px;display:flex;align-items:center;justify-content:center;gap:7px;padding:7px 10px;border:1px solid transparent;border-radius:5px;background:transparent;color:#5d7080;font-family:inherit;font-size:13px;font-weight:500;cursor:pointer}
+.auth-choice button.active{background:#fff;border-color:#cbd7e1;color:#173f67;box-shadow:0 1px 3px #19364c12}
+.auth-section-title{display:flex;align-items:flex-start;gap:12px;margin-bottom:21px}
+.auth-icon{width:40px;height:40px;display:grid;place-items:center;flex:none;border-radius:6px;background:#e8f0f7;color:#1e527d}
+.auth-icon.officer{background:#edf0f3;color:#445d70}
+.auth-section-title h2{margin:0 0 4px;color:#243a4d;font-size:20px;font-weight:600;line-height:1.3}
+.auth-section-title p{margin:0;color:#6d7f8e;font-size:12px;line-height:1.5}
+.auth-card form{display:grid;gap:15px}
+.auth-card form>label{display:grid;gap:7px}
+.auth-card form>label>span{color:#405567;font-size:13px;font-weight:500}
+.auth-input{height:44px;display:flex;align-items:center;gap:9px;padding:0 12px;border:1px solid #cbd6df;border-radius:5px;background:#fff;color:#64798b}
+.auth-input:focus-within{border-color:#527fa3;box-shadow:0 0 0 3px #e4eef6}
+.auth-input b{display:block;flex:0 0 42px;padding-right:10px;border-right:1px solid #d9e1e7;color:#344d61;font-size:13px;font-weight:500;line-height:1;text-align:center;white-space:nowrap}
+.auth-input input{width:100%;min-width:0;border:0;outline:0;background:transparent;color:#263b4d;font:400 14px "Noto Sans","Noto Sans Devanagari",Arial,sans-serif}
+.auth-input .otp-input{font-size:17px;font-weight:600;letter-spacing:.3em;text-align:center}
+.auth-primary{min-height:42px;display:flex;align-items:center;justify-content:center;gap:9px;padding:9px 18px;border:1px solid #174b77;border-radius:5px;background:#174b77;color:#fff;font-family:inherit;font-size:13px;font-weight:500;cursor:pointer}
+.auth-primary:hover{background:#103b60}.auth-primary:disabled{cursor:not-allowed;opacity:.55}
+.auth-link{border:0;background:transparent;color:#275f8c;font-family:inherit;font-size:12px;font-weight:500;cursor:pointer}
+.auth-error{margin-top:15px;padding:10px 12px;border:1px solid #edcbc7;border-radius:5px;background:#fff2f0;color:#a13d34;font-size:12px;line-height:1.5}
+.auth-new-vendor{margin:19px 0 0;padding-top:15px;border-top:1px solid #e5eaee;color:#71818e;font-size:11px;line-height:1.5;text-align:center}
+.auth-footer{padding:13px 20px;border-top:1px solid #dce3e9;background:#fff;color:#71818e;font-size:11px;text-align:center}
+@media(max-width:650px){.auth-government-header{align-items:flex-start;padding:13px 15px}.auth-government-header .municipal-brand{gap:9px}.auth-government-header .municipal-brand-mark{width:54px;height:54px}.auth-government-header .municipal-wordmark strong{font-size:15px}.auth-government-header .municipal-wordmark>span{font-size:11px}.auth-government-header .municipal-wordmark small{display:none}.auth-language{padding:7px}.auth-language>span,.auth-language>svg{display:none}.auth-panel{padding:30px 14px 40px}.auth-service-heading h1{font-size:21px}.auth-card{padding:20px}.auth-choice button{font-size:12px}}
+@media(max-width:390px){.auth-government-header{gap:8px}.auth-government-header .municipal-brand-mark{width:48px;height:48px}.auth-government-header .municipal-wordmark strong{font-size:13px}.auth-government-header .municipal-wordmark>span{font-size:10px}.auth-language{max-width:92px}.auth-language select{max-width:76px}.auth-card{padding:17px}.auth-choice button{padding-inline:6px}.auth-section-title h2{font-size:18px}}

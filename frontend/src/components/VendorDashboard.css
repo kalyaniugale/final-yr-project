@@ -1,0 +1,34 @@
+.vendor-dashboard-stack{display:flex;flex-direction:column;gap:20px}
+.vendor-dashboard-loading{min-height:340px;display:grid;place-content:center;justify-items:center;gap:12px;color:#6f8077;font-size:12px}
+.vendor-dashboard-loading svg{animation:vendor-spin 1s linear infinite}
+@keyframes vendor-spin{to{transform:rotate(360deg)}}
+.vendor-account-card,.vendor-dashboard-card{background:#fff;border:1px solid var(--vp-line);border-radius:12px;padding:26px}
+.vendor-account-heading,.dashboard-section-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:18px}
+.vendor-account-heading h2,.dashboard-section-heading h2{margin:7px 0 4px;font-size:21px}
+.vendor-account-heading p,.dashboard-section-heading p{margin:0;color:#7b8981;font-size:10px}
+.vendor-account-grid,.allocation-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px}
+.vendor-account-grid>div,.allocation-facts>div{background:#f6f8f7;border-radius:7px;padding:13px}
+.vendor-account-grid span,.allocation-facts span{display:block;color:#86928c;font-size:8px;margin-bottom:6px}
+.vendor-account-grid strong,.allocation-facts strong{font-size:11px;color:#344b3e}
+.allocation-zone{display:flex;align-items:flex-start;gap:13px;border-top:1px solid #e8eeea;margin-top:19px;padding-top:19px;color:var(--vp-green)}
+.allocation-zone strong{font-size:17px}.allocation-zone p{color:#6f7e76;font-size:10px;line-height:1.5;margin:5px 0 0}
+.dashboard-empty{display:grid;justify-items:center;text-align:center;gap:9px;padding:34px 15px;color:#849189}
+.dashboard-empty strong{color:#3b5145;font-size:13px}.dashboard-empty p{font-size:10px;margin:0 0 6px}
+.request-summary-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}
+.request-summary-card{background:#fff;border:1px solid var(--vp-line);border-top:3px solid #a8b3ad;border-radius:9px;padding:17px}
+.request-summary-card span{color:#78877f;font-size:10px}.request-summary-card strong{display:block;font-size:25px;margin-top:7px}
+.status-border-pending{border-top-color:#d2a42b}.status-border-approved{border-top-color:#34845a}.status-border-rejected{border-top-color:#bd5b50}.status-border-cancelled{border-top-color:#87939b}
+.status-active{background:#e8f5ec;color:#21683d}
+.vendor-action-notice{display:flex;align-items:flex-start;gap:11px;background:#fff8e7;border:1px solid #ead7a4;border-radius:9px;padding:15px;color:#6c571d}
+.vendor-action-notice p{font-size:10px;margin:4px 0 0}
+.request-history-list{display:flex;flex-direction:column;gap:13px;margin-top:20px}.request-history-item{border:1px solid #e0e7e3;border-radius:10px;padding:19px}
+.request-history-main{display:flex;justify-content:space-between;gap:15px}.request-history-main h3{font-size:15px;margin:5px 0}.request-history-main p{color:#74827a;font-size:10px;margin:0}
+.request-type-label{color:#658072;font-size:8px;font-weight:800;letter-spacing:.09em}
+.request-meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:16px 0}.request-meta>div{background:#f7f9f8;padding:9px;border-radius:6px;min-width:0}
+.request-meta dt{color:#8b9690;font-size:8px}.request-meta dd{color:#405148;font-size:9px;font-weight:700;margin:5px 0 0;overflow-wrap:anywhere}
+.request-timeline{display:flex;align-items:flex-start;max-width:620px;padding:13px 0}.timeline-step{display:flex;align-items:flex-start;gap:7px;min-width:max-content}
+.timeline-step>span{width:10px;height:10px;background:#26754b;border:2px solid #dcece3;border-radius:50%;margin-top:2px}.timeline-step strong,.timeline-step small{display:block;font-size:8px}.timeline-step small{color:#8a9690;margin-top:3px}
+.timeline-step.rejected>span{background:#b44c42}.timeline-step.cancelled>span{background:#77838a}.timeline-line{height:1px;background:#cfdad4;flex:1;min-width:25px;margin:6px 8px}
+.request-reason{background:#fff2f0;color:#8e3d34;border-radius:6px;padding:10px;font-size:10px}.request-row-actions{display:flex;justify-content:flex-end;margin-top:10px}
+@media(max-width:760px){.vendor-account-heading,.dashboard-section-heading{align-items:stretch;flex-direction:column}.vendor-account-grid,.allocation-facts,.request-summary-grid,.request-meta{grid-template-columns:1fr 1fr}.request-timeline{overflow-x:auto}}
+@media(max-width:420px){.vendor-account-grid,.allocation-facts,.request-meta{grid-template-columns:1fr}.vendor-account-card,.vendor-dashboard-card{padding:19px 15px}}

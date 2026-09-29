@@ -1,66 +1,80 @@
-# Nashik Vendor Management — Implementation UI
+# Nashik Street Vendor Management & Zoning Platform
 
-A five-screen React + FastAPI research demonstration using the actual processed project data. This release changes presentation and adds read-only endpoints; it does not retrain or replace any ML model.
+React, FastAPI, and SQLite decision-support application with separate authenticated vendor and NMC officer workspaces. The research recommendation engine remains weighted MCDA with the existing K-Means environmental features.
 
-## Screens
+## Authentication configuration
 
-1. Overview — live registry counts, project workflow and model status.
-2. Zone registry — all 308 official records, searchable by ID, description, division and zone type, with a record-details panel.
-3. Recommendations — vendor input, Top 3, real Leaflet reference map, selected-zone reasons and expandable factor evidence.
-4. GIS & model insights — feature groups, processing workflow, K-Means evaluation and reference coverage.
-5. Expert review — review progress and instructions for opening the existing independent Streamlit labeling tool.
+Copy `.env.example` to `.env` in the repository root and configure its values. Do not commit the resulting secrets. The backend resolves this file from `backend/app_config.py`, so both Uvicorn and direct scripts load the same configuration regardless of the current working directory. Values already defined in the process environment take precedence over `.env`.
 
-The recommendation list no longer displays the repeated availability-unverified text, and the verified-only checkbox is removed. The normal request uses exploratory candidates. The backend continues to enforce zone-type and explicit closure restrictions, and it does not invent vacancy or municipal approval. A concise footer and contextual details preserve the distinction between official records and unverified analytical boundaries.
+```text
+APP_ENV=development
+AUTH_HMAC_SECRET=<long random secret>
+SESSION_COOKIE_SECURE=false
+OTP_PROVIDER=development
+OTP_DEBUG=true
+NMC_ADMIN_USERNAME=<officer username>
+NMC_ADMIN_PASSWORD=<strong local password>
+```
 
-## Install the backend
+`AUTH_HMAC_SECRET` must remain stable after historical identities are seeded. Use `SESSION_COOKIE_SECURE=true` behind production HTTPS. `OTP_DEBUG=true` is strictly for local development: it prints the OTP code, but never the phone number. The API never returns an OTP.
 
-Keep your existing project structure and your original training scripts. Copy the files from this ZIP's backend/ folder into:
+## Initialize operational and authentication data
 
-C:\Users\kalya\vendor-map\backend\
+From the repository root, create a virtual environment and install the Python dependencies:
 
-Replace api.py and mcda_engine.py. Keep 05_recommend.py, or replace it with the included matching version. Do not copy these into scripts/ or app/; run from the project root with --app-dir backend.
-
-In PowerShell:
-
-cd C:\Users\kalya\vendor-map
+```powershell
+python -m venv .venv
 .\.venv\Scripts\Activate.ps1
-python -m pip install fastapi uvicorn
+python -m pip install -r requirements.txt
+```
+
+Then, after configuring the environment, initialize the local database:
+
+```powershell
+python backend/init_db.py
+```
+
+Initialization is idempotent. It preserves operational vendors, allocation requests, allocations, zone state, and audit history. It also reads `data/raw/nmc/vendors.csv`, normalizes valid `phone_number` and `alternate_phone` values, and seeds only unambiguous HMAC mappings. Plaintext phone numbers are not copied into SQLite or model files.
+
+FastAPI runs the same ordered bootstrap at application startup as a safety check. Running `init_db.py` explicitly remains useful for a visible initialization summary.
+
+## Run locally
+
+Backend:
+
+```powershell
 python -m uvicorn api:app --app-dir backend --reload --host 127.0.0.1 --port 8000
+```
 
-Open http://127.0.0.1:8000/docs to check the API. Keep this terminal running.
+Frontend:
 
-The backend reads existing data/processed files, official_zones.csv, and reports/data_quality/geometry_duplicates. Run the earlier geometry_duplicate_audit.py if those reports are missing.
+```powershell
+cd frontend
+npm install
+npm run dev
+```
 
-## Install the frontend
+Open `http://127.0.0.1:5173`. Unauthenticated visitors enter through `/login`; server sessions determine whether the application shows `/vendor` or `/admin` experiences.
 
-The included frontend/ directory is a complete standalone Vite app with its own sidebar and five-page navigation. To avoid damaging your existing dashboard, first run it separately:
+## Roles and privacy
 
-1. Rename your existing frontend folder if needed, or extract this ZIP into another folder such as vendor-map/implementation-demo.
-2. Open a second terminal in the extracted frontend/ directory.
-3. npm install
-4. npm run dev
-5. Open the local Vite address, normally http://127.0.0.1:5173.
+- `VENDOR`: accesses only the authenticated vendor profile, recommendations, and that vendor's requests.
+- `NEW_VENDOR_ONBOARDING`: can complete one verified operational profile registration.
+- `ADMIN`: accesses the NMC dashboard and administrative actions.
 
-The API allows localhost and 127.0.0.1 at port 5173. If your current Vite app uses another port, update the local CORS origins in backend/api.py. The frontend uses VITE_API_BASE, defaulting to http://127.0.0.1:8000.
+Sessions use an HttpOnly, SameSite=Lax cookie. SQLite stores only hashes of session tokens and OTPs. Historical and newly verified phone identities use HMAC values. Admin credentials come from environment configuration and are never stored in the database. Frontend visibility is not trusted for authorization; protected API endpoints enforce roles and ownership server-side.
 
-To integrate into your existing React dashboard rather than run a second shell, copy:
-- frontend/src/components/RecommendationPage.jsx
-- frontend/src/components/RecommendationPage.css
-- frontend/src/pages/ImplementationPages.jsx
-- frontend/src/ImplementationApp.css
+## Tests and build
 
-Mount individual pages in your existing routes and keep your existing sidebar. ImplementationApp.jsx is optional: use it only if you want the complete supplied demo navigation. The package uses React 18, react-leaflet@4, Leaflet and lucide-react. Do not create a second BrowserRouter inside an existing router.
+```powershell
+pytest
+cd frontend
+npm test -- --run
+npm run build
+```
 
-## Data and model integrity
+Tests use isolated temporary databases and an explicit test-only authorization bypass for legacy workflow coverage. Dedicated authentication tests run with that bypass disabled.
 
-The current ranking is weighted MCDA, not XGBoost, Random Forest or a supervised predictor. K-Means K=2 is the environmental baseline; K=4 is an alternative experiment. SHAP is not used. Factor explanations are deterministic and derived from each recommendation's actual GIS/evidence fields.
+## Model integrity
 
-Listed capacity is not live available capacity. No live-status data is supplied. Existing-vendor IDs return only non-identifying model fields and do not establish identity. Historical proposed zones are not automatically considered verified current locations. The map uses analytical reference points, not official legal polygons. Shared-reference details remain visible when relevant.
-
-The overview and zone registry read the actual source tables. The GIS screen includes the already-reported K-Means evaluation results; these are clustering metrics, not recommendation accuracy. The expert-review screen reads local queue and label counts but does not fabricate completed judgments. The separate Streamlit tool remains the actual labeling workflow.
-
-## Testing and limitations
-
-The Python API was syntax-checked and exercised using the project reference-zone structure and synthetic OSM fixtures. Catalogue, overview, review summary and recommendation explanation endpoints returned successfully. All JSX files passed syntax parsing. A full npm/browser build was not completed in the execution environment; run npm install and npm run build locally.
-
-The API is for local research use. Public deployment requires authenticated vendor lookup, access controls, rate limiting, audit logs, municipal data stewardship and a secure live-status backend. Do not publish personal vendor records or present this prototype as an operational allocation authority.
+Authentication does not modify K-Means, MCDA weights, personalization multipliers, live-capacity rules, or allocation business logic. Historical vendor associations are evidence only and are never treated as current occupancy. Map points remain analytical references, not legal zone boundaries.
