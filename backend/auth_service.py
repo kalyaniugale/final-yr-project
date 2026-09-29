@@ -309,7 +309,7 @@ def create_admin_session(
 
 def get_session(token: str | None, database_path: str | Path = DATABASE_PATH) -> dict | None:
     if not token:
-    return None
+        return None
     connection = connect(database_path)
     try:
         row = connection.execute(
