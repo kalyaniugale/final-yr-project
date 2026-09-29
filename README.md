@@ -34,7 +34,7 @@ Then, after configuring the environment, initialize the local database:
 python backend/init_db.py
 ```
 
-Initialization is idempotent. It preserves operational vendors, allocation requests, allocations, zone state, and audit history. It also reads `data/raw/nmc/vendors.csv`, normalizes valid `phone_number` and `alternate_phone` values, and seeds only unambiguous HMAC mappings. Plaintext phone numbers are not copied into SQLite or model files.
+Initialization is idempotent. It preserves operational vendors, allocation requests, allocations, zone state, and audit history. When the privacy-restricted `data/raw/nmc/vendors.csv` is supplied separately, initialization normalizes valid `phone_number` and `alternate_phone` values and seeds only unambiguous HMAC mappings. The CSV is intentionally excluded from Git; plaintext phone numbers are not copied into SQLite or model files.
 
 FastAPI runs the same ordered bootstrap at application startup as a safety check. Running `init_db.py` explicitly remains useful for a visible initialization summary.
 

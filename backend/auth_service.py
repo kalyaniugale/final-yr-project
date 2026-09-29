@@ -78,9 +78,32 @@ def _timestamp(value: datetime) -> str:
 def seed_historical_vendor_identities(
     database_path: str | Path = DATABASE_PATH,
     source_path: str | Path = HISTORICAL_VENDOR_SOURCE,
-) -> dict[str, int | str]:
+) -> dict[str, int | str | bool]:
     """Idempotently seed only unambiguous HMAC-to-vendor mappings."""
     source_path = Path(source_path)
+    if not source_path.is_file():
+        connection = connect(database_path)
+        try:
+            identity_rows = connection.execute(
+                "SELECT COUNT(*) FROM vendor_auth_identities"
+            ).fetchone()[0]
+        finally:
+            connection.close()
+        return {
+            "source": str(source_path),
+            "source_available": False,
+            "rows": 0,
+            "valid_rows": 0,
+            "missing_rows": 0,
+            "invalid_nonempty_values": 0,
+            "distinct_valid_numbers": 0,
+            "ambiguous_numbers": 0,
+            "ambiguous_vendor_ids": 0,
+            "seedable_numbers": 0,
+            "inserted": 0,
+            "already_existing": 0,
+            "identity_rows": identity_rows,
+        }
     with source_path.open(newline="", encoding="utf-8-sig") as source:
         reader = csv.DictReader(source)
         required = {"vendor_id", "phone_number", "alternate_phone"}
@@ -131,6 +154,7 @@ def seed_historical_vendor_identities(
         ).fetchone()[0]
     return {
         "source": str(source_path),
+        "source_available": True,
         "rows": len(rows),
         "valid_rows": valid_rows,
         "missing_rows": missing_rows,

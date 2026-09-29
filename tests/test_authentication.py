@@ -113,6 +113,14 @@ class AuthenticationTests(unittest.TestCase):
         self.assertNotIn("9876543210", serialized)
         self.assertNotIn("9999999999", serialized)
 
+    def test_missing_private_historical_source_is_a_safe_noop(self):
+        summary = auth_service.seed_historical_vendor_identities(
+            self.database_path, self.root / "not-supplied.csv"
+        )
+        self.assertFalse(summary["source_available"])
+        self.assertEqual(summary["inserted"], 0)
+        self.assertEqual(summary["identity_rows"], 1)
+
     def test_existing_vendor_otp_login_me_logout_and_consumption(self):
         challenge = self.request_otp("+91-98765-43210")
         verified = self.verify(challenge)

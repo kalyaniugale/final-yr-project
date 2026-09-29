@@ -18,7 +18,10 @@ def main() -> None:
     print(f"Already existing: {summary['already_existing']}")
     print(f"Application Vendor IDs backfilled: {summary['application_vendor_ids_backfilled']}")
     auth_summary = bootstrap_summary["authentication"]
-    print("Historical authentication identities seeded")
+    if auth_summary["source_available"]:
+        print("Historical authentication identities seeded")
+    else:
+        print("Historical authentication identity seeding skipped: private source not supplied")
     print(f"Seedable mobile mappings: {auth_summary['seedable_numbers']}")
     print(f"Ambiguous mobile mappings skipped: {auth_summary['ambiguous_numbers']}")
     print(f"Identity rows inserted: {auth_summary['inserted']}")
