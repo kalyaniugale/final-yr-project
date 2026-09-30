@@ -57,7 +57,7 @@ data/operational/*.db-wal
 data/operational/*.db-shm
 
 # Sensitive raw vendor records
-data/raw/nmc/vendors.csv
+
 
 # Private credentials or officer-maintained live records
 data/raw/nmc/zone_live_status.csv
