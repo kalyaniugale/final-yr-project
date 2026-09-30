@@ -63,6 +63,45 @@ def phone_hmac(normalized_mobile: str) -> str:
     return hmac.new(_secret(), f"phone:{normalized_mobile}".encode(), hashlib.sha256).hexdigest()
 
 
+def find_vendor_by_phone_hash(
+    hashed_phone: str,
+    database_path: str | Path = DATABASE_PATH,
+) -> str | None:
+    connection = connect(database_path)
+    try:
+        row = connection.execute(
+            "SELECT vendor_id FROM vendor_auth_identities WHERE phone_hash = ?",
+            (hashed_phone,),
+        ).fetchone()
+        return row["vendor_id"] if row is not None else None
+    finally:
+        connection.close()
+
+
+def bind_verified_phone_hash(
+    hashed_phone: str,
+    vendor_id: str,
+    database_path: str | Path = DATABASE_PATH,
+) -> None:
+    """Bind a WhatsApp-verified sender without ever persisting the plaintext phone."""
+    now = utc_now()
+    with transaction(database_path, immediate=True) as connection:
+        existing = connection.execute(
+            "SELECT vendor_id FROM vendor_auth_identities WHERE phone_hash = ?",
+            (hashed_phone,),
+        ).fetchone()
+        if existing is not None:
+            if existing["vendor_id"] != vendor_id:
+                raise AuthError("This verified mobile identity is already linked.", 409)
+            return
+        connection.execute(
+            """INSERT INTO vendor_auth_identities
+               (identity_id, vendor_id, phone_hash, vendor_source, is_verified, created_at, updated_at)
+               VALUES (?, ?, ?, 'OPERATIONAL', 1, ?, ?)""",
+            (f"VID_{uuid.uuid4().hex}", vendor_id, hashed_phone, now, now),
+        )
+
+
 def _otp_hash(challenge_id: str, otp: str) -> str:
     return hmac.new(_secret(), f"otp:{challenge_id}:{otp}".encode(), hashlib.sha256).hexdigest()
 

@@ -56,6 +56,44 @@ npm run dev
 
 Open `http://127.0.0.1:5173`. Unauthenticated visitors enter through `/login`; server sessions determine whether the application shows `/vendor` or `/admin` experiences.
 
+## Direct Meta WhatsApp Cloud API
+
+The vendor bot uses Meta's WhatsApp Cloud API directly. It does not use Twilio, browser automation, WhatsApp Web, or an unofficial WhatsApp client. Add these values to the project-root `.env` file:
+
+```text
+WHATSAPP_ACCESS_TOKEN=<Meta system-user or temporary access token>
+WHATSAPP_PHONE_NUMBER_ID=<WhatsApp phone number ID>
+WHATSAPP_VERIFY_TOKEN=<private webhook verification token you choose>
+META_APP_SECRET=<Meta application secret>
+WHATSAPP_GRAPH_VERSION=<supported version such as vNN.N>
+```
+
+Never commit real values. The webhook endpoints are:
+
+```text
+GET  /api/whatsapp/webhook  # Meta subscription verification
+POST /api/whatsapp/webhook  # signed WhatsApp notifications
+```
+
+For local deterministic testing without Meta delivery:
+
+```powershell
+python backend/whatsapp/simulator.py --mobile 9198XXXXXXXX --message "Hi"
+```
+
+The simulator invokes the same persistent conversation service as the webhook and never calls Meta. For duplicate-delivery testing, repeat a command with the same `--message-id`.
+
+Manual Meta Developer Console setup is still required:
+
+1. Create or select a Meta business application and add the WhatsApp product.
+2. Add and verify a WhatsApp Business phone number; copy its Phone Number ID.
+3. Create an appropriately scoped access token and store it only in `.env` or a deployment secret manager.
+4. Expose the backend through public HTTPS and set the callback URL to `https://<host>/api/whatsapp/webhook`.
+5. Enter the same private verify token configured in `WHATSAPP_VERIFY_TOKEN` and subscribe the app to message webhook events.
+6. Copy the Meta App Secret into deployment secrets for `X-Hub-Signature-256` validation.
+
+Conversation state and inbound-message deduplication are stored in SQLite. Sender numbers are normalized and HMACed using the existing authentication secret; plaintext mobile numbers are not stored in the WhatsApp tables. Historical-vendor recognition requires the privacy-restricted identity seed data to have been initialized securely.
+
 ## Roles and privacy
 
 - `VENDOR`: accesses only the authenticated vendor profile, recommendations, and that vendor's requests.

@@ -50,7 +50,10 @@ EDITABLE_PROFILE_FIELDS = {
 
 @lru_cache(maxsize=2)
 def _historical_identity_map(path: str = str(HISTORICAL_IDENTITY_PATH)) -> dict[str, dict[str, str | None]]:
-    with Path(path).open(newline="", encoding="utf-8-sig") as source:
+    source_path = Path(path)
+    if not source_path.is_file():
+        return {}
+    with source_path.open(newline="", encoding="utf-8-sig") as source:
         return {
             row["vendor_id"]: {
                 "full_name": (row.get("vendor_name_english") or "").strip() or None,

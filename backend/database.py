@@ -173,6 +173,36 @@ CREATE TABLE IF NOT EXISTS auth_sessions (
 
 CREATE INDEX IF NOT EXISTS idx_auth_sessions_token_active
     ON auth_sessions(session_token_hash, revoked_at, expires_at);
+
+CREATE TABLE IF NOT EXISTS whatsapp_conversations (
+    conversation_key TEXT PRIMARY KEY,
+    phone_hash TEXT NOT NULL UNIQUE,
+    vendor_id TEXT NULL,
+    language TEXT NOT NULL DEFAULT 'en'
+        CHECK (language IN ('en', 'mr', 'hi')),
+    flow TEXT NOT NULL DEFAULT 'START',
+    step TEXT NOT NULL DEFAULT 'START',
+    state_json TEXT NOT NULL DEFAULT '{}',
+    invalid_count INTEGER NOT NULL DEFAULT 0 CHECK (invalid_count >= 0),
+    updated_at TEXT NOT NULL,
+    expires_at TEXT NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_whatsapp_conversations_vendor
+    ON whatsapp_conversations(vendor_id);
+
+CREATE TABLE IF NOT EXISTS whatsapp_processed_messages (
+    message_id TEXT PRIMARY KEY,
+    phone_hash TEXT NOT NULL,
+    status TEXT NOT NULL DEFAULT 'PROCESSING'
+        CHECK (status IN ('PROCESSING', 'PROCESSED', 'IGNORED', 'FAILED')),
+    received_at TEXT NOT NULL,
+    processed_at TEXT NULL,
+    error_code TEXT NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_whatsapp_processed_phone_received
+    ON whatsapp_processed_messages(phone_hash, received_at);
 """
 
 

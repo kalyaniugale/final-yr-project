@@ -105,7 +105,10 @@ class OperationalDatabaseTests(unittest.TestCase):
                 "SELECT verified_by FROM zone_live_status WHERE zone_id = ?", (zone_id,)
             ).fetchone()[0]
         self.assertTrue(
-            {"vendor_auth_identities", "auth_otp_challenges", "auth_sessions"}.issubset(tables)
+            {
+                "vendor_auth_identities", "auth_otp_challenges", "auth_sessions",
+                "whatsapp_conversations", "whatsapp_processed_messages",
+            }.issubset(tables)
         )
         self.assertEqual(verified_by, "migration-test")
 

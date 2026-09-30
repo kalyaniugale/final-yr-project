@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import os
+import re
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -28,6 +29,15 @@ class AuthSettings:
     otp_debug: bool
     nmc_admin_username: str
     nmc_admin_password: str
+
+
+@dataclass(frozen=True)
+class WhatsAppSettings:
+    access_token: str
+    phone_number_id: str
+    verify_token: str
+    meta_app_secret: str
+    graph_version: str
 
 
 _REQUIRED_AUTH_VARIABLES = (
@@ -70,4 +80,30 @@ def get_auth_settings() -> AuthSettings:
         otp_debug=_boolean_value("OTP_DEBUG"),
         nmc_admin_username=_required_value("NMC_ADMIN_USERNAME"),
         nmc_admin_password=_required_value("NMC_ADMIN_PASSWORD"),
+    )
+
+
+def get_whatsapp_settings() -> WhatsAppSettings:
+    """Validate direct Meta Cloud API configuration without exposing values."""
+    names = (
+        "WHATSAPP_ACCESS_TOKEN",
+        "WHATSAPP_PHONE_NUMBER_ID",
+        "WHATSAPP_VERIFY_TOKEN",
+        "META_APP_SECRET",
+        "WHATSAPP_GRAPH_VERSION",
+    )
+    missing = [name for name in names if not os.environ.get(name, "").strip()]
+    if missing:
+        raise ConfigurationError(
+            "Missing required WhatsApp configuration: " + ", ".join(missing)
+        )
+    graph_version = _required_value("WHATSAPP_GRAPH_VERSION").strip()
+    if not re.fullmatch(r"v\d+\.\d+", graph_version):
+        raise ConfigurationError("WHATSAPP_GRAPH_VERSION must use the form vNN.N")
+    return WhatsAppSettings(
+        access_token=_required_value("WHATSAPP_ACCESS_TOKEN"),
+        phone_number_id=_required_value("WHATSAPP_PHONE_NUMBER_ID").strip(),
+        verify_token=_required_value("WHATSAPP_VERIFY_TOKEN"),
+        meta_app_secret=_required_value("META_APP_SECRET"),
+        graph_version=graph_version,
     )

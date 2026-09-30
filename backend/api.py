@@ -15,6 +15,7 @@ from pydantic import BaseModel, Field, StrictBool
 
 sys.path.insert(0,str(Path(__file__).resolve().parent))
 from mcda_engine import ROOT, DATA, recommend, CATEGORIES, derive_mcda_weights
+from recommendation_explanations import explain
 from database import (
     DATABASE_PATH,
     OperationalConflictError,
@@ -357,7 +358,7 @@ def metric(r,name,digits=0):
     except (TypeError,ValueError):pass
     return None
 
-def explain(r,factor_weights=None):
+def _legacy_explain(r,factor_weights=None):
     """Source-grounded, deterministic explanations; no generated suitability claims."""
     def count(name):
         x=metric(r,name)
@@ -1141,3 +1142,11 @@ def review_summary():
         "reviewer_count":int(d.reviewer_id.nunique()),
         "rated_count":int(d.relevance.notna().sum()),
         "abstained_count":int(d.relevance.isna().sum())}
+
+
+# WhatsApp remains isolated behind one router inclusion.
+try:
+    from .whatsapp.webhook import router as whatsapp_router
+except ImportError:
+    from whatsapp.webhook import router as whatsapp_router
+app.include_router(whatsapp_router)
