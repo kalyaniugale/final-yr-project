@@ -1,0 +1,7 @@
+# GIS preprocessing, K-Means, model experiments and local expert review.
+scikit-learn>=1.5,<2
+joblib>=1.4,<2
+geopandas>=1.0,<2
+matplotlib>=3.9,<4
+streamlit>=1.39,<2
+# XGBoost remains optional; install explicitly only for experiments requiring it.

@@ -1,0 +1,55 @@
+{
+  "synthetic": true,
+  "production_use_allowed": false,
+  "generated_at_utc": "2026-09-30T06:17:13.672777+00:00",
+  "random_seed": 42,
+  "source_review_queue": "C:\\Users\\Darshan\\final-yr-project\\reports\\expert_review\\review_queue.csv",
+  "source_queue_pair_count": 144,
+  "synthetic_ahp": {
+    "expert_count": 3,
+    "consistent_expert_count": 3,
+    "aggregate_consistency_ratio": 0.0,
+    "weights": {
+      "business": 0.3067558952178454,
+      "commercial": 0.19324410478215465,
+      "access": 0.1932441047821547,
+      "facilities": 0.15337794760892268,
+      "preference": 0.07668897380446131,
+      "historical": 0.07668897380446131
+    }
+  },
+  "synthetic_suitability_reviews": {
+    "reviewer_count": 4,
+    "judgment_count": 576,
+    "rated_count": 563,
+    "abstain_count": 9,
+    "site_verification_count": 4,
+    "ready_for_model_count": 140,
+    "model_dataset_rows": 140,
+    "weighted_quadratic_kappa": 0.6386217779552025
+  },
+  "random_forest_demo": {
+    "group_column": "vendor_profile_id",
+    "cv_folds": 5,
+    "baseline_mae": 0.614327895335155,
+    "random_forest_mae": 0.2473511805324305,
+    "random_forest_rmse": 0.34515960732090173,
+    "random_forest_spearman": 0.8629712321094641,
+    "random_forest_beats_baseline": true
+  },
+  "methodology_notice": "Synthetic reviewers are generated from evidence visible in the independent expert-review interface. Production MCDA scores, rankings and historical compatibility are not used in synthetic label generation.",
+  "presentation_notice": "These outputs demonstrate implementation readiness only. Final AHP weights, expert agreement and ML performance must be recomputed using real expert responses.",
+  "outputs": {
+    "ahp_reviews": "C:\\Users\\Darshan\\final-yr-project\\reports\\synthetic_demo\\synthetic_ahp_reviews.csv",
+    "ahp_policy": "C:\\Users\\Darshan\\final-yr-project\\reports\\synthetic_demo\\synthetic_ahp_policy.json",
+    "ahp_report": "C:\\Users\\Darshan\\final-yr-project\\reports\\synthetic_demo\\synthetic_ahp_report.json",
+    "expert_labels": "C:\\Users\\Darshan\\final-yr-project\\reports\\synthetic_demo\\synthetic_expert_labels.csv",
+    "aggregated_labels": "C:\\Users\\Darshan\\final-yr-project\\reports\\synthetic_demo\\aggregated_expert_labels.csv",
+    "model_dataset": "C:\\Users\\Darshan\\final-yr-project\\reports\\synthetic_demo\\model_dataset.csv",
+    "quality_report": "C:\\Users\\Darshan\\final-yr-project\\reports\\synthetic_demo\\expert_label_quality.json",
+    "feature_manifest": "C:\\Users\\Darshan\\final-yr-project\\reports\\synthetic_demo\\model_feature_manifest.json",
+    "rf_model_comparison": "C:\\Users\\Darshan\\final-yr-project\\reports\\synthetic_demo\\rf_model_comparison.json",
+    "rf_oof_predictions": "C:\\Users\\Darshan\\final-yr-project\\reports\\synthetic_demo\\rf_oof_predictions.csv",
+    "rf_model": "C:\\Users\\Darshan\\final-yr-project\\reports\\synthetic_demo\\random_forest_synthetic_demo.joblib"
+  }
+}

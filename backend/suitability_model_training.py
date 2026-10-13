@@ -65,23 +65,13 @@ from sklearn.model_selection import GroupKFold
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder
 
-try:
-    from .expert_label_aggregation import (
-        FEATURE_MANIFEST_PATH,
-        MODEL_DATASET_PATH,
-        RATING_MAX,
-        RATING_MIN,
-        quadratic_weighted_kappa,
-    )
+import sys
+from pathlib import Path
+_PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(_PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(_PROJECT_ROOT))
 
-except ImportError:
-    from expert_label_aggregation import (
-        FEATURE_MANIFEST_PATH,
-        MODEL_DATASET_PATH,
-        RATING_MAX,
-        RATING_MIN,
-        quadratic_weighted_kappa,
-    )
+from backend.expert_label_aggregation import FEATURE_MANIFEST_PATH, MODEL_DATASET_PATH, RATING_MAX, RATING_MIN, quadratic_weighted_kappa
 
 
 ROOT = Path(__file__).resolve().parents[1]

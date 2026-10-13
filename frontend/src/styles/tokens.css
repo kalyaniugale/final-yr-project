@@ -1,0 +1,8 @@
+/* Shared design tokens; richer civic palette. */
+:root{
+  --civic-navy-950:#0b2033;--civic-navy-900:#122d46;--civic-navy-800:#193e5b;
+  --civic-blue-100:#dee9f2;--civic-teal:#285e68;--civic-saffron:#a85d12;
+  --civic-ink:#182735;--civic-text:#374d60;--civic-muted:#586e80;
+  --civic-line:#c7d3dd;--civic-line-strong:#adbfce;--civic-canvas:#eaf0f3;
+  --civic-surface:#fff;--civic-radius:8px;--civic-shadow:0 1px 2px #162b3a0a,0 6px 18px #162b3a0a;
+}

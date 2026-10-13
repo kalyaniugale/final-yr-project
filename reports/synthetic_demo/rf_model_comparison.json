@@ -1,0 +1,189 @@
+{
+  "generated_at_utc": "2026-09-30T06:17:13.532963+00:00",
+  "experiment_type": "SUPERVISED_EXPERT_SUITABILITY_REGRESSION",
+  "status": "EXPERIMENTAL",
+  "dataset": {
+    "rows": 140,
+    "target": "target_relevance",
+    "target_min": 1.0,
+    "target_max": 3.5,
+    "target_mean": 2.2392857142857143,
+    "group_column": "vendor_profile_id",
+    "unique_groups": 6,
+    "cv_folds": 5,
+    "dataset_sha256": null,
+    "feature_manifest_sha256": null
+  },
+  "features": {
+    "feature_columns": [
+      "business_category",
+      "preferred_division",
+      "zone_division",
+      "environment_cluster",
+      "geometry_status",
+      "geometry_method",
+      "official_capacity",
+      "mapped_landuse_coverage_ratio_500m",
+      "commercial_poi_count_250m",
+      "market_poi_count_500m",
+      "food_poi_count_250m",
+      "distance_to_major_road_m",
+      "distance_to_bus_access_m",
+      "bus_count_500m",
+      "healthcare_count_500m",
+      "education_count_500m",
+      "toilet_count_500m",
+      "parking_count_500m"
+    ],
+    "categorical_features": [
+      "business_category",
+      "preferred_division",
+      "zone_division",
+      "environment_cluster",
+      "geometry_status",
+      "geometry_method"
+    ],
+    "numeric_features": [
+      "official_capacity",
+      "mapped_landuse_coverage_ratio_500m",
+      "commercial_poi_count_250m",
+      "market_poi_count_500m",
+      "food_poi_count_250m",
+      "distance_to_major_road_m",
+      "distance_to_bus_access_m",
+      "bus_count_500m",
+      "healthcare_count_500m",
+      "education_count_500m",
+      "toilet_count_500m",
+      "parking_count_500m"
+    ]
+  },
+  "baseline": {
+    "name": "grouped_train_fold_mean",
+    "metrics": {
+      "mae": 0.614327895335155,
+      "rmse": 0.7043528752699014,
+      "r2": -0.0032048973572160744,
+      "spearman_rank_correlation": -0.060805062556726484,
+      "within_one_point_rate": 0.8642857142857143,
+      "rounded_exact_accuracy": 0.5285714285714286,
+      "rounded_quadratic_weighted_kappa": 0.0
+    }
+  },
+  "models": {
+    "random_forest": {
+      "metrics": {
+        "mae": 0.2473511805324305,
+        "rmse": 0.34515960732090173,
+        "r2": 0.7590932368308257,
+        "spearman_rank_correlation": 0.8629712321094641,
+        "within_one_point_rate": 1.0,
+        "rounded_exact_accuracy": 0.7642857142857142,
+        "rounded_quadratic_weighted_kappa": 0.747926669576604
+      },
+      "folds": [
+        {
+          "fold": 1,
+          "train_rows": 116,
+          "validation_rows": 24,
+          "train_groups": 5,
+          "validation_groups": 1,
+          "mae": 0.2861187468010383,
+          "rmse": 0.3752799108606567,
+          "r2": 0.7161121028120543,
+          "spearman_rank_correlation": 0.8646441830447504,
+          "within_one_point_rate": 1.0,
+          "rounded_exact_accuracy": 0.75,
+          "rounded_quadratic_weighted_kappa": 0.7272727272727273
+        },
+        {
+          "fold": 2,
+          "train_rows": 116,
+          "validation_rows": 24,
+          "train_groups": 5,
+          "validation_groups": 1,
+          "mae": 0.244985722803431,
+          "rmse": 0.35505215126058987,
+          "r2": 0.6815275028679425,
+          "spearman_rank_correlation": 0.8323064959152191,
+          "within_one_point_rate": 1.0,
+          "rounded_exact_accuracy": 0.7916666666666666,
+          "rounded_quadratic_weighted_kappa": 0.7560975609756098
+        },
+        {
+          "fold": 3,
+          "train_rows": 116,
+          "validation_rows": 24,
+          "train_groups": 5,
+          "validation_groups": 1,
+          "mae": 0.25143287268287273,
+          "rmse": 0.3509540424770596,
+          "r2": 0.7113115190223801,
+          "spearman_rank_correlation": 0.8907504216564118,
+          "within_one_point_rate": 1.0,
+          "rounded_exact_accuracy": 0.75,
+          "rounded_quadratic_weighted_kappa": 0.7272727272727273
+        },
+        {
+          "fold": 4,
+          "train_rows": 95,
+          "validation_rows": 45,
+          "train_groups": 4,
+          "validation_groups": 2,
+          "mae": 0.2259988095238096,
+          "rmse": 0.33319734672698353,
+          "r2": 0.7850703102022457,
+          "spearman_rank_correlation": 0.8904825177856142,
+          "within_one_point_rate": 1.0,
+          "rounded_exact_accuracy": 0.7777777777777778,
+          "rounded_quadratic_weighted_kappa": 0.7413793103448276
+        },
+        {
+          "fold": 5,
+          "train_rows": 117,
+          "validation_rows": 23,
+          "train_groups": 5,
+          "validation_groups": 1,
+          "mae": 0.2468835926553319,
+          "rmse": 0.31769698734532614,
+          "r2": 0.8331478194330351,
+          "spearman_rank_correlation": 0.9227067966022338,
+          "within_one_point_rate": 1.0,
+          "rounded_exact_accuracy": 0.7391304347826086,
+          "rounded_quadratic_weighted_kappa": 0.7836990595611285
+        }
+      ],
+      "beats_grouped_mean_baseline_mae": true
+    }
+  },
+  "selected_model": "random_forest",
+  "selection_rule": "Lowest grouped out-of-fold MAE; RMSE then model name used only as deterministic tie-breakers.",
+  "selected_model_metrics": {
+    "mae": 0.2473511805324305,
+    "rmse": 0.34515960732090173,
+    "r2": 0.7590932368308257,
+    "spearman_rank_correlation": 0.8629712321094641,
+    "within_one_point_rate": 1.0,
+    "rounded_exact_accuracy": 0.7642857142857142,
+    "rounded_quadratic_weighted_kappa": 0.747926669576604
+  },
+  "selected_model_beats_baseline_mae": true,
+  "library_versions": {
+    "python": "3.13.15",
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "scikit_learn": "1.9.1",
+    "xgboost": null
+  },
+  "limitations": [
+    "Targets are independent expert judgments rather than observed vendor business outcomes.",
+    "Grouped cross-validation estimates generalization to unseen vendor profiles, not necessarily unseen zones.",
+    "Small expert-labelled datasets can produce unstable performance estimates.",
+    "Model selection does not establish municipal legality or operational allocation feasibility.",
+    "The supervised model remains experimental and does not replace MCDA or Goal Programming."
+  ],
+  "synthetic_demo": true,
+  "real_expert_validation": false,
+  "interpretation": "Proof-of-pipeline experiment using synthetic expert judgments. Metrics must not be reported as final real-world model performance.",
+  "synthetic_mae_improvement_percent": 59.73629353140725
+}

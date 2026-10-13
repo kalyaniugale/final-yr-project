@@ -1,0 +1,11 @@
+# Operational API, numerical ranking/planning, and geographic slot validation.
+fastapi>=0.115,<1
+uvicorn[standard]>=0.30,<1
+pydantic>=2.9,<3
+httpx>=0.27,<1
+python-dotenv>=1.0,<2
+numpy>=1.26,<3
+pandas>=2.2,<4
+scipy>=1.11,<2
+shapely>=2.0,<3
+pyproj>=3.6,<4

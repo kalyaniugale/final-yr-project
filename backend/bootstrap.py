@@ -3,14 +3,15 @@ from __future__ import annotations
 
 from pathlib import Path
 
-try:
-    from .app_config import get_auth_settings
-    from .auth_service import HISTORICAL_VENDOR_SOURCE, seed_historical_vendor_identities
-    from .database import DATABASE_PATH, OFFICIAL_ZONES_PATH, initialize_database
-except ImportError:
-    from app_config import get_auth_settings
-    from auth_service import HISTORICAL_VENDOR_SOURCE, seed_historical_vendor_identities
-    from database import DATABASE_PATH, OFFICIAL_ZONES_PATH, initialize_database
+import sys
+from pathlib import Path
+_PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(_PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(_PROJECT_ROOT))
+
+from backend.app_config import get_auth_settings
+from backend.auth_service import HISTORICAL_VENDOR_SOURCE, seed_historical_vendor_identities
+from backend.database import DATABASE_PATH, OFFICIAL_ZONES_PATH, initialize_database
 
 
 def initialize_application(

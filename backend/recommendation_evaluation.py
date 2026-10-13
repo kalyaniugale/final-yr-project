@@ -44,28 +44,14 @@ from typing import Any, Mapping, Sequence
 import numpy as np
 import pandas as pd
 
-try:
-    from .decision_policy import (
-        FACTOR_ORDER,
-        derive_mcda_weights,
-        normalize_weights,
-    )
-    from .mcda_engine import (
-        ROOT,
-        rank_candidates,
-        score_candidates,
-    )
-except ImportError:  # Supports direct execution.
-    from decision_policy import (
-        FACTOR_ORDER,
-        derive_mcda_weights,
-        normalize_weights,
-    )
-    from mcda_engine import (
-        ROOT,
-        rank_candidates,
-        score_candidates,
-    )
+import sys
+from pathlib import Path
+_PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(_PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(_PROJECT_ROOT))
+
+from backend.decision_policy import FACTOR_ORDER, derive_mcda_weights, normalize_weights
+from backend.mcda_engine import ROOT, rank_candidates, score_candidates
 
 
 DEFAULT_REPORT_DIR = (

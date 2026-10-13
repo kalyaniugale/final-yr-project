@@ -29,22 +29,14 @@ from typing import Mapping
 import numpy as np
 import pandas as pd
 
-try:
-    from .database import DATABASE_PATH, get_live_zone_status_map
-    from .decision_policy import (
-        FACTOR_ORDER,
-        RESEARCH_BASELINE_WEIGHTS,
-        derive_mcda_weights,
-        normalize_weights,
-    )
-except ImportError:  # Supports direct script execution.
-    from database import DATABASE_PATH, get_live_zone_status_map
-    from decision_policy import (
-        FACTOR_ORDER,
-        RESEARCH_BASELINE_WEIGHTS,
-        derive_mcda_weights,
-        normalize_weights,
-    )
+import sys
+from pathlib import Path
+_PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(_PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(_PROJECT_ROOT))
+
+from backend.database import DATABASE_PATH, get_live_zone_status_map
+from backend.decision_policy import FACTOR_ORDER, RESEARCH_BASELINE_WEIGHTS, derive_mcda_weights, normalize_weights
 
 
 ROOT = Path(__file__).resolve().parents[1]

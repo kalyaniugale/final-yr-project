@@ -7,7 +7,8 @@ import argparse, hashlib, json, sys
 from datetime import datetime, timezone
 from pathlib import Path
 import pandas as pd
-from mcda_engine import ROOT, DATA, CATEGORIES, load
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from research.mcda_baseline import ROOT, DATA, CATEGORIES, load
 
 OUT=ROOT/"reports/expert_review"
 QUEUE=OUT/"review_queue.csv"

@@ -4,7 +4,7 @@ React, FastAPI, and SQLite decision-support application with separate authentica
 
 ## Authentication configuration
 
-Copy `.env.example` to `.env` in the repository root and configure its values. Do not commit the resulting secrets. The backend resolves this file from `backend/app_config.py`, so both Uvicorn and direct scripts load the same configuration regardless of the current working directory. Values already defined in the process environment take precedence over `.env`.
+Copy `.env.example` to `.env` in the repository root and configure its values. Do not commit the resulting secrets. The backend resolves this file from `backend/core/config.py` (with the original module retained as a compatibility wrapper), so both Uvicorn and direct scripts load the same configuration regardless of the current working directory. Values already defined in the process environment take precedence over `.env`.
 
 ```text
 APP_ENV=development
@@ -50,7 +50,7 @@ Frontend:
 
 ```powershell
 cd frontend
-npm install
+npm ci
 npm run dev
 ```
 
@@ -67,9 +67,9 @@ Sessions use an HttpOnly, SameSite=Lax cookie. SQLite stores only hashes of sess
 ## Tests and build
 
 ```powershell
-pytest
+python -m pytest -q
 cd frontend
-npm test -- --run
+npm test
 npm run build
 ```
 
@@ -78,3 +78,9 @@ Tests use isolated temporary databases and an explicit test-only authorization b
 ## Model integrity
 
 Authentication does not modify K-Means, MCDA weights, personalization multipliers, live-capacity rules, or allocation business logic. Historical vendor associations are evidence only and are never treated as current occupancy. Map points remain analytical references, not legal zone boundaries.
+
+## Code organization and maintenance
+
+See [architecture](docs/architecture.md) for the final folder tree, module relationships, compatibility entry points and protected assets; [migration checklist](docs/migration-checklist.md) for phases and reversibility; and [deployment](docs/deployment.md) for dependency groups, configuration and PowerShell commands. [Removal evidence](docs/deletion-manifest.json) and [frontend moves](docs/frontend-moves.json) document source cleanup.
+
+The operational engine remains `backend.mcda_engine`; the different historical baseline is `research.mcda_baseline`, with `scripts/mcda_engine.py` retained as a compatibility entry. No database migration or model regeneration is required by this refactor.

@@ -1,0 +1,96 @@
+{
+  "synthetic": true,
+  "real_expert_validation": false,
+  "production_use_allowed": false,
+  "rows": 140,
+  "group_column": "vendor_profile_id",
+  "unique_groups": 6,
+  "cv_folds": 5,
+  "baseline": {
+    "mae": 0.614327895335155,
+    "rmse": 0.7043528752699014,
+    "spearman": -0.060805062556726484,
+    "within_one": 0.8642857142857143,
+    "r2": -0.0032048973572160744
+  },
+  "random_forest": {
+    "mae": 0.24692783392203027,
+    "rmse": 0.345092289953834,
+    "spearman": 0.864003010766754,
+    "within_one": 1.0,
+    "r2": 0.7591871970000889,
+    "mae_improvement_over_baseline_percent": 59.80520568949333
+  },
+  "xgboost": {
+    "mae": 0.2553880078451974,
+    "rmse": 0.3613453662844864,
+    "spearman": 0.8579463384973824,
+    "within_one": 0.9857142857142858,
+    "r2": 0.7359695354557494,
+    "mae_improvement_over_baseline_percent": 58.428062638134485
+  },
+  "selected_model": "random_forest",
+  "top_shap_features": [
+    {
+      "feature": "numeric__commercial_poi_count_250m",
+      "mean_absolute_shap": 0.38492724299430847
+    },
+    {
+      "feature": "numeric__education_count_500m",
+      "mean_absolute_shap": 0.11063729971647263
+    },
+    {
+      "feature": "categorical__environment_cluster_0.0",
+      "mean_absolute_shap": 0.0876261293888092
+    },
+    {
+      "feature": "numeric__mapped_landuse_coverage_ratio_500m",
+      "mean_absolute_shap": 0.052791472524404526
+    },
+    {
+      "feature": "numeric__distance_to_bus_access_m",
+      "mean_absolute_shap": 0.05185981094837189
+    },
+    {
+      "feature": "categorical__preferred_division_Nashik West",
+      "mean_absolute_shap": 0.039402734488248825
+    },
+    {
+      "feature": "categorical__business_category_clothing",
+      "mean_absolute_shap": 0.03511011227965355
+    },
+    {
+      "feature": "numeric__market_poi_count_500m",
+      "mean_absolute_shap": 0.03061535395681858
+    },
+    {
+      "feature": "categorical__business_category_vegetable_fruit",
+      "mean_absolute_shap": 0.02787434123456478
+    },
+    {
+      "feature": "categorical__business_category_other",
+      "mean_absolute_shap": 0.025555504485964775
+    },
+    {
+      "feature": "categorical__business_category_food",
+      "mean_absolute_shap": 0.02263523079454899
+    },
+    {
+      "feature": "categorical__business_category_flower",
+      "mean_absolute_shap": 0.022132478654384613
+    },
+    {
+      "feature": "categorical__business_category_general_goods",
+      "mean_absolute_shap": 0.02199513278901577
+    },
+    {
+      "feature": "numeric__distance_to_major_road_m",
+      "mean_absolute_shap": 0.02083265408873558
+    },
+    {
+      "feature": "numeric__official_capacity",
+      "mean_absolute_shap": 0.020582199096679688
+    }
+  ],
+  "interpretation": "Synthetic proof-of-pipeline experiment. Performance and SHAP results must be recomputed using real independent expert labels."
+}

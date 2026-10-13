@@ -1,0 +1,11 @@
+{
+  "foundation_sources": [
+    "ImplementationApp.css",
+    "RoleShell.css",
+    "Polish.css",
+    "MunicipalTheme.css",
+    "ServiceTheme.css"
+  ],
+  "exact_duplicate_rules_removed": 20,
+  "dead_pilot_rules_removed": 15
+}

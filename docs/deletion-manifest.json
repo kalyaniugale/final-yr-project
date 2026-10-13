@@ -1,0 +1,46 @@
+[
+  {
+    "path": "app/api.py",
+    "reason": "Zero-byte placeholder; repository reference search found no caller. Real API/training/recommendation entry points remain."
+  },
+  {
+    "path": "scripts/05_train_suitability.py",
+    "reason": "Zero-byte placeholder; repository reference search found no caller. Real API/training/recommendation entry points remain."
+  },
+  {
+    "path": "scripts/06_evaluate_models.py",
+    "reason": "Zero-byte placeholder; repository reference search found no caller. Real API/training/recommendation entry points remain."
+  },
+  {
+    "path": "scripts/07_recommend.py",
+    "reason": "Zero-byte placeholder; repository reference search found no caller. Real API/training/recommendation entry points remain."
+  },
+  {
+    "path": "scripts/08_test_scenarios.py",
+    "reason": "Zero-byte placeholder; repository reference search found no caller. Real API/training/recommendation entry points remain."
+  },
+  {
+    "path": "images.jpg",
+    "reason": "Byte-identical to frontend/public/nmc-logo.jpg; source references use /nmc-logo.jpg and no root asset reference was found."
+  },
+  {
+    "path": "frontend/src/ImplementationApp.css",
+    "reason": "Consolidated in styles/foundation.css and styles/tokens.css; source declaration order retained. Not discarded."
+  },
+  {
+    "path": "frontend/src/RoleShell.css",
+    "reason": "Consolidated in styles/foundation.css and styles/tokens.css; source declaration order retained. Not discarded."
+  },
+  {
+    "path": "frontend/src/Polish.css",
+    "reason": "Consolidated in styles/foundation.css and styles/tokens.css; source declaration order retained. Not discarded."
+  },
+  {
+    "path": "frontend/src/MunicipalTheme.css",
+    "reason": "Consolidated in styles/foundation.css and styles/tokens.css; source declaration order retained. Not discarded."
+  },
+  {
+    "path": "frontend/src/ServiceTheme.css",
+    "reason": "Consolidated in styles/foundation.css and styles/tokens.css; source declaration order retained. Not discarded."
+  }
+]

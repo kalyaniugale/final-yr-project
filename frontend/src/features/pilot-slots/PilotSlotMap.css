@@ -1,0 +1,58 @@
+.pilot-panel {background:#fff; color:#203849; border:1px solid #dce5ea; border-radius:12px; padding:24px; margin:20px 0;}
+.pilot-geographic .pilot-context-map {height:640px; min-height:480px;}
+.pilot-map-frame {position:relative;}
+.pilot-map-actions,.pilot-navigation-controls>div {display:flex; gap:8px; flex-wrap:wrap;}
+.pilot-generation,.pilot-draft-banner {display:flex; gap:14px; align-items:end; flex-wrap:wrap; padding:14px; margin-bottom:18px; background:#f1f6fa; border-radius:8px; font-size:12px;}
+.pilot-generation label,.pilot-edit-controls label {display:grid; gap:6px;}
+.pilot-geographic input:not([type=checkbox]),.pilot-generation select {padding:9px; border:1px solid #cad9e3; border-radius:6px; background:white; font:inherit; width:100%;}
+.pilot-draft-banner {background:#fff6df; align-items:center; border:1px solid #ebd399;}
+.pilot-draft-banner label {display:flex; align-items:center; gap:7px;}
+.pilot-edit-controls {display:grid; gap:12px; margin-top:20px; font-size:12px;}
+.pilot-edit-controls h4 {margin:6px 0;}
+.pilot-drag-handle {background:white; color:#174b77; border:2px solid #174b77; border-radius:50%; text-align:center; line-height:26px; font-size:20px; cursor:move; box-shadow:0 1px 8px #0003;}
+.pilot-map-label.leaflet-tooltip {background:#fff; color:#102b47; font-size:12px; font-weight:750; padding:2px 5px; border:1px solid #afc0cd; border-radius:4px; box-shadow:0 1px 3px #0002; pointer-events:none;}
+.pilot-context-map[data-slot-labels=hidden] .pilot-map-label:not(.pilot-label-assigned):not(.pilot-label-focused) {display:none;}
+.pilot-label-assigned.leaflet-tooltip {border:2px solid #071f60; color:#071f60;}
+.pilot-floating-destination {position:absolute; left:16px; right:16px; bottom:16px; z-index:450; background:#fffef3; border-left:5px solid #174b77; box-shadow:0 3px 15px #0003; border-radius:7px; padding:12px; display:grid; gap:5px; pointer-events:none; font-size:13px;}
+.pilot-floating-destination small {color:#637888;}
+.pilot-navigation-controls {font-size:13px; line-height:1.6;}
+.pilot-navigation-controls>div {margin:12px 0;}
+.pilot-navigation-controls button {min-height:42px;}
+.pilot-vendor .pilot-workspace {grid-template-columns:minmax(0,1fr) 240px;}
+@media(max-width:1000px) {.pilot-vendor .pilot-workspace {grid-template-columns:1fr;}}
+@media(max-width:600px) {.pilot-geographic .pilot-context-map {height:62vh; min-height:410px;} .pilot-generation {align-items:stretch;} .pilot-generation label,.pilot-generation>button {width:100%;} .pilot-floating-destination {left:8px; right:8px; bottom:8px;} .pilot-vendor .pilot-details {padding:12px;} .pilot-vendor .pilot-details dl {display:grid; grid-template-columns:1fr 1fr;}}
+.pilot-panel[hidden], .pilot-panel [hidden] {display:none!important;}
+.pilot-header,.pilot-toolbar {display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;}
+.pilot-header h2 {margin:6px 0; font-size:24px;}
+.pilot-header p {margin:0; color:#637888;}
+.pilot-panel button {padding:10px 14px; border:1px solid #cad9e3; border-radius:7px; background:#f5f8fa; color:#174b77; cursor:pointer; font:inherit; font-size:13px;}
+.pilot-panel button:hover {background:#e7f0f7;}
+.pilot-panel button:disabled {opacity:.6; cursor:wait;}
+.pilot-panel button[aria-pressed=true] {background:#174b77; color:white;}
+.pilot-panel :focus-visible {outline:3px solid #28658f; outline-offset:3px;}
+.pilot-warning {padding:14px 16px; background:#fff8e8; border-left:4px solid #c58c25; font-size:13px; line-height:1.65;}
+.pilot-error {padding:12px; background:#fff0f0; color:#a62929;}
+.pilot-assignment {padding:12px; background:#edf5fb; font-size:14px;}
+.pilot-toolbar {margin:20px 0;}
+.pilot-toolbar [role=group] {display:flex; gap:8px; flex-wrap:wrap;}
+.pilot-workspace {display:grid; grid-template-columns:minmax(0,1fr) 280px; gap:20px;}
+.pilot-visual {min-width:0; border:1px solid #e0e8ed; border-radius:10px; padding:16px; background:#fbfdfe;}
+.pilot-legend {display:flex; gap:14px; flex-wrap:wrap; font-size:11px; margin:12px 0;}
+.pilot-legend span {display:flex; align-items:center; gap:6px;}
+.pilot-legend i {width:11px; height:11px; border-radius:3px;}
+.pilot-context-note {font-size:12px; color:#627888; line-height:1.65;}
+.pilot-context-map {height:460px; width:100%; border-radius:7px; z-index:0;}
+.pilot-details {padding:18px; background:#f5f8fa; border-radius:10px;}
+.pilot-details h3 {font-size:28px; margin:10px 0;}
+.pilot-details p {font-size:14px; line-height:1.7;}
+.pilot-status {display:inline-block; border-left:4px solid; background:white; padding:6px 9px; font-size:12px; font-weight:700;}
+.pilot-details dl {font-size:13px;}
+.pilot-details dl div {padding:9px 0; border-bottom:1px solid #dce5ea;}
+.pilot-details dt {color:#627888; margin-bottom:4px;}
+.pilot-details dd {margin:0; overflow-wrap:anywhere; font-weight:600;}
+.pilot-details form,.pilot-details label {display:grid; gap:8px;}
+.pilot-details form {gap:14px; font-size:13px;}
+.pilot-details select {width:100%; padding:9px; border:1px solid #cad9e3; border-radius:6px; background:white; font:inherit;}
+.pilot-details small {font-size:11px; line-height:1.6; color:#637888;}
+@media(max-width:1000px) {.pilot-workspace {grid-template-columns:1fr;} .pilot-details dl {display:grid; grid-template-columns:1fr 1fr; gap:12px;}}
+@media(max-width:600px) {.pilot-panel {padding:14px;} .pilot-header h2 {font-size:20px;} .pilot-visual {padding:10px;} .pilot-context-map {height:380px;} .pilot-details dl {grid-template-columns:1fr;} .pilot-header>button {width:100%;}}

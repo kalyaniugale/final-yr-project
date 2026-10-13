@@ -62,3 +62,10 @@ data/raw/nmc/vendors.csv
 # Private credentials or officer-maintained live records
 data/raw/nmc/zone_live_status.csv
 reports/expert_review/expert_labels.csv
+
+# Tooling / browser review artifacts (source tests and curated reports remain tracked)
+.coverage
+htmlcov/
+playwright-report/
+test-results/
+*.tsbuildinfo

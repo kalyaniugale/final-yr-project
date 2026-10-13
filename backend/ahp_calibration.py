@@ -30,25 +30,13 @@ from typing import Any, Iterable
 import numpy as np
 import pandas as pd
 
-try:
-    from .decision_policy import (
-        DEFAULT_POLICY_PATH,
-        FACTOR_ORDER,
-        AhpResult,
-        aggregate_ahp_matrices,
-        calculate_ahp_weights,
-        save_ahp_policy,
-    )
+import sys
+from pathlib import Path
+_PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(_PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(_PROJECT_ROOT))
 
-except ImportError:
-    from decision_policy import (
-        DEFAULT_POLICY_PATH,
-        FACTOR_ORDER,
-        AhpResult,
-        aggregate_ahp_matrices,
-        calculate_ahp_weights,
-        save_ahp_policy,
-    )
+from backend.decision_policy import DEFAULT_POLICY_PATH, FACTOR_ORDER, AhpResult, aggregate_ahp_matrices, calculate_ahp_weights, save_ahp_policy
 
 
 ROOT = Path(__file__).resolve().parents[1]

@@ -28,50 +28,16 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Any, Sequence
 
-try:
-    from .allocation_optimizer import (
-        AllocationDemand,
-        AllocationPlan,
-        OptimizationConfig,
-        optimize_allocations,
-    )
+import sys
+from pathlib import Path
+_PROJECT_ROOT = Path(__file__).resolve().parents[1]
+if str(_PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(_PROJECT_ROOT))
 
-    from .database import (
-        DATABASE_PATH,
-        get_active_allocation_for_vendor,
-        list_allocation_requests,
-    )
-
-    from .decision_policy import (
-        derive_mcda_weights,
-    )
-
-    from .vendor_service import (
-        get_vendor_profile,
-    )
-
-except ImportError:
-
-    from allocation_optimizer import (
-        AllocationDemand,
-        AllocationPlan,
-        OptimizationConfig,
-        optimize_allocations,
-    )
-
-    from database import (
-        DATABASE_PATH,
-        get_active_allocation_for_vendor,
-        list_allocation_requests,
-    )
-
-    from decision_policy import (
-        derive_mcda_weights,
-    )
-
-    from vendor_service import (
-        get_vendor_profile,
-    )
+from backend.allocation_optimizer import AllocationDemand, AllocationPlan, OptimizationConfig, optimize_allocations
+from backend.database import DATABASE_PATH, get_active_allocation_for_vendor, list_allocation_requests
+from backend.decision_policy import derive_mcda_weights
+from backend.vendor_service import get_vendor_profile
 
 
 class AllocationPlanningValidationError(

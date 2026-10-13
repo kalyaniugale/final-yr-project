@@ -1,0 +1,142 @@
+{
+  "generated_at_utc": "2026-09-30T06:17:09.372426+00:00",
+  "evaluation_type": "INDEPENDENT_EXPERT_LABEL_QUALITY",
+  "queue_pair_count": 144,
+  "label_row_count": 576,
+  "reviewer_count": 4,
+  "ready_for_model_count": 140,
+  "model_dataset_row_count": 140,
+  "quality_rules": {
+    "min_raters": 3,
+    "max_rating_range": 2,
+    "max_rating_std": 1.0,
+    "exclude_if_site_verification_requested": true,
+    "min_common_pairs_for_kappa": 5
+  },
+  "label_status_counts": {
+    "READY_FOR_MODEL": 140,
+    "SITE_VERIFICATION_REQUIRED": 4
+  },
+  "recommendation_distribution": {
+    "Sufficient evidence to rate": 563,
+    "Insufficient evidence / abstain": 9,
+    "Requires site verification": 4
+  },
+  "rating_distribution": {
+    "0": 2,
+    "1": 107,
+    "2": 237,
+    "3": 200,
+    "4": 17
+  },
+  "reviewer_summary": [
+    {
+      "reviewer_id": "SYNTHETIC_REVIEWER_01",
+      "judgment_count": 144,
+      "numeric_rating_count": 144,
+      "abstain_count": 0,
+      "site_verification_count": 0
+    },
+    {
+      "reviewer_id": "SYNTHETIC_REVIEWER_02",
+      "judgment_count": 144,
+      "numeric_rating_count": 144,
+      "abstain_count": 0,
+      "site_verification_count": 0
+    },
+    {
+      "reviewer_id": "SYNTHETIC_REVIEWER_03",
+      "judgment_count": 144,
+      "numeric_rating_count": 144,
+      "abstain_count": 0,
+      "site_verification_count": 0
+    },
+    {
+      "reviewer_id": "SYNTHETIC_REVIEWER_04",
+      "judgment_count": 144,
+      "numeric_rating_count": 131,
+      "abstain_count": 9,
+      "site_verification_count": 4
+    }
+  ],
+  "reviewer_pair_agreement": [
+    {
+      "reviewer_a": "SYNTHETIC_REVIEWER_01",
+      "reviewer_b": "SYNTHETIC_REVIEWER_02",
+      "common_rated_pairs": 144,
+      "exact_agreement_rate": 0.5138888888888888,
+      "quadratic_weighted_kappa": 0.5913978494623655
+    },
+    {
+      "reviewer_a": "SYNTHETIC_REVIEWER_01",
+      "reviewer_b": "SYNTHETIC_REVIEWER_03",
+      "common_rated_pairs": 144,
+      "exact_agreement_rate": 0.5347222222222222,
+      "quadratic_weighted_kappa": 0.6172539489671932
+    },
+    {
+      "reviewer_a": "SYNTHETIC_REVIEWER_01",
+      "reviewer_b": "SYNTHETIC_REVIEWER_04",
+      "common_rated_pairs": 131,
+      "exact_agreement_rate": 0.5190839694656488,
+      "quadratic_weighted_kappa": 0.6373811529666626
+    },
+    {
+      "reviewer_a": "SYNTHETIC_REVIEWER_02",
+      "reviewer_b": "SYNTHETIC_REVIEWER_03",
+      "common_rated_pairs": 144,
+      "exact_agreement_rate": 0.7083333333333334,
+      "quadratic_weighted_kappa": 0.7
+    },
+    {
+      "reviewer_a": "SYNTHETIC_REVIEWER_02",
+      "reviewer_b": "SYNTHETIC_REVIEWER_04",
+      "common_rated_pairs": 131,
+      "exact_agreement_rate": 0.5725190839694656,
+      "quadratic_weighted_kappa": 0.6410625551479125
+    },
+    {
+      "reviewer_a": "SYNTHETIC_REVIEWER_03",
+      "reviewer_b": "SYNTHETIC_REVIEWER_04",
+      "common_rated_pairs": 131,
+      "exact_agreement_rate": 0.5801526717557252,
+      "quadratic_weighted_kappa": 0.645351008215086
+    }
+  ],
+  "agreement_summary": {
+    "metric": "Pairwise quadratic-weighted Cohen kappa on common numeric-rated pairs",
+    "minimum_common_pairs": 5,
+    "eligible_reviewer_pairs": 6,
+    "weighted_mean_quadratic_kappa": 0.6386217779552025,
+    "weighted_mean_exact_agreement": 0.5721212121212121
+  },
+  "model_features": [
+    "business_category",
+    "preferred_division",
+    "zone_division",
+    "environment_cluster",
+    "geometry_status",
+    "geometry_method",
+    "official_capacity",
+    "mapped_landuse_coverage_ratio_500m",
+    "commercial_poi_count_250m",
+    "market_poi_count_500m",
+    "food_poi_count_250m",
+    "distance_to_major_road_m",
+    "distance_to_bus_access_m",
+    "bus_count_500m",
+    "healthcare_count_500m",
+    "education_count_500m",
+    "toilet_count_500m",
+    "parking_count_500m"
+  ],
+  "missing_configured_features": [],
+  "target": "target_relevance",
+  "limitations": [
+    "Expert suitability ratings are research judgments rather than observed business outcomes.",
+    "Reviewer agreement does not establish predictive accuracy or municipal legality.",
+    "Pairs requesting site verification are excluded from the model dataset by default.",
+    "MCDA outputs and historical compatibility are excluded from supervised-model features to reduce circularity.",
+    "Small expert samples may produce unstable agreement statistics and limited supervised-model generalization."
+  ]
+}

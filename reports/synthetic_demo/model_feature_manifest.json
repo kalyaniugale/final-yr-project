@@ -1,0 +1,87 @@
+{
+  "dataset_purpose": "Experimental supervised learning of independent expert suitability judgments.",
+  "target": "target_relevance",
+  "target_scale": {
+    "minimum": 0,
+    "maximum": 4,
+    "meaning": "Median independent expert suitability rating on the 0–4 ordinal scale."
+  },
+  "normalized_target": "target_normalized",
+  "metadata_columns": [
+    "pair_id",
+    "vendor_profile_id",
+    "zone_id",
+    "evidence_version"
+  ],
+  "categorical_features": [
+    "business_category",
+    "preferred_division",
+    "zone_division",
+    "environment_cluster",
+    "geometry_status",
+    "geometry_method"
+  ],
+  "numeric_features": [
+    "official_capacity",
+    "mapped_landuse_coverage_ratio_500m",
+    "commercial_poi_count_250m",
+    "market_poi_count_500m",
+    "food_poi_count_250m",
+    "distance_to_major_road_m",
+    "distance_to_bus_access_m",
+    "bus_count_500m",
+    "healthcare_count_500m",
+    "education_count_500m",
+    "toilet_count_500m",
+    "parking_count_500m"
+  ],
+  "feature_columns": [
+    "business_category",
+    "preferred_division",
+    "zone_division",
+    "environment_cluster",
+    "geometry_status",
+    "geometry_method",
+    "official_capacity",
+    "mapped_landuse_coverage_ratio_500m",
+    "commercial_poi_count_250m",
+    "market_poi_count_500m",
+    "food_poi_count_250m",
+    "distance_to_major_road_m",
+    "distance_to_bus_access_m",
+    "bus_count_500m",
+    "healthcare_count_500m",
+    "education_count_500m",
+    "toilet_count_500m",
+    "parking_count_500m"
+  ],
+  "missing_configured_features": [],
+  "audit_only_columns": [
+    "rating_mean",
+    "rating_median",
+    "rating_std",
+    "rating_range",
+    "rated_count",
+    "review_count",
+    "abstain_count",
+    "site_verification_count"
+  ],
+  "explicitly_excluded_from_features": [
+    "pair_id",
+    "vendor_profile_id",
+    "zone_id",
+    "evidence_version",
+    "reviewer_id",
+    "reviewed_at_utc",
+    "reason",
+    "confidence",
+    "recommendation",
+    "relevance",
+    "MCDA score",
+    "MCDA ranking",
+    "MCDA factor contributions",
+    "historical business compatibility",
+    "same-business historical count"
+  ],
+  "leakage_policy": "Only feature_columns listed in this manifest may be supplied to the supervised model. Additional queue columns must not be automatically included."
+}

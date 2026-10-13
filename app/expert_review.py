@@ -11,8 +11,8 @@ import pandas as pd
 import streamlit as st
 
 ROOT=Path(__file__).resolve().parents[1]
-sys.path.insert(0,str(ROOT/"scripts"))
-from review_queue import prepare, QUEUE, LABELS, OUT
+sys.path.insert(0,str(ROOT))
+from scripts.review_queue import prepare, QUEUE, LABELS, OUT
 OUT=ROOT/"reports/expert_review"
 QUEUE=OUT/"review_queue.csv"
 LABELS=OUT/"expert_labels.csv"

@@ -1,0 +1,46 @@
+﻿expert_id,factor_a,factor_a_label,factor_b,factor_b_label,comparison_value,reason
+SYNTHETIC_EXPERT_01,business,Business Compatibility,commercial,Commercial Surroundings,2,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_01,business,Business Compatibility,access,Road and Transport Access,2,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_01,business,Business Compatibility,facilities,Nearby Facilities,2,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_01,business,Business Compatibility,preference,Preferred Division,4,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_01,business,Business Compatibility,historical,Historical Evidence,4,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_01,commercial,Commercial Surroundings,access,Road and Transport Access,1,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_01,commercial,Commercial Surroundings,facilities,Nearby Facilities,1,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_01,commercial,Commercial Surroundings,preference,Preferred Division,2,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_01,commercial,Commercial Surroundings,historical,Historical Evidence,2,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_01,access,Road and Transport Access,facilities,Nearby Facilities,1,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_01,access,Road and Transport Access,preference,Preferred Division,2,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_01,access,Road and Transport Access,historical,Historical Evidence,2,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_01,facilities,Nearby Facilities,preference,Preferred Division,2,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_01,facilities,Nearby Facilities,historical,Historical Evidence,2,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_01,preference,Preferred Division,historical,Historical Evidence,1,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_02,business,Business Compatibility,commercial,Commercial Surroundings,1,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_02,business,Business Compatibility,access,Road and Transport Access,2,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_02,business,Business Compatibility,facilities,Nearby Facilities,2,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_02,business,Business Compatibility,preference,Preferred Division,4,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_02,business,Business Compatibility,historical,Historical Evidence,4,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_02,commercial,Commercial Surroundings,access,Road and Transport Access,2,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_02,commercial,Commercial Surroundings,facilities,Nearby Facilities,2,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_02,commercial,Commercial Surroundings,preference,Preferred Division,4,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_02,commercial,Commercial Surroundings,historical,Historical Evidence,4,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_02,access,Road and Transport Access,facilities,Nearby Facilities,1,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_02,access,Road and Transport Access,preference,Preferred Division,2,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_02,access,Road and Transport Access,historical,Historical Evidence,2,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_02,facilities,Nearby Facilities,preference,Preferred Division,2,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_02,facilities,Nearby Facilities,historical,Historical Evidence,2,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_02,preference,Preferred Division,historical,Historical Evidence,1,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_03,business,Business Compatibility,commercial,Commercial Surroundings,2,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_03,business,Business Compatibility,access,Road and Transport Access,1,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_03,business,Business Compatibility,facilities,Nearby Facilities,2,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_03,business,Business Compatibility,preference,Preferred Division,4,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_03,business,Business Compatibility,historical,Historical Evidence,4,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_03,commercial,Commercial Surroundings,access,Road and Transport Access,1/2,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_03,commercial,Commercial Surroundings,facilities,Nearby Facilities,1,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_03,commercial,Commercial Surroundings,preference,Preferred Division,2,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_03,commercial,Commercial Surroundings,historical,Historical Evidence,2,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_03,access,Road and Transport Access,facilities,Nearby Facilities,2,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_03,access,Road and Transport Access,preference,Preferred Division,4,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_03,access,Road and Transport Access,historical,Historical Evidence,4,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_03,facilities,Nearby Facilities,preference,Preferred Division,2,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_03,facilities,Nearby Facilities,historical,Historical Evidence,2,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.
+SYNTHETIC_EXPERT_03,preference,Preferred Division,historical,Historical Evidence,1,SYNTHETIC DEMO judgment generated from a predefined internally consistent priority vector. Not a real expert response.

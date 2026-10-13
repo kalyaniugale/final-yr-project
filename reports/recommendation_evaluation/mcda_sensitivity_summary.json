@@ -1,0 +1,78 @@
+{
+  "generated_at_utc": "2026-09-30T03:09:32.230652+00:00",
+  "evaluation_type": "MCDA_WEIGHT_SENSITIVITY",
+  "interpretation": "Measures ranking robustness to weight perturbation. It does not measure predictive accuracy or real-world business success.",
+  "request": {
+    "business": "food",
+    "division": "Nashik West",
+    "vendor_id": "",
+    "exclude_zone": "",
+    "require_verified": false,
+    "use_live_status": false,
+    "top_n": 3
+  },
+  "candidate_snapshot": {
+    "candidate_count": 146,
+    "candidate_count_before_live_filter": 146,
+    "candidate_count_after_live_filter": 146,
+    "candidate_count_after_verified_filter": 146
+  },
+  "weight_policy": {
+    "source": "RESEARCH_BASELINE",
+    "ahp_consistency_ratio": null,
+    "baseline_weights": {
+      "business": 0.25,
+      "commercial": 0.2,
+      "access": 0.2,
+      "facilities": 0.15,
+      "preference": 0.1,
+      "historical": 0.1
+    }
+  },
+  "sensitivity_configuration": {
+    "top_n": 3,
+    "one_at_a_time_deltas": [
+      0.1,
+      0.2
+    ],
+    "monte_carlo_samples": 200,
+    "monte_carlo_delta": 0.2,
+    "random_seed": 42
+  },
+  "baseline_recommendations": [
+    {
+      "rank": 1,
+      "zone_id": "NW_F_025",
+      "zone_division": "Nashik West",
+      "score": 72.14048989241573,
+      "fallback_used": false
+    },
+    {
+      "rank": 2,
+      "zone_id": "NW_F_005",
+      "zone_division": "Nashik West",
+      "score": 70.98073289975817,
+      "fallback_used": false
+    },
+    {
+      "rank": 3,
+      "zone_id": "NW_F_001",
+      "zone_division": "Nashik West",
+      "score": 56.71630735811376,
+      "fallback_used": false
+    }
+  ],
+  "summary": {
+    "scenario_count": 224,
+    "top1_stability_rate": 1.0,
+    "ordered_top_k_stability_rate": 0.5669642857142857,
+    "mean_top_k_retention": 0.8556547619047619,
+    "minimum_top_k_retention": 0.6666666666666666,
+    "mean_top_k_jaccard": 0.7834821428571429,
+    "minimum_top_k_jaccard": 0.5,
+    "mean_rank_correlation": 0.9977438299700745,
+    "minimum_rank_correlation": 0.9930089749645726,
+    "mean_absolute_rank_shift": 1.812805772994129,
+    "maximum_rank_shift": 19
+  }
+}

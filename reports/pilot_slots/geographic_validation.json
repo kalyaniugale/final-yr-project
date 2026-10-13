@@ -1,0 +1,43 @@
+{
+  "review_date": "2026-10-10",
+  "source_sha256": "06258e55bda7a9091127b27779b28e12f26797afd4e964add5241631c74d8841",
+  "validation": {
+    "valid": true,
+    "slot_count": 10,
+    "metric_crs": "EPSG:32643",
+    "dimension_tolerance_m": 0.002,
+    "containment": "PASS",
+    "spacing": "PASS",
+    "pedestrian_clearance": "PASS",
+    "unknown_obstructions_assessed": false,
+    "counts": {
+      "Boundary A": 5,
+      "Boundary B": 5
+    }
+  },
+  "maximum_edge_error_m": 1.873225130566425e-09,
+  "minimum_slot_spacing_m": 0.49999999912343474,
+  "source_boundary_areas_m2": {
+    "Boundary A": 1377.8657489610378,
+    "Boundary B": 1283.3489837426205
+  },
+  "corridor_width_m": 1.2,
+  "slot_ids": {
+    "2974": [
+      "S001",
+      "S002",
+      "S003",
+      "S004",
+      "S005"
+    ],
+    "3577": [
+      "S006",
+      "S007",
+      "S008",
+      "S009",
+      "S010"
+    ]
+  },
+  "site_verification": false,
+  "routing_live_tested": false
+}

@@ -1,0 +1,26 @@
+{
+  "synthetic": true,
+  "production_policy": false,
+  "source": "SYNTHETIC_DEMO_AHP",
+  "generated_at_utc": "2026-09-30T06:17:07.299488+00:00",
+  "expert_count": 3,
+  "consistent_expert_count": 3,
+  "included_experts": [
+    "SYNTHETIC_EXPERT_01",
+    "SYNTHETIC_EXPERT_02",
+    "SYNTHETIC_EXPERT_03"
+  ],
+  "excluded_experts": [],
+  "weights": {
+    "business": 0.3067558952178454,
+    "commercial": 0.19324410478215465,
+    "access": 0.1932441047821547,
+    "facilities": 0.15337794760892268,
+    "preference": 0.07668897380446131,
+    "historical": 0.07668897380446131
+  },
+  "consistency_ratio": 0.0,
+  "consistency_index": 0.0,
+  "lambda_max": 5.999999999999999,
+  "warning": "Synthetic demonstration policy only. Do not copy this file to data/policy/mcda_weights.json. Final weights require real expert judgments."
+}

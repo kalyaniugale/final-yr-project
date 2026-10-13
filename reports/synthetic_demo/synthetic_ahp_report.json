@@ -1,0 +1,91 @@
+{
+  "generated_at_utc": "2026-09-30T06:17:07.297931+00:00",
+  "factor_order": [
+    "business",
+    "commercial",
+    "access",
+    "facilities",
+    "preference",
+    "historical"
+  ],
+  "factor_labels": {
+    "business": "Business Compatibility",
+    "commercial": "Commercial Surroundings",
+    "access": "Road and Transport Access",
+    "facilities": "Nearby Facilities",
+    "preference": "Preferred Division",
+    "historical": "Historical Evidence"
+  },
+  "expert_count": 3,
+  "consistent_expert_count": 3,
+  "included_experts": [
+    "SYNTHETIC_EXPERT_01",
+    "SYNTHETIC_EXPERT_02",
+    "SYNTHETIC_EXPERT_03"
+  ],
+  "excluded_experts": [],
+  "consistency_threshold": 0.1,
+  "aggregate": {
+    "weights": {
+      "business": 0.3067558952178454,
+      "commercial": 0.19324410478215465,
+      "access": 0.1932441047821547,
+      "facilities": 0.15337794760892268,
+      "preference": 0.07668897380446131,
+      "historical": 0.07668897380446131
+    },
+    "lambda_max": 5.999999999999999,
+    "consistency_index": 0.0,
+    "consistency_ratio": 0.0,
+    "is_consistent": true
+  },
+  "experts": [
+    {
+      "expert_id": "SYNTHETIC_EXPERT_01",
+      "consistency_ratio": 1.4325458382260086e-16,
+      "consistency_index": 1.7763568394002506e-16,
+      "lambda_max": 6.000000000000001,
+      "is_consistent": true,
+      "weights": {
+        "business": 0.33333333333333337,
+        "commercial": 0.1666666666666666,
+        "access": 0.16666666666666666,
+        "facilities": 0.16666666666666666,
+        "preference": 0.08333333333333333,
+        "historical": 0.08333333333333333
+      }
+    },
+    {
+      "expert_id": "SYNTHETIC_EXPERT_02",
+      "consistency_ratio": 1.4325458382260086e-16,
+      "consistency_index": 1.7763568394002506e-16,
+      "lambda_max": 6.000000000000001,
+      "is_consistent": true,
+      "weights": {
+        "business": 0.2857142857142858,
+        "commercial": 0.2857142857142856,
+        "access": 0.14285714285714288,
+        "facilities": 0.14285714285714288,
+        "preference": 0.07142857142857144,
+        "historical": 0.07142857142857144
+      }
+    },
+    {
+      "expert_id": "SYNTHETIC_EXPERT_03",
+      "consistency_ratio": 1.4325458382260086e-16,
+      "consistency_index": 1.7763568394002506e-16,
+      "lambda_max": 6.000000000000001,
+      "is_consistent": true,
+      "weights": {
+        "business": 0.2857142857142858,
+        "commercial": 0.1428571428571428,
+        "access": 0.28571428571428575,
+        "facilities": 0.14285714285714288,
+        "preference": 0.07142857142857144,
+        "historical": 0.07142857142857144
+      }
+    }
+  ],
+  "policy_path": null,
+  "interpretation": "AHP weights represent structured expert policy judgements. They are not learned model coefficients or probabilities of vendor success."
+}

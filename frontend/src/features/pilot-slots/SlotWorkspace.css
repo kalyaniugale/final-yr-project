@@ -1,0 +1,47 @@
+/* Scoped GIS workspace: existing service/authentication pages retain their styling. */
+.pilot-panel.pilot-geographic{margin:0;padding:12px;background:#f1f5f7;border:1px solid #d3dfe7;border-radius:12px;min-width:0}
+.pilot-panel.pilot-geographic .pilot-header{margin:0 0 6px;gap:8px;flex-wrap:nowrap}
+.pilot-panel.pilot-geographic .pilot-header h2{font-size:19px;margin:0;line-height:1.3;color:#19374e}
+.pilot-panel.pilot-geographic .pilot-header span{font-size:12px;color:#556c7b}
+.pilot-panel.pilot-geographic .pilot-header button{padding:8px 12px;font-size:12px;white-space:nowrap}
+.pilot-panel.pilot-geographic .slot-provisional-warning{margin:0 0 10px;font-size:12px;color:#8a5b1e;line-height:1.4}
+.pilot-panel.pilot-geographic .pilot-workspace{position:relative;display:grid;grid-template-columns:minmax(0,73fr) minmax(245px,27fr);gap:12px;height:var(--slot-workspace-height,600px);min-height:320px;overflow:hidden}
+.pilot-panel.pilot-geographic .pilot-visual{padding:0;border:1px solid #ccdbe5;background:#fff;min-width:0;min-height:0;border-radius:10px;overflow:hidden}
+.pilot-panel.pilot-geographic .pilot-map-frame{height:100%;position:relative;min-height:0}
+.pilot-panel.pilot-geographic .pilot-context-map{height:100%;min-height:0;width:100%;border-radius:0}
+.pilot-panel.pilot-geographic .slot-inspector{height:100%;overflow-y:auto;min-height:0;margin:0;padding:16px;background:white;border:1px solid #ccdbe5;border-radius:10px;box-sizing:border-box}
+.pilot-panel.pilot-geographic .slot-inspector h3{margin:4px 0;font-size:28px;line-height:1.2;color:#183c56}
+.slot-context-label{text-transform:uppercase;font-size:10px;letter-spacing:.06em;color:#586f7e;font-weight:700}
+.slot-inspector-title{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.slot-zone-name{display:block;font-size:15px;line-height:1.4;margin:8px 0 3px;color:#244659}
+.slot-inspector-basic>small{display:block;color:#657988;font-size:11px}
+.pilot-panel.pilot-geographic .slot-basic-meta{font-size:13px;margin:9px 0 14px;line-height:1.4}
+.slot-status-available{border-color:#218657!important}.slot-status-occupied{border-color:#c43e3e!important}.slot-status-reserved{border-color:#c9961c!important}.slot-status-blocked{border-color:#788491!important}
+.pilot-panel.pilot-geographic .slot-inspector-extra{border-top:1px solid #e3ebf0;padding-top:12px;font-size:12px}
+.pilot-panel.pilot-geographic .slot-inspector form{gap:10px}.pilot-panel.pilot-geographic .slot-inspector dl{font-size:12px;margin:10px 0}
+.pilot-panel.pilot-geographic .slot-inspector label{font-size:12px}.pilot-panel.pilot-geographic .slot-inspector button{font-size:12px;min-height:40px}
+.slot-sheet-toggle{display:none}
+.slot-map-controls{position:absolute;top:10px;left:54px;right:10px;z-index:450;display:flex;flex-wrap:wrap;gap:5px;pointer-events:none}
+.pilot-panel.pilot-geographic .slot-map-controls button{pointer-events:auto;padding:8px 10px;font-size:11px;min-height:36px;background:#fff;border:1px solid #bccedb;box-shadow:0 2px 6px #19374e13}
+.pilot-panel.pilot-geographic .slot-map-controls button[aria-pressed=true]{background:#e6f0f5;color:#174b77;border-color:#7195ad}
+.pilot-panel.pilot-geographic .slot-map-controls a{pointer-events:auto;padding:8px 10px;font-size:11px;min-height:36px;background:#fff;border:1px solid #bccedb;border-radius:7px;text-decoration:none;color:#174b77}
+.admin-dashboard:has(.pilot-panel:not([hidden]))>.service-disclosure{display:none}
+.admin-dashboard:has(.pilot-panel:not([hidden])) .admin-header{margin-bottom:10px;padding-bottom:10px}
+.slot-map-information,.slot-tools-popover{position:absolute;top:96px;right:10px;z-index:460;width:min(360px,calc(100% - 20px));max-height:65%;overflow-y:auto;background:#fff;border:1px solid #c6d8e3;border-radius:10px;padding:14px;box-shadow:0 5px 20px #19374e22;font-size:12px}
+.slot-tools-popover .pilot-generation{display:grid;gap:10px;margin:0;padding:0;background:transparent}
+.slot-map-legend{position:absolute;bottom:24px;left:10px;right:10px;z-index:440;display:flex;flex-wrap:wrap;gap:5px 10px;background:#ffffffed;border:1px solid #d3dfe7;border-radius:6px;padding:7px 9px;font-size:10px;pointer-events:none}
+.slot-map-legend span{display:flex;align-items:center;gap:4px}.slot-map-legend i{width:9px;height:9px;border-radius:2px}.slot-selected-key{border:2px solid #142e50}.slot-own-key{border:2px dashed #086c72}
+.slot-own-note,.slot-own-access{font-size:12px;color:#566d7d;line-height:1.5}.slot-own-access{display:grid;gap:8px;margin-top:12px}.slot-own-access a{display:block;color:#185d87;font-weight:600;padding:10px;border:1px solid #cad9e3;border-radius:7px;text-decoration:none}.slot-own-access small{display:block}.slot-inspector-basic .slot-my-assignment{color:#086c72;font-weight:700}
+.pilot-panel.pilot-geographic .pilot-error{font-size:12px;margin-bottom:8px}.pilot-panel.pilot-geographic>p[role=status]{margin:4px 0;font-size:12px}
+.pilot-panel.pilot-geographic .pilot-draft-banner{padding:8px;margin:6px 0;font-size:11px;gap:8px}
+@media(max-width:760px){
+ .admin-dashboard:has(.pilot-panel:not([hidden])) .admin-controls{display:none}
+ .pilot-panel.pilot-geographic{padding:8px}.pilot-panel.pilot-geographic .pilot-header h2{font-size:16px}.pilot-panel.pilot-geographic .pilot-header span{font-size:10px}.pilot-panel.pilot-geographic .pilot-header button{max-width:115px;white-space:normal;font-size:10px;padding:7px}.pilot-panel.pilot-geographic .slot-provisional-warning{font-size:10px;margin-bottom:6px}
+ .pilot-panel.pilot-geographic .pilot-workspace{display:block;min-height:460px}.pilot-panel.pilot-geographic .pilot-visual{height:100%}
+ .pilot-panel.pilot-geographic .slot-inspector{position:absolute;bottom:calc(22px + env(safe-area-inset-bottom));left:8px;right:8px;z-index:470;height:auto;max-height:32%;padding:10px 12px;border-radius:12px;box-shadow:0 3px 18px #183c5629;overflow-y:auto}
+ .pilot-panel.pilot-geographic .slot-inspector.is-expanded{max-height:72%}.pilot-panel.pilot-geographic .slot-inspector:not(.is-expanded) .slot-inspector-extra{display:none}
+ .pilot-panel.pilot-geographic .slot-inspector .slot-sheet-toggle{display:flex;align-items:center;justify-content:space-between;width:100%;min-height:24px;padding:0 0 5px;background:transparent;border:0;font-size:10px;color:#587283}
+ .pilot-panel.pilot-geographic .slot-inspector h3{font-size:23px}.pilot-panel.pilot-geographic .slot-zone-name{font-size:12px;margin:4px 0 2px}.pilot-panel.pilot-geographic .slot-basic-meta{font-size:11px;margin:5px 0 0}.slot-context-label{font-size:9px}
+ .pilot-panel.pilot-geographic .pilot-status{font-size:10px;padding:4px 6px}.slot-map-controls{left:48px;top:8px;right:8px;gap:4px}.pilot-panel.pilot-geographic .slot-map-controls button{font-size:10px;padding:6px 8px;min-height:32px}
+ .slot-map-legend{left:8px;right:8px;bottom:auto;top:102px;padding:5px;font-size:9px;gap:4px 8px}.slot-map-information,.slot-tools-popover{top:146px;max-height:48%;width:calc(100% - 16px);right:8px}
+}

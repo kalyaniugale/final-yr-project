@@ -1,0 +1,3012 @@
+{
+  "components": {
+    "schemas": {
+      "ActiveVendorAllocationResponse": {
+        "properties": {
+          "allocation": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AllocationResponse"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "title": "ActiveVendorAllocationResponse",
+        "type": "object"
+      },
+      "AdminLoginBody": {
+        "properties": {
+          "password": {
+            "title": "Password",
+            "type": "string"
+          },
+          "username": {
+            "title": "Username",
+            "type": "string"
+          }
+        },
+        "required": [
+          "username",
+          "password"
+        ],
+        "title": "AdminLoginBody",
+        "type": "object"
+      },
+      "AdminZoneStatusBody": {
+        "properties": {
+          "status": {
+            "enum": [
+              "OPEN",
+              "CLOSED",
+              "SUSPENDED"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "verified_by": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Verified By"
+          }
+        },
+        "required": [
+          "status"
+        ],
+        "title": "AdminZoneStatusBody",
+        "type": "object"
+      },
+      "AllocationListResponse": {
+        "properties": {
+          "allocations": {
+            "items": {
+              "$ref": "#/components/schemas/AllocationResponse"
+            },
+            "title": "Allocations",
+            "type": "array"
+          },
+          "count": {
+            "title": "Count",
+            "type": "integer"
+          },
+          "status_filter": {
+            "anyOf": [
+              {
+                "enum": [
+                  "ACTIVE",
+                  "RELEASED"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Status Filter"
+          }
+        },
+        "required": [
+          "allocations",
+          "count"
+        ],
+        "title": "AllocationListResponse",
+        "type": "object"
+      },
+      "AllocationPlanningBody": {
+        "description": "Read-only batch allocation-planning request.",
+        "properties": {
+          "candidate_pool_size": {
+            "anyOf": [
+              {
+                "maximum": 500.0,
+                "minimum": 1.0,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Candidate Pool Size"
+          },
+          "max_vendors": {
+            "default": 500,
+            "maximum": 500.0,
+            "minimum": 1.0,
+            "title": "Max Vendors",
+            "type": "integer"
+          },
+          "reject_pending_requests": {
+            "default": true,
+            "title": "Reject Pending Requests",
+            "type": "boolean"
+          },
+          "require_verified": {
+            "default": true,
+            "title": "Require Verified",
+            "type": "boolean"
+          },
+          "time_limit_seconds": {
+            "anyOf": [
+              {
+                "exclusiveMinimum": 0.0,
+                "maximum": 120.0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": 30.0,
+            "title": "Time Limit Seconds"
+          },
+          "vendor_ids": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 500,
+            "minItems": 1,
+            "title": "Vendor Ids",
+            "type": "array"
+          }
+        },
+        "required": [
+          "vendor_ids"
+        ],
+        "title": "AllocationPlanningBody",
+        "type": "object"
+      },
+      "AllocationRequestCreate": {
+        "properties": {
+          "business_category": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Business Category"
+          },
+          "notes": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Notes"
+          },
+          "preferred_division": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Preferred Division"
+          },
+          "request_type": {
+            "enum": [
+              "NEW_ALLOCATION",
+              "RELOCATION"
+            ],
+            "title": "Request Type",
+            "type": "string"
+          },
+          "vendor_id": {
+            "title": "Vendor Id",
+            "type": "string"
+          },
+          "zone_id": {
+            "title": "Zone Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "vendor_id",
+          "zone_id",
+          "request_type"
+        ],
+        "title": "AllocationRequestCreate",
+        "type": "object"
+      },
+      "AllocationRequestListResponse": {
+        "properties": {
+          "count": {
+            "title": "Count",
+            "type": "integer"
+          },
+          "requests": {
+            "items": {
+              "$ref": "#/components/schemas/AllocationRequestResponse"
+            },
+            "title": "Requests",
+            "type": "array"
+          },
+          "status_filter": {
+            "anyOf": [
+              {
+                "enum": [
+                  "PENDING",
+                  "APPROVED",
+                  "REJECTED",
+                  "CANCELLED"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Status Filter"
+          }
+        },
+        "required": [
+          "requests",
+          "count"
+        ],
+        "title": "AllocationRequestListResponse",
+        "type": "object"
+      },
+      "AllocationRequestResponse": {
+        "properties": {
+          "application_vendor_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Application Vendor Id"
+          },
+          "business_category": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Business Category"
+          },
+          "business_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Business Name"
+          },
+          "created_at": {
+            "title": "Created At",
+            "type": "string"
+          },
+          "preferred_division": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Preferred Division"
+          },
+          "rejection_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rejection Reason"
+          },
+          "request_id": {
+            "title": "Request Id",
+            "type": "string"
+          },
+          "request_type": {
+            "enum": [
+              "NEW_ALLOCATION",
+              "RELOCATION"
+            ],
+            "title": "Request Type",
+            "type": "string"
+          },
+          "reviewed_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reviewed At"
+          },
+          "reviewed_by": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reviewed By"
+          },
+          "status": {
+            "enum": [
+              "PENDING",
+              "APPROVED",
+              "REJECTED",
+              "CANCELLED"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "updated_at": {
+            "title": "Updated At",
+            "type": "string"
+          },
+          "vendor_id": {
+            "title": "Vendor Id",
+            "type": "string"
+          },
+          "vendor_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Vendor Name"
+          },
+          "vendor_type": {
+            "anyOf": [
+              {
+                "enum": [
+                  "NEW",
+                  "EXISTING_IMPORTED"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Vendor Type"
+          },
+          "zone_id": {
+            "title": "Zone Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "request_id",
+          "vendor_id",
+          "zone_id",
+          "request_type",
+          "status",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "AllocationRequestResponse",
+        "type": "object"
+      },
+      "AllocationResponse": {
+        "properties": {
+          "allocated_at": {
+            "title": "Allocated At",
+            "type": "string"
+          },
+          "allocation_id": {
+            "title": "Allocation Id",
+            "type": "string"
+          },
+          "application_vendor_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Application Vendor Id"
+          },
+          "approved_by": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Approved By"
+          },
+          "created_at": {
+            "title": "Created At",
+            "type": "string"
+          },
+          "released_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Released At"
+          },
+          "request_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Request Id"
+          },
+          "status": {
+            "enum": [
+              "ACTIVE",
+              "RELEASED"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "updated_at": {
+            "title": "Updated At",
+            "type": "string"
+          },
+          "vendor_id": {
+            "title": "Vendor Id",
+            "type": "string"
+          },
+          "vendor_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Vendor Name"
+          },
+          "vendor_type": {
+            "anyOf": [
+              {
+                "enum": [
+                  "NEW",
+                  "EXISTING_IMPORTED"
+                ],
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Vendor Type"
+          },
+          "zone_id": {
+            "title": "Zone Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "allocation_id",
+          "vendor_id",
+          "zone_id",
+          "status",
+          "allocated_at",
+          "created_at",
+          "updated_at"
+        ],
+        "title": "AllocationResponse",
+        "type": "object"
+      },
+      "ApprovalBody": {
+        "properties": {
+          "approved_by": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Approved By"
+          },
+          "notes": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Notes"
+          }
+        },
+        "title": "ApprovalBody",
+        "type": "object"
+      },
+      "ApprovalResponse": {
+        "properties": {
+          "allocation": {
+            "$ref": "#/components/schemas/AllocationResponse"
+          },
+          "released_allocation": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AllocationResponse"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "request": {
+            "$ref": "#/components/schemas/AllocationRequestResponse"
+          }
+        },
+        "required": [
+          "request",
+          "allocation"
+        ],
+        "title": "ApprovalResponse",
+        "type": "object"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "title": "Detail",
+            "type": "array"
+          }
+        },
+        "title": "HTTPValidationError",
+        "type": "object"
+      },
+      "PilotGeometryEdit": {
+        "properties": {
+          "layout": {
+            "additionalProperties": true,
+            "title": "Layout",
+            "type": "object"
+          },
+          "poses": {
+            "additionalProperties": true,
+            "title": "Poses",
+            "type": "object"
+          }
+        },
+        "required": [
+          "layout"
+        ],
+        "title": "PilotGeometryEdit",
+        "type": "object"
+      },
+      "PilotGeometryPreview": {
+        "properties": {
+          "config": {
+            "additionalProperties": true,
+            "title": "Config",
+            "type": "object"
+          },
+          "obstructions": {
+            "anyOf": [
+              {
+                "items": {
+                  "additionalProperties": true,
+                  "type": "object"
+                },
+                "maxItems": 100,
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Obstructions"
+          }
+        },
+        "title": "PilotGeometryPreview",
+        "type": "object"
+      },
+      "PilotGeometrySave": {
+        "properties": {
+          "layout": {
+            "additionalProperties": true,
+            "title": "Layout",
+            "type": "object"
+          },
+          "review_confirmed": {
+            "default": false,
+            "title": "Review Confirmed",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "layout"
+        ],
+        "title": "PilotGeometrySave",
+        "type": "object"
+      },
+      "PilotRouteRequest": {
+        "properties": {
+          "latitude": {
+            "maximum": 90.0,
+            "minimum": -90.0,
+            "title": "Latitude",
+            "type": "number"
+          },
+          "longitude": {
+            "maximum": 180.0,
+            "minimum": -180.0,
+            "title": "Longitude",
+            "type": "number"
+          }
+        },
+        "required": [
+          "longitude",
+          "latitude"
+        ],
+        "title": "PilotRouteRequest",
+        "type": "object"
+      },
+      "PilotSlotUpdate": {
+        "properties": {
+          "assigned_vendor_id": {
+            "anyOf": [
+              {
+                "maxLength": 100,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Assigned Vendor Id"
+          },
+          "expected_updated_at": {
+            "maxLength": 100,
+            "minLength": 1,
+            "title": "Expected Updated At",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "AVAILABLE",
+              "RESERVED",
+              "OCCUPIED",
+              "BLOCKED"
+            ],
+            "title": "Status",
+            "type": "string"
+          }
+        },
+        "required": [
+          "status",
+          "expected_updated_at"
+        ],
+        "title": "PilotSlotUpdate",
+        "type": "object"
+      },
+      "RejectionBody": {
+        "properties": {
+          "notes": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Notes"
+          },
+          "rejection_reason": {
+            "title": "Rejection Reason",
+            "type": "string"
+          },
+          "reviewed_by": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reviewed By"
+          }
+        },
+        "required": [
+          "rejection_reason"
+        ],
+        "title": "RejectionBody",
+        "type": "object"
+      },
+      "Request": {
+        "description": "Single-vendor recommendation request.",
+        "properties": {
+          "business": {
+            "default": "",
+            "title": "Business",
+            "type": "string"
+          },
+          "division": {
+            "default": "",
+            "title": "Division",
+            "type": "string"
+          },
+          "exclude_zone": {
+            "default": "",
+            "title": "Exclude Zone",
+            "type": "string"
+          },
+          "require_verified": {
+            "default": false,
+            "title": "Require Verified",
+            "type": "boolean"
+          },
+          "top_n": {
+            "default": 3,
+            "maximum": 20.0,
+            "minimum": 1.0,
+            "title": "Top N",
+            "type": "integer"
+          },
+          "vendor_id": {
+            "default": "",
+            "title": "Vendor Id",
+            "type": "string"
+          }
+        },
+        "title": "Request",
+        "type": "object"
+      },
+      "SensitivityRequest": {
+        "description": "MCDA robustness evaluation request.",
+        "properties": {
+          "business": {
+            "default": "",
+            "title": "Business",
+            "type": "string"
+          },
+          "division": {
+            "default": "",
+            "title": "Division",
+            "type": "string"
+          },
+          "exclude_zone": {
+            "default": "",
+            "title": "Exclude Zone",
+            "type": "string"
+          },
+          "include_scenarios": {
+            "default": false,
+            "title": "Include Scenarios",
+            "type": "boolean"
+          },
+          "monte_carlo_delta": {
+            "default": 0.2,
+            "exclusiveMaximum": 1.0,
+            "minimum": 0.0,
+            "title": "Monte Carlo Delta",
+            "type": "number"
+          },
+          "monte_carlo_samples": {
+            "default": 200,
+            "maximum": 1000.0,
+            "minimum": 0.0,
+            "title": "Monte Carlo Samples",
+            "type": "integer"
+          },
+          "random_seed": {
+            "default": 42,
+            "title": "Random Seed",
+            "type": "integer"
+          },
+          "require_verified": {
+            "default": false,
+            "title": "Require Verified",
+            "type": "boolean"
+          },
+          "top_n": {
+            "default": 3,
+            "maximum": 20.0,
+            "minimum": 1.0,
+            "title": "Top N",
+            "type": "integer"
+          },
+          "vendor_id": {
+            "default": "",
+            "title": "Vendor Id",
+            "type": "string"
+          }
+        },
+        "title": "SensitivityRequest",
+        "type": "object"
+      },
+      "ValidationError": {
+        "properties": {
+          "ctx": {
+            "title": "Context",
+            "type": "object"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "title": "Location",
+            "type": "array"
+          },
+          "msg": {
+            "title": "Message",
+            "type": "string"
+          },
+          "type": {
+            "title": "Error Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError",
+        "type": "object"
+      },
+      "VendorOtpRequestBody": {
+        "properties": {
+          "mobile": {
+            "title": "Mobile",
+            "type": "string"
+          }
+        },
+        "required": [
+          "mobile"
+        ],
+        "title": "VendorOtpRequestBody",
+        "type": "object"
+      },
+      "VendorOtpVerifyBody": {
+        "properties": {
+          "challenge_id": {
+            "title": "Challenge Id",
+            "type": "string"
+          },
+          "otp": {
+            "title": "Otp",
+            "type": "string"
+          }
+        },
+        "required": [
+          "challenge_id",
+          "otp"
+        ],
+        "title": "VendorOtpVerifyBody",
+        "type": "object"
+      },
+      "VendorProfileResponse": {
+        "properties": {
+          "application_vendor_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Application Vendor Id"
+          },
+          "business_category": {
+            "title": "Business Category",
+            "type": "string"
+          },
+          "business_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Business Name"
+          },
+          "created_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Created At"
+          },
+          "full_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Full Name"
+          },
+          "market_preference": {
+            "title": "Market Preference",
+            "type": "boolean"
+          },
+          "parking_preference": {
+            "title": "Parking Preference",
+            "type": "boolean"
+          },
+          "preferred_division": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Preferred Division"
+          },
+          "preferred_language": {
+            "enum": [
+              "en",
+              "mr",
+              "hi"
+            ],
+            "title": "Preferred Language",
+            "type": "string"
+          },
+          "preferred_locality": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Preferred Locality"
+          },
+          "priority_profile": {
+            "enum": [
+              "BALANCED",
+              "COMMERCIAL",
+              "ACCESSIBILITY",
+              "FACILITIES"
+            ],
+            "title": "Priority Profile",
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "ACTIVE",
+              "INACTIVE"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "transport_preference": {
+            "title": "Transport Preference",
+            "type": "boolean"
+          },
+          "updated_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Updated At"
+          },
+          "vendor_id": {
+            "title": "Vendor Id",
+            "type": "string"
+          },
+          "vendor_type": {
+            "enum": [
+              "NEW",
+              "EXISTING_IMPORTED"
+            ],
+            "title": "Vendor Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "vendor_id",
+          "vendor_type",
+          "business_category",
+          "priority_profile",
+          "parking_preference",
+          "transport_preference",
+          "market_preference",
+          "preferred_language",
+          "status"
+        ],
+        "title": "VendorProfileResponse",
+        "type": "object"
+      },
+      "VendorProfileUpdateBody": {
+        "properties": {
+          "business_category": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Business Category"
+          },
+          "business_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Business Name"
+          },
+          "full_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Full Name"
+          },
+          "market_preference": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Market Preference"
+          },
+          "parking_preference": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Parking Preference"
+          },
+          "preferred_division": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Preferred Division"
+          },
+          "preferred_language": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Preferred Language"
+          },
+          "preferred_locality": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Preferred Locality"
+          },
+          "priority_profile": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Priority Profile"
+          },
+          "transport_preference": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Transport Preference"
+          }
+        },
+        "title": "VendorProfileUpdateBody",
+        "type": "object"
+      },
+      "VendorRegistrationBody": {
+        "properties": {
+          "business_category": {
+            "title": "Business Category",
+            "type": "string"
+          },
+          "business_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Business Name"
+          },
+          "full_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Full Name"
+          },
+          "market_preference": {
+            "default": false,
+            "title": "Market Preference",
+            "type": "boolean"
+          },
+          "parking_preference": {
+            "default": false,
+            "title": "Parking Preference",
+            "type": "boolean"
+          },
+          "preferred_division": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Preferred Division"
+          },
+          "preferred_language": {
+            "default": "en",
+            "title": "Preferred Language",
+            "type": "string"
+          },
+          "preferred_locality": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Preferred Locality"
+          },
+          "priority_profile": {
+            "default": "BALANCED",
+            "title": "Priority Profile",
+            "type": "string"
+          },
+          "transport_preference": {
+            "default": false,
+            "title": "Transport Preference",
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "business_category"
+        ],
+        "title": "VendorRegistrationBody",
+        "type": "object"
+      },
+      "ZoneLiveStatusResponse": {
+        "properties": {
+          "available_capacity": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Available Capacity"
+          },
+          "current_vendor_count": {
+            "title": "Current Vendor Count",
+            "type": "integer"
+          },
+          "official_capacity": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Official Capacity"
+          },
+          "status": {
+            "enum": [
+              "OPEN",
+              "FULL",
+              "CLOSED",
+              "SUSPENDED",
+              "RESTRICTED",
+              "NO_VENDING"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "updated_at": {
+            "title": "Updated At",
+            "type": "string"
+          },
+          "verified_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Verified At"
+          },
+          "verified_by": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Verified By"
+          },
+          "zone_id": {
+            "title": "Zone Id",
+            "type": "string"
+          }
+        },
+        "required": [
+          "zone_id",
+          "current_vendor_count",
+          "status",
+          "updated_at"
+        ],
+        "title": "ZoneLiveStatusResponse",
+        "type": "object"
+      }
+    }
+  },
+  "info": {
+    "title": "Nashik Vendor Zoning Decision-Support API",
+    "version": "0.2.0"
+  },
+  "openapi": "3.1.0",
+  "paths": {
+    "/api/admin/allocation-plan": {
+      "post": {
+        "description": "Create an advisory multi-vendor allocation plan.\n\nNo database mutation occurs here.",
+        "operationId": "create_allocation_plan_api_admin_allocation_plan_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AllocationPlanningBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Create Allocation Plan",
+        "tags": [
+          "Admin",
+          "Allocation Planning"
+        ]
+      }
+    },
+    "/api/admin/overview": {
+      "get": {
+        "operationId": "admin_overview_api_admin_overview_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Admin Overview",
+        "tags": [
+          "Admin"
+        ]
+      }
+    },
+    "/api/admin/zones": {
+      "get": {
+        "operationId": "admin_zones_api_admin_zones_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "division",
+            "required": false,
+            "schema": {
+              "default": "",
+              "title": "Division",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "zone_type",
+            "required": false,
+            "schema": {
+              "default": "",
+              "title": "Zone Type",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "live_status",
+            "required": false,
+            "schema": {
+              "default": "",
+              "title": "Live Status",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "schema": {
+              "default": "",
+              "title": "Q",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Admin Zones",
+        "tags": [
+          "Admin"
+        ]
+      }
+    },
+    "/api/allocation-requests": {
+      "get": {
+        "operationId": "allocation_request_list_api_allocation_requests_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "PENDING",
+                    "APPROVED",
+                    "REJECTED",
+                    "CANCELLED"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Status"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AllocationRequestListResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Allocation Request List",
+        "tags": [
+          "Allocation Requests"
+        ]
+      },
+      "post": {
+        "operationId": "submit_allocation_request_api_allocation_requests_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AllocationRequestCreate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AllocationRequestResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Submit Allocation Request",
+        "tags": [
+          "Allocation Requests"
+        ]
+      }
+    },
+    "/api/allocation-requests/{request_id}": {
+      "get": {
+        "operationId": "allocation_request_detail_api_allocation_requests__request_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "request_id",
+            "required": true,
+            "schema": {
+              "title": "Request Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AllocationRequestResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Allocation Request Detail",
+        "tags": [
+          "Allocation Requests"
+        ]
+      }
+    },
+    "/api/allocation-requests/{request_id}/approve": {
+      "post": {
+        "operationId": "approve_request_api_allocation_requests__request_id__approve_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "request_id",
+            "required": true,
+            "schema": {
+              "title": "Request Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ApprovalBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApprovalResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Approve Request",
+        "tags": [
+          "Allocation Requests"
+        ]
+      }
+    },
+    "/api/allocation-requests/{request_id}/cancel": {
+      "post": {
+        "operationId": "cancel_request_api_allocation_requests__request_id__cancel_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "request_id",
+            "required": true,
+            "schema": {
+              "title": "Request Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AllocationRequestResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Cancel Request",
+        "tags": [
+          "Allocation Requests"
+        ]
+      }
+    },
+    "/api/allocation-requests/{request_id}/reject": {
+      "post": {
+        "operationId": "reject_request_api_allocation_requests__request_id__reject_post",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "request_id",
+            "required": true,
+            "schema": {
+              "title": "Request Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RejectionBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AllocationRequestResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Reject Request",
+        "tags": [
+          "Allocation Requests"
+        ]
+      }
+    },
+    "/api/allocations": {
+      "get": {
+        "operationId": "allocation_list_api_allocations_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "status",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "ACTIVE",
+                    "RELEASED"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Status"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AllocationListResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Allocation List",
+        "tags": [
+          "Allocations"
+        ]
+      }
+    },
+    "/api/allocations/{allocation_id}": {
+      "get": {
+        "operationId": "allocation_detail_api_allocations__allocation_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "allocation_id",
+            "required": true,
+            "schema": {
+              "title": "Allocation Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AllocationResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Allocation Detail",
+        "tags": [
+          "Allocations"
+        ]
+      }
+    },
+    "/api/auth/admin/login": {
+      "post": {
+        "operationId": "admin_login_api_auth_admin_login_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdminLoginBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Admin Login",
+        "tags": [
+          "Authentication"
+        ]
+      }
+    },
+    "/api/auth/logout": {
+      "post": {
+        "operationId": "logout_api_auth_logout_post",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Logout",
+        "tags": [
+          "Authentication"
+        ]
+      }
+    },
+    "/api/auth/me": {
+      "get": {
+        "operationId": "current_user_api_auth_me_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Current User",
+        "tags": [
+          "Authentication"
+        ]
+      }
+    },
+    "/api/auth/vendor/request-otp": {
+      "post": {
+        "operationId": "request_vendor_otp_api_auth_vendor_request_otp_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VendorOtpRequestBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Request Vendor Otp",
+        "tags": [
+          "Authentication"
+        ]
+      }
+    },
+    "/api/auth/vendor/verify-otp": {
+      "post": {
+        "operationId": "verify_vendor_otp_api_auth_vendor_verify_otp_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VendorOtpVerifyBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Verify Vendor Otp",
+        "tags": [
+          "Authentication"
+        ]
+      }
+    },
+    "/api/catalog": {
+      "get": {
+        "description": "Official records only; geometry/live state remain separate.",
+        "operationId": "catalog_api_catalog_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "zone_type",
+            "required": false,
+            "schema": {
+              "default": "",
+              "title": "Zone Type",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "division",
+            "required": false,
+            "schema": {
+              "default": "",
+              "title": "Division",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "q",
+            "required": false,
+            "schema": {
+              "default": "",
+              "title": "Q",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 308,
+              "title": "Limit",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Catalog"
+      }
+    },
+    "/api/health": {
+      "get": {
+        "operationId": "health_api_health_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Health"
+      }
+    },
+    "/api/implementation/summary": {
+      "get": {
+        "description": "Non-sensitive implementation metrics for the project dashboard.",
+        "operationId": "implementation_summary_api_implementation_summary_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Implementation Summary"
+      }
+    },
+    "/api/official-zones": {
+      "get": {
+        "operationId": "official_zones_api_official_zones_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "division",
+            "required": false,
+            "schema": {
+              "default": "",
+              "title": "Division",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "zone_type",
+            "required": false,
+            "schema": {
+              "default": "",
+              "title": "Zone Type",
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "required": false,
+            "schema": {
+              "default": 308,
+              "maximum": 500,
+              "minimum": 1,
+              "title": "Limit",
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Official Zones"
+      }
+    },
+    "/api/options": {
+      "get": {
+        "operationId": "options_api_options_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Options"
+      }
+    },
+    "/api/overview": {
+      "get": {
+        "operationId": "overview_api_overview_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Overview"
+      }
+    },
+    "/api/pilot/initialize": {
+      "post": {
+        "operationId": "initialize_pilot_layout_api_pilot_initialize_post",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Initialize Pilot Layout"
+      }
+    },
+    "/api/pilot/layout": {
+      "get": {
+        "operationId": "get_pilot_layout_api_pilot_layout_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Get Pilot Layout"
+      },
+      "patch": {
+        "operationId": "save_pilot_geometry_api_pilot_layout_patch",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PilotGeometrySave"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Save Pilot Geometry"
+      }
+    },
+    "/api/pilot/navigation": {
+      "get": {
+        "operationId": "pilot_navigation_destination_api_pilot_navigation_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Pilot Navigation Destination"
+      }
+    },
+    "/api/pilot/preview": {
+      "post": {
+        "operationId": "preview_pilot_geometry_api_pilot_preview_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PilotGeometryPreview"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Preview Pilot Geometry"
+      }
+    },
+    "/api/pilot/route": {
+      "post": {
+        "operationId": "pilot_walking_route_api_pilot_route_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PilotRouteRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Pilot Walking Route"
+      }
+    },
+    "/api/pilot/slots/{slot_id}": {
+      "get": {
+        "operationId": "get_pilot_slot_api_pilot_slots__slot_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "slot_id",
+            "required": true,
+            "schema": {
+              "title": "Slot Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Get Pilot Slot"
+      },
+      "patch": {
+        "operationId": "patch_pilot_slot_api_pilot_slots__slot_id__patch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "slot_id",
+            "required": true,
+            "schema": {
+              "title": "Slot Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PilotSlotUpdate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Patch Pilot Slot"
+      }
+    },
+    "/api/pilot/validate": {
+      "post": {
+        "operationId": "validate_pilot_edit_api_pilot_validate_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PilotGeometryEdit"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Validate Pilot Edit"
+      }
+    },
+    "/api/recommendations": {
+      "post": {
+        "operationId": "recommendations_api_recommendations_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Request"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Recommendations"
+      }
+    },
+    "/api/recommendations/sensitivity": {
+      "post": {
+        "description": "Evaluate ranking sensitivity to reasonable MCDA weight changes.",
+        "operationId": "recommendation_sensitivity_api_recommendations_sensitivity_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SensitivityRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Recommendation Sensitivity",
+        "tags": [
+          "Research Evaluation"
+        ]
+      }
+    },
+    "/api/research/status": {
+      "get": {
+        "description": "Return non-sensitive implementation and research readiness state.",
+        "operationId": "research_status_api_research_status_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Research Status",
+        "tags": [
+          "Research Evaluation"
+        ]
+      }
+    },
+    "/api/review-summary": {
+      "get": {
+        "operationId": "review_summary_api_review_summary_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Review Summary"
+      }
+    },
+    "/api/vendor/{vendor_id}": {
+      "get": {
+        "operationId": "vendor_api_vendor__vendor_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "vendor_id",
+            "required": true,
+            "schema": {
+              "title": "Vendor Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Vendor"
+      }
+    },
+    "/api/vendors": {
+      "post": {
+        "operationId": "register_operational_vendor_api_vendors_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VendorRegistrationBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VendorProfileResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Register Operational Vendor",
+        "tags": [
+          "Vendors"
+        ]
+      }
+    },
+    "/api/vendors/me/dashboard": {
+      "get": {
+        "operationId": "vendor_dashboard_api_vendors_me_dashboard_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Vendor Dashboard",
+        "tags": [
+          "Vendors"
+        ]
+      }
+    },
+    "/api/vendors/me/eligible-zones": {
+      "get": {
+        "description": "Return map context without duplicating recommendation scoring.",
+        "operationId": "vendor_eligible_zones_api_vendors_me_eligible_zones_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Vendor Eligible Zones",
+        "tags": [
+          "Vendors"
+        ]
+      }
+    },
+    "/api/vendors/{vendor_id}": {
+      "get": {
+        "operationId": "unified_vendor_profile_api_vendors__vendor_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "vendor_id",
+            "required": true,
+            "schema": {
+              "title": "Vendor Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VendorProfileResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Unified Vendor Profile",
+        "tags": [
+          "Vendors"
+        ]
+      },
+      "patch": {
+        "operationId": "patch_vendor_profile_api_vendors__vendor_id__patch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "vendor_id",
+            "required": true,
+            "schema": {
+              "title": "Vendor Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VendorProfileUpdateBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VendorProfileResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Patch Vendor Profile",
+        "tags": [
+          "Vendors"
+        ]
+      }
+    },
+    "/api/vendors/{vendor_id}/active-allocation": {
+      "get": {
+        "operationId": "vendor_active_allocation_api_vendors__vendor_id__active_allocation_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "vendor_id",
+            "required": true,
+            "schema": {
+              "title": "Vendor Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActiveVendorAllocationResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Vendor Active Allocation",
+        "tags": [
+          "Vendors"
+        ]
+      }
+    },
+    "/api/zone/{zone_id}": {
+      "get": {
+        "operationId": "zone_api_zone__zone_id__get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "zone_id",
+            "required": true,
+            "schema": {
+              "title": "Zone Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Zone"
+      }
+    },
+    "/api/zones/geometry": {
+      "get": {
+        "description": "Return analytical reference points only.",
+        "operationId": "geometry_api_zones_geometry_get",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            },
+            "description": "Successful Response"
+          }
+        },
+        "summary": "Geometry"
+      }
+    },
+    "/api/zones/{zone_id}/live-status": {
+      "get": {
+        "operationId": "zone_live_status_api_zones__zone_id__live_status_get",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "zone_id",
+            "required": true,
+            "schema": {
+              "title": "Zone Id",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ZoneLiveStatusResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Zone Live Status",
+        "tags": [
+          "Zone Live Status"
+        ]
+      },
+      "patch": {
+        "operationId": "patch_zone_live_status_api_zones__zone_id__live_status_patch",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "zone_id",
+            "required": true,
+            "schema": {
+              "title": "Zone Id",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AdminZoneStatusBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ZoneLiveStatusResponse"
+                }
+              }
+            },
+            "description": "Successful Response"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            },
+            "description": "Validation Error"
+          }
+        },
+        "summary": "Patch Zone Live Status",
+        "tags": [
+          "Admin",
+          "Zone Live Status"
+        ]
+      }
+    }
+  }
+}
