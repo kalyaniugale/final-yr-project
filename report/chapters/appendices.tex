@@ -1,0 +1,167 @@
+% ==============================================================================
+% Appendices
+% ==============================================================================
+\appendix
+
+% ------------------------------------------------------------------------------
+% Appendix A: Plagiarism Report
+% ------------------------------------------------------------------------------
+\chapter{Plagiarism Report of Paper and Project Report}
+\label{app:plagiarism}
+
+\begin{center}
+    \textbf{\Large Plagiarism Authentication Status}
+\end{center}
+
+\vspace{0.8cm}
+
+\noindent As per the official institute guidelines issued by the Department of Information Technology, K. K. Wagh Institute of Engineering Education and Research, Nashik, the formal plagiarism verification of the research paper and project report is conducted under the direct supervision of the project guide prior to institutional defense.
+
+\vspace{0.5cm}
+
+\placeholderbox{Plagiarism Verification Certificate Placeholder}{
+    \textbf{Project Title:} VendorMap: A Smart Vendor Relocation and Zone Recommendation System\\[0.2cm]
+    \textbf{Target Similarity Index:} $\le 15\%$ (Excluding bibliography and standard quotations)\\[0.2cm]
+    \textbf{Verification Platform:} Turnitin / DrillBit / Urkund (Institutional Subscription)\\[0.2cm]
+    \textbf{Verification Authority:} Prof. Vidya R. More (Project Guide)
+}{
+    The formal plagiarism report and similarity score certificate will be generated and countersigned by the project guide after the finalization of the complete Project Stage-II report and before final bound submission. Do not generate or fabricate an unverified percentage score.
+}
+
+\vspace{1.5cm}
+
+\noindent
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}cc}
+    \underline{\hspace{4.5cm}} & \underline{\hspace{4.5cm}} \\
+    \textbf{Signature of Project Guide} & \textbf{Signature of Head of Department} \\
+    Prof. Vidya R. More & Prof. Dr. P. D. Bhamre \\
+    Department of Information Technology & Department of Information Technology \\
+\end{tabular*}
+
+\clearpage
+
+% ------------------------------------------------------------------------------
+% Appendix B: Base Paper(s)
+% ------------------------------------------------------------------------------
+\chapter{Base Papers and Literature Benchmark}
+\label{app:base_papers}
+
+The design and algorithmic architecture of VendorMap are grounded in the following foundational academic base papers:
+
+\section*{Base Paper 1: Socioeconomic Foundations of Urban Street Vending}
+\begin{itemize}
+    \item \textbf{Citation:} S. K. Bhowmik, ``Street Vendors in Asia: A Review,'' \textit{Economic and Political Weekly}, vol. 40, no. 22/23, pp. 2256--2264, 2005~\cite{bhowmik2005street}.
+    \item \textbf{Methodological Contribution:} Establishes the socioeconomic necessity of informal street vending across developing Asian metropolitan economies, demonstrating that vendors constitute 2\%--3\% of the urban workforce and require structured municipal protection rather than punitive eviction.
+    \item \textbf{Relevance to VendorMap:} Informs the municipal policy objectives and statutory vendor classification implemented in the onboarding and relocation modules.
+\end{itemize}
+
+\section*{Base Paper 2: GIS-Based Multi-Criteria Decision Analysis}
+\begin{itemize}
+    \item \textbf{Citation:} J. Malczewski, \textit{GIS and Multicriteria Decision Analysis}. New York, NY, USA: John Wiley \& Sons, 1999~\cite{malczewski1999gis}.
+    \item \textbf{Methodological Contribution:} Formulates the mathematical integration of spatial Geographic Information Systems (GIS) layers with multi-attribute utility theory and weighted linear combination.
+    \item \textbf{Relevance to VendorMap:} Provides the theoretical foundation for our 6-factor spatial suitability engine, which extends Malczewski's model by introducing non-linear logarithmic saturation and exponential proximity decay transforms.
+\end{itemize}
+
+\section*{Base Paper 3: The Analytic Hierarchy Process (AHP)}
+\begin{itemize}
+    \item \textbf{Citation:} T. L. Saaty, ``How to make a decision: The analytic hierarchy process,'' \textit{European Journal of Operational Research}, vol. 48, no. 1, pp. 9--26, 1990~\cite{saaty1990how}.
+    \item \textbf{Methodological Contribution:} Establishes the mathematical theory of pairwise matrix comparison, eigenvalue derivation ($\mathbf{A}\mathbf{w} = \lambda_{\max}\mathbf{w}$), and transitivity validation via the Consistency Ratio ($CR \le 0.10$).
+    \item \textbf{Relevance to VendorMap:} Directly implemented in \texttt{backend/decision\_policy.py} to allow municipal town-planning officers to calibrate criteria weights with automated consistency validation.
+\end{itemize}
+
+\section*{Base Paper 4: Pre-emptive Goal Programming and Multiple Objectives}
+\begin{itemize}
+    \item \textbf{Citation:} A. Charnes and W. W. Cooper, ``Goal programming and multiple objective optimizations: Part 1,'' \textit{European Journal of Operational Research}, vol. 1, no. 1, pp. 39--54, 1977~\cite{charnes1977goal}.
+    \item \textbf{Methodological Contribution:} Formulates lexicographic goal programming to resolve conflicting operational constraints in resource-constrained institutional environments.
+    \item \textbf{Relevance to VendorMap:} Inspires our two-stage Mixed-Integer Linear Program (MILP) solved via HiGHS, which eliminates the Spatial Capacity Paradox by prioritizing vendor placement while strictly capping zone capacities.
+\end{itemize}
+
+\clearpage
+
+% ------------------------------------------------------------------------------
+% Appendix C: Tools Used
+% ------------------------------------------------------------------------------
+\chapter{Tools and Technological Stack}
+\label{app:tools_used}
+
+Table~\ref{tab:tools_inventory} provides a comprehensive inventory of all software tools, programming languages, computational libraries, and hardware platforms utilized in the development and validation of VendorMap.
+
+\begin{table}[htbp]
+\caption{Comprehensive Software, Library, and Tool Inventory}
+\label{tab:tools_inventory}
+\centering
+\small
+\begin{tabularx}{\textwidth}{lp{0.3\textwidth}X}
+\toprule
+\textbf{Category} & \textbf{Tool / Library Name} & \textbf{Role and Technical Application in Project} \\
+\midrule
+\textbf{Core Languages} & Python 3.10.12 & Backend API, spatial analytics, MILP optimization \\
+                         & JavaScript (ES6+ / JSX) & Frontend UI, custom React hooks, interactive maps \\
+                         & \LaTeX{} (TeX Live / MiKTeX) & Professional typeset research paper and Stage-II report \\
+\midrule
+\textbf{Web Frameworks} & FastAPI 0.141.1 & Asynchronous ASGI REST API, Pydantic contracts \\
+                         & Uvicorn 0.54.0 & High-performance asynchronous HTTP server \\
+                         & React 18.2 / Vite 5.x & Single-page application UI, hot-reload bundler \\
+\midrule
+\textbf{Geospatial Tools}& Shapely 2.1.2 & 2D geometric operations, polygon containment \\
+                         & PyProj 3.8.0 & Geodetic coordinate transforms (EPSG:4326 $\to$ 32643) \\
+                         & React-Leaflet 4.2 & Interactive browser GIS mapping, tile rendering \\
+                         & OpenStreetMap (OSM) & Base road vectors, POIs, and urban land-use data \\
+\midrule
+\textbf{Scientific \& ML}& NumPy 2.5 / Pandas 3.0 & Matrix calculations, tabular municipal data pipelines \\
+                         & SciPy 1.18.1 / HiGHS & Pre-emptive Goal Programming (MILP) solver \\
+                         & Scikit-learn 1.9.1 & $K$-Means clustering, GroupKFold validation \\
+                         & SHAP 0.44.0 & TreeSHAP global and local feature attribution \\
+\midrule
+\textbf{Database \& Sec.}& SQLite 3.39+ & Transactional ACID storage with WAL mode \\
+                         & SQLAlchemy 2.1 & Core database schema and query abstraction \\
+                         & Python \texttt{hmac} & HMAC-SHA256 one-way vendor mobile phone hashing \\
+\midrule
+\textbf{Messaging API}   & Meta WhatsApp Cloud API & Official direct Graph API v21.0+ webhook gateway \\
+\midrule
+\textbf{Testing \& Dev.} & Pytest 8.4 & Automated regression test suite (18 test suites) \\
+                         & Visual Studio Code & Integrated Development Environment (IDE) \\
+                         & Git / GitHub & Distributed source version control and tracking \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\clearpage
+
+% ------------------------------------------------------------------------------
+% Appendix D: Papers Published / Certificates
+% ------------------------------------------------------------------------------
+\chapter{Papers Published and Technical Certificates}
+\label{app:publications}
+
+\section*{Conference Research Paper Details}
+
+The research methodology and empirical findings of this project have been formulated into a peer-reviewed academic conference paper formatted to IEEE standards.
+
+\begin{itemize}
+    \item \textbf{Paper Title:} \textit{UrbanVending AI: A Geospatial Decision-Support and Micro-Allocation Framework for Municipal Street Vendor Zoning Using Multi-Criteria Evaluation, AHP Calibration, and Pre-emptive Goal Programming}
+    \item \textbf{Authors:} Vivek Rajendra Patil, Darshan Gopal Gavate, Sneha Rajan Tingare, Kalyani Bhausaheb Ugale, and Prof. Vidya R. More
+    \item \textbf{Target Conference:} IEEE International Conference on Smart Urban Mobility and Intelligent Computing Systems
+    \item \textbf{Publication Status:} Submitted / Under Peer Review
+    \item \textbf{Repository Source Location:} \texttt{research-paper/main.tex}
+\end{itemize}
+
+\vspace{0.8cm}
+
+\placeholderbox{Conference Paper Acceptance / Presentation Certificate Placeholder}{
+    \textbf{Paper Title:} UrbanVending AI: A Geospatial Decision-Support and Micro-Allocation Framework for Municipal Street Vendor Zoning...\\[0.2cm]
+    \textbf{Authors:} Vivek Rajendra Patil, Darshan Gopal Gavate, Sneha Rajan Tingare, Kalyani Bhausaheb Ugale, Prof. Vidya R. More\\[0.2cm]
+    \textbf{Organizing Institution:} IEEE Conference Organizing Committee
+}{
+    Insert the official scanned copy of the Conference Acceptance Letter, Registration Receipt, or Presentation Certificate upon formal issuance by the conference proceedings committee.
+}
+
+\vspace{1.5cm}
+
+\noindent
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}cc}
+    \underline{\hspace{4.5cm}} & \underline{\hspace{4.5cm}} \\
+    \textbf{Prof. Vidya R. More} & \textbf{Prof. Dr. P. D. Bhamre} \\
+    Project Guide & Head of Department \\
+    Department of Information Technology & Department of Information Technology \\
+\end{tabular*}

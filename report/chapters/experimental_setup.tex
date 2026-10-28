@@ -1,0 +1,190 @@
+% ==============================================================================
+% Chapter 6: Experimental Setup
+% ==============================================================================
+\chapter{Experimental Setup}
+\label{ch:experimental_setup}
+
+This chapter details the empirical dataset profiles, cartographic and tabular data preprocessing pipelines, computational execution protocols, evaluation metrics, and runtime efficiency considerations.
+
+\section{Experimental Setup / Block Diagram}
+\label{sec:setup_block_diagram}
+
+The experimental evaluation framework is structured to benchmark four distinct computational tiers: unsupervised spatial clustering, multi-criteria ranking sensitivity, mathematical Goal Programming convergence, and geometric micro-slot packing precision. Fig.~\ref{fig:experimental_block_diagram} depicts the computational benchmarking environment.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+    node distance=1.1cm,
+    block/.style={
+        rectangle, draw=blue!70, fill=blue!6, rounded corners=2pt,
+        font=\scriptsize, inner sep=4pt, text width=6.2cm, text centered
+    },
+    arrow/.style={->, >=stealth, thick, draw=black!75}
+]
+
+\node[block, fill=gray!10, draw=black!70] (raw_data) {
+    \textbf{Multi-Source Data Ingestion}\\
+    NMC Municipal Survey (7,259 Vendors, 308 Zones) + OSM Vector Layers
+};
+
+\node[block, below=0.6cm of raw_data] (preproc) {
+    \textbf{Cartographic \& Attribute Preprocessing}\\
+    WGS84 $\to$ UTM Zone 43N (EPSG:32643), Laplace Shrinkage ($M=20.0$)
+};
+
+\node[block, below=0.6cm of preproc] (clustering) {
+    \textbf{Protocol 1: Spatial Typology Benchmarking}\\
+    Unsupervised $K$-Means ($K \in \{2, 4\}$) across 5 seeds ($\{11, 23, 37, 53, 71\}$)
+};
+
+\node[block, below=0.6cm of clustering] (sensitivity) {
+    \textbf{Protocol 2: MCDA Sensitivity Audit}\\
+    224 Perturbation Scenarios (24 OAT $\pm 10\%, \pm 20\%$, 200 Monte Carlo $\delta=0.20$)
+};
+
+\node[block, below=0.6cm of sensitivity] (milp_bench) {
+    \textbf{Protocol 3: Goal Programming Batch Optimization}\\
+    HiGHS Dual Simplex Solver under synthetic \& live municipal demand (10--500 vendors)
+};
+
+\node[block, below=0.6cm of milp_bench] (packing_bench) {
+    \textbf{Protocol 4: Geometric Micro-Slot Metric Validation}\\
+    Lekha Nagar Pilot Site (NN\_F\_013) across Boundaries A (2974) and B (3577)
+};
+
+\draw[arrow] (raw_data) -- (preproc);
+\draw[arrow] (preproc) -- (clustering);
+\draw[arrow] (clustering) -- (sensitivity);
+\draw[arrow] (sensitivity) -- (milp_bench);
+\draw[arrow] (milp_bench) -- (packing_bench);
+
+\end{tikzpicture}
+\caption{Block diagram of the experimental evaluation and benchmarking pipeline.}
+\label{fig:experimental_block_diagram}
+\end{figure}
+
+\section{Dataset Description}
+\label{sec:dataset_description}
+
+The empirical evaluation utilizes actual administrative records obtained from the Nashik Municipal Corporation (NMC) paired with high-resolution geospatial features extracted from OpenStreetMap (OSM). Table~\ref{tab:dataset_inventory} lists the core data assets.
+
+\begin{table}[htbp]
+\caption{Dataset Inventory and Spatial Attributes}
+\label{tab:dataset_inventory}
+\centering
+\small
+\begin{tabular}{llrrl}
+\toprule
+\textbf{Dataset Asset} & \textbf{Data Format} & \textbf{Records} & \textbf{Features} & \textbf{Primary Source} \\
+\midrule
+\texttt{official\_zones.csv} & Tabular & 308 & 9 & NMC Town-Planning Gazette \\
+\texttt{vendors.csv} & Tabular & 7,259 & 22 & NMC Street Vendor Survey \\
+\texttt{assignments.csv} & Relational & 7,259 & 19 & NMC Administrative Crosswalk \\
+\texttt{zone\_evidence.csv} & Tabular & 308 & 20 & Synthesized Historical Survey \\
+\texttt{roads\_clean.gpkg} & Vector Lines & 13,988 & 12 & OpenStreetMap (OSM) \\
+\texttt{commercial\_pts.gpkg} & Vector Points & 353 & 8 & OSM Commercial Features \\
+\texttt{landuse\_clean.gpkg} & Vector Polygons & 401 & 6 & OSM Land Use Polygons \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:zone_vendor_distribution} details the distribution of municipal vending zones across statutory legal classifications and the breakdown of registered vendors across business categories.
+
+\begin{table}[htbp]
+\caption{Distribution of Municipal Zones and Registered Business Categories}
+\label{tab:zone_vendor_distribution}
+\centering
+\small
+\begin{tabular}{lrr|lrr}
+\toprule
+\textbf{Zone Classification} & \textbf{Count} & \textbf{\%} & \textbf{Business Category} & \textbf{Vendors} & \textbf{\%} \\
+\midrule
+FREE Vending Zone & 166 & 53.9\% & Vegetable / Fruit Vending & 3,176 & 43.8\% \\
+NO\_VENDING Zone & 83 & 26.9\% & Food / Beverages & 1,693 & 23.3\% \\
+RESTRICTED Zone & 59 & 19.2\% & General Household Goods & 955 & 13.2\% \\
+\midrule
+\textbf{Total Zones} & \textbf{308} & \textbf{100.0\%} & Other Miscellaneous & 682 & 9.4\% \\
+\cmidrule(r){1-3}
+\textbf{Spatial Boundary Status} & & & Clothing / Apparel & 457 & 6.3\% \\
+Digitized Usable Polygon & 258 & 83.8\% & Unknown / Survey Review & 174 & 2.4\% \\
+Unmapped / Pending Re-survey & 50 & 16.2\% & Flower / Puja Items & 122 & 1.7\% \\
+\midrule
+\textbf{Median Footprint Area} & \multicolumn{2}{r|}{$3,731.56\text{ m}^2$} & \textbf{Total Registered Vendors} & \textbf{7,259} & \textbf{100.0\%} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Data Preprocessing}
+\label{sec:data_preprocessing}
+
+To ensure analytical and numerical integrity, data preprocessing followed a rigorous multi-stage pipeline:
+
+\begin{enumerate}
+    \item \textbf{Cartographic Reprojection and Metric Transformation:} OpenStreetMap layers and municipal boundary polygons were reprojected from geographic coordinates (EPSG:4326 / WGS84) to the Universal Transverse Mercator metric projection (EPSG:32643 / UTM Zone 43N). This eliminates latitude-dependent metric distortion, enabling Euclidean distance and area calculations in exact meters.
+    \item \textbf{Spatial Cleaning and Outlier Removal:} Zones with inverted polygon vertices or invalid geometries were topologically corrected via Shapely's \texttt{make\_valid} operator. The 50 municipal zones lacking digitized boundaries were separated into a dedicated verification queue and excluded from autonomous micro-slot generation.
+    \item \textbf{Cryptographic Phone Number Hashing:} In compliance with data minimization principles, raw vendor contact numbers were formatted to standard E.164 strings and hashed using HMAC-SHA256 with an institutional secret key (\texttt{AUTH\_HMAC\_SECRET}). Plaintext phone numbers were scrubbed from operational database tables.
+    \item \textbf{Leave-Location-Group-Out Laplace Shrinkage:} To compute reliable business category compatibility without self-reinforcing bias, historical vendor associations were grouped by spatial cluster ($g_v$). When estimating category lift for a vendor, their entire location group was held out, and Laplace smoothing was applied with shrinkage strength $M = 20.0$.
+\end{enumerate}
+
+\section{Experimental Steps}
+\label{sec:experimental_steps}
+
+The empirical evaluation of VendorMap was conducted according to four standardized experimental protocols:
+
+\begin{enumerate}
+    \item \textbf{Protocol 1: Unsupervised Environmental Clustering:}
+    $K$-Means clustering was executed across the 258 usable zone geometries using the 12 normalized spatial criteria. Experiments were run for $K \in \{2, 4\}$ across five deterministic initialization seeds ($\{11, 23, 37, 53, 71\}$). Partition concordance was evaluated using the Adjusted Rand Index ($ARI$).
+    
+    \item \textbf{Protocol 2: MCDA Sensitivity Audit:}
+    To evaluate whether zone recommendations are brittle under subjective weight variation, a 224-scenario sensitivity audit was executed for a representative vendor profile (Food Vendor in Nashik West evaluating 146 candidate zones). The test suite comprised:
+    \begin{itemize}
+        \item 24 One-at-a-Time (OAT) scenarios varying each of the 6 criteria by $\pm 10\%$ and $\pm 20\%$ while renormalizing remaining weights.
+        \item 200 Monte Carlo scenarios uniformly sampling weight vectors within a $\pm 20\%$ perturbation hypercube ($\delta = 0.20$) around the baseline AHP policy.
+    \end{itemize}
+    
+    \item \textbf{Protocol 3: Goal Programming Batch Optimization:}
+    To evaluate optimization scalability and capacity enforcement, synthetic and historical vendor demand batches ($N \in \{10, 50, 100, 250, 500\}$) were allocated against the live zone capacity registry using the HiGHS dual simplex solver. Solution convergence time, unassigned counts ($U^*$), and capacity violations were recorded.
+    
+    \item \textbf{Protocol 4: Metric Micro-Slot Packing Validation:}
+    The geometric micro-slot packing engine was executed on the official Lekha Nagar pilot site (Zone NN\_F\_013) across Boundary A (Property ID 2974, area $1,377.87\,\text{m}^2$) and Boundary B (Property ID 3577, area $1,283.35\,\text{m}^2$). The algorithm attempted to pack 10 standardized $2\,\text{m} \times 2\,\text{m}$ slots with $\ge 0.5\,\text{m}$ clearance and a $1.2\,\text{m}$ pedestrian corridor.
+\end{enumerate}
+
+\section{Performance Parameters}
+\label{sec:performance_parameters}
+
+The quantitative performance of the models and algorithms was evaluated using the following formal statistical parameters:
+
+\begin{itemize}
+    \item \textbf{Mean Absolute Error (MAE):}
+    \begin{equation}
+        \text{MAE} = \frac{1}{n} \sum_{i=1}^n |y_i - \hat{y}_i|
+    \end{equation}
+    \item \textbf{Root Mean Squared Error (RMSE):}
+    \begin{equation}
+        \text{RMSE} = \sqrt{\frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2}
+    \end{equation}
+    \item \textbf{Spearman Rank Correlation ($\rho$):}
+    \begin{equation}
+        \rho = 1 - \frac{6 \sum d_i^2}{n(n^2 - 1)}
+    \end{equation}
+    where $d_i$ is the difference between the ranks of corresponding variables.
+    \item \textbf{Top-$K$ Jaccard Similarity:}
+    \begin{equation}
+        J(S_K, S'_K) = \frac{|S_K \cap S'_K|}{|S_K \cup S'_K|}
+    \end{equation}
+    measuring the set overlap between the top-$K$ recommended zones before and after weight perturbation.
+    \item \textbf{Adjusted Rand Index (ARI):} Measures the similarity between two data clusterings adjusted for chance ($ARI = 1.0$ indicates identical cluster partitions).
+    \item \textbf{Geometric Edge Dimension Error:} Maximum deviation of generated slot polygon edge lengths from nominal $2.000\,\text{m}$ dimensions in meters ($\Delta_{\text{edge}} = \max |e_k - 2.0|$).
+\end{itemize}
+
+\section{Efficiency Issues}
+\label{sec:efficiency_issues}
+
+During development and stress-testing, four primary computational efficiency challenges were identified and addressed:
+
+\begin{enumerate}
+    \item \textbf{Mixed-Integer Linear Programming Convergence:} Standard branch-and-bound MILP solvers can experience exponential time complexity in dense allocation scenarios. By deploying the HiGHS dual revised simplex solver~\cite{huang2023highs} and decomposing the objective into two sequential pre-emptive stages, problem complexity was reduced to polynomial time, enabling convergence in under 120 milliseconds for 100-vendor batches.
+    \item \textbf{Spatial Search Overhead in Micro-Slot Packing:} Searching candidate slot placements at sub-millimeter intervals across irregular polygons is computationally expensive. The generator optimizes this by deriving the dominant boundary axis $\theta^*$ from the minimum rotated bounding rectangle and performing directional 1D corridor projection, restricting 2D polygon intersection checks to feasible candidate spans.
+    \item \textbf{Database Concurrency and Locking:} Simultaneous vendor OTP requests, administrative zone updates, and background webhook processing can lead to database contention in standard SQLite. The database configuration enforces Write-Ahead Logging (WAL) with a 5000-millisecond busy timeout and immediate transaction locks on critical write paths.
+    \item \textbf{Mobile GPS Geolocation Jitter:} High-frequency GPS polling on mobile devices causes rapid battery depletion and route recalculation jitter. The client navigation hook implements a throttled location watcher with a 10-second cache allowance, a 50-meter accuracy filter, and an automatic proximity transition that prevents erroneous slot arrival claims in urban canyons.
+\end{enumerate}

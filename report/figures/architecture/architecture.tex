@@ -1,0 +1,85 @@
+% System Architecture Diagram in TikZ
+\begin{tikzpicture}[
+    node distance=1.1cm and 1.2cm,
+    box/.style={
+        rectangle, draw=black!75, fill=gray!8, rounded corners=2pt,
+        text centered, font=\footnotesize, minimum height=0.7cm, inner sep=4pt
+    },
+    primary/.style={
+        box, fill=blue!10, draw=blue!70, font=\footnotesize\bfseries
+    },
+    accent/.style={
+        box, fill=teal!10, draw=teal!70, font=\footnotesize\bfseries
+    },
+    opt/.style={
+        box, fill=purple!10, draw=purple!70, font=\footnotesize\bfseries
+    },
+    layer/.style={
+        rectangle, draw=black!40, dashed, rounded corners=4pt, inner sep=6pt, fill=black!2
+    },
+    arrow/.style={
+        ->, >=stealth, thick, draw=black!80
+    }
+]
+
+% Top Layer: Data Ingestion
+\node[primary, text width=3.4cm] (nmc_data) {NMC Official Registry\\(7,259 Vendors, 308 Zones)};
+\node[primary, text width=3.4cm, right=0.8cm of nmc_data] (osm_data) {OpenStreetMap Spatial Layers\\(13,988 Roads, 353 POIs)};
+
+% Layer 2: Spatial Feature Engineering & Clustering
+\node[box, text width=3.4cm, below=0.8cm of nmc_data] (geom_prep) {Spatial Verification \& Projection\\(EPSG:4326 $\to$ EPSG:32643)};
+\node[box, text width=3.4cm, below=0.8cm of osm_data] (gis_feat) {12 Environmental GIS Metrics\\(Saturation \& Proximity Transforms)};
+
+\node[accent, text width=7.6cm, below=0.6cm of $(geom_prep.south)!0.5!(gis_feat.south)$] (kmeans) {
+    Environmental Spatial Typology Layer\\
+    \normalfont{\scriptsize Unsupervised $K$-Means ($K=2$, $ARI=1.0$ vs. baseline, 258 usable zone geometries)}
+};
+
+% Layer 3: Decision Engine
+\node[box, text width=3.4cm, below=0.7cm of kmeans.south west, anchor=north west] (ahp_engine) {
+    AHP Policy Calibration\\
+    \normalfont{\scriptsize Pairwise Matrix, $\lambda_{\max}$, $CR \le 0.10$}
+};
+\node[accent, text width=3.8cm, below=0.7cm of kmeans.south east, anchor=north east] (mcda_engine) {
+    Missing-Data-Aware MCDA\\
+    \normalfont{\scriptsize 6-Factor Composite Scoring with Empirical Bayes Category Shrinkage}
+};
+
+% Layer 4: Mathematical Optimization & Micro-Allocation
+\node[opt, text width=7.6cm, below=0.7cm of $(ahp_engine.south)!0.5!(mcda_engine.south)$] (milp) {
+    Pre-emptive Goal Programming Optimizer (MILP / HiGHS)\\
+    \normalfont{\scriptsize \textbf{Stage 1:} Maximize assigned vendors ($u_v$) $\mid$ \textbf{Stage 2:} Minimize suitability loss, fallback, \& coverage penalties}
+};
+
+\node[box, text width=7.6cm, below=0.6cm of milp] (micro_alloc) {
+    Geometric Micro-Slot Packing Generator (Lekha Nagar Pilot NN\_F\_013)\\
+    \normalfont{\scriptsize $2\,\text{m}\times 2\,\text{m}$ footprints, $\ge 0.5\,\text{m}$ spacing, $1.2\,\text{m}$ continuous pedestrian corridor}
+};
+
+% Layer 5: Operational Delivery & Interfaces
+\node[primary, text width=3.6cm, below=0.7cm of micro_alloc.south west, anchor=north west] (admin_ui) {
+    NMC Officer Admin Console\\
+    \normalfont{\scriptsize Live Capacity Tracking, GIS Map, Allocation Auditing}
+};
+\node[primary, text width=3.6cm, below=0.7cm of micro_alloc.south east, anchor=north east] (vendor_channel) {
+    Vendor Channels (Web \& WhatsApp)\\
+    \normalfont{\scriptsize Multilingual (En/Mr), Meta Cloud API, HMAC-SHA256 Identity}
+};
+
+% Arrows
+\draw[arrow] (nmc_data) -- (geom_prep);
+\draw[arrow] (osm_data) -- (gis_feat);
+\draw[arrow] (geom_prep) -- (kmeans.north -| geom_prep);
+\draw[arrow] (gis_feat) -- (kmeans.north -| gis_feat);
+
+\draw[arrow] (kmeans.south -| ahp_engine) -- (ahp_engine);
+\draw[arrow] (ahp_engine) -- (mcda_engine);
+\draw[arrow] (kmeans.south -| mcda_engine) -- (mcda_engine);
+
+\draw[arrow] (mcda_engine) -- (milp.north -| mcda_engine);
+\draw[arrow] (milp) -- (micro_alloc);
+
+\draw[arrow] (micro_alloc.south -| admin_ui) -- (admin_ui);
+\draw[arrow] (micro_alloc.south -| vendor_channel) -- (vendor_channel);
+
+\end{tikzpicture}

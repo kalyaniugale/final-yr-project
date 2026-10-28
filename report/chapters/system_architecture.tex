@@ -1,0 +1,199 @@
+% ==============================================================================
+% Chapter 3: System Architecture
+% ==============================================================================
+\chapter{System Architecture}
+\label{ch:system_architecture}
+
+\section{Problem Statement / Definition}
+\label{sec:problem_statement}
+
+Let $\mathcal{V} = \{v_1, v_2, \dots, v_N\}$ represent a finite set of $N = 7,259$ registered municipal street vendors within the urban jurisdiction of the Nashik Municipal Corporation (NMC). Each vendor $v \in \mathcal{V}$ is defined by an operational tuple:
+\begin{equation}
+    v = \left( \text{ID}_v, c_v, d_v, \mathbf{x}_v, \text{Status}_v \right)
+    \label{eq:vendor_tuple_def}
+\end{equation}
+where:
+\begin{itemize}
+    \item $\text{ID}_v \in \mathbb{S}$ is the unique vendor identity or application sequence;
+    \item $c_v \in \mathcal{C}$ is the standardized business category selected from the domain:
+    \begin{equation}
+        \mathcal{C} = \left\{ \text{vegetable\_fruit}, \text{food}, \text{clothing}, \text{flower}, \text{general\_goods}, \text{other} \right\}
+    \end{equation}
+    \item $d_v \in \mathcal{D}$ is the preferred administrative division from the six NMC municipal divisions:
+    \begin{equation}
+        \mathcal{D} = \left\{ \text{Nashik East}, \text{Nashik West}, \text{Nashik Road}, \text{Panchavati}, \text{CIDCO}, \text{Satpur} \right\}
+    \end{equation}
+    \item $\mathbf{x}_v = (\phi_v, \lambda_v) \in \mathbb{R}^2$ represents historical geographic coordinates (if recorded during civic surveys);
+    \item $\text{Status}_v \in \{\text{ACTIVE}, \text{INACTIVE}\}$ denotes the administrative lifecycle status.
+\end{itemize}
+
+Similarly, let $\mathcal{Z} = \{z_1, z_2, \dots, z_M\}$ denote the set of $M = 308$ official municipal vending zones demarcated by the NMC town-planning department. Each zone $z \in \mathcal{Z}$ is characterized by:
+\begin{equation}
+    z = \left( \text{ID}_z, \text{Type}_z, C_z, d_z, \Omega_z \right)
+    \label{eq:zone_tuple_def}
+\end{equation}
+where:
+\begin{itemize}
+    \item $\text{Type}_z \in \{\text{FREE}, \text{RESTRICTED}, \text{NO\_VENDING}\}$ indicates statutory zoning permission under the Street Vendors Act, 2014;
+    \item $C_z \in \mathbb{N}_{\ge 0}$ is the authorized municipal carrying capacity (maximum allowable vendors);
+    \item $d_z \in \mathcal{D}$ is the administrative division containing zone $z$;
+    \item $\Omega_z \subset \mathbb{R}^2$ represents the geographic boundary polygon or reference coordinate footprint.
+\end{itemize}
+
+\noindent \textbf{The Optimization Problem:} Given a batch of vendor relocation or initial allocation requests $\mathcal{V}_{\text{req}} \subseteq \mathcal{V}$, determine a binary allocation matrix $\mathbf{X} \in \{0, 1\}^{|\mathcal{V}_{\text{req}}| \times |\mathcal{Z}|}$, where $x_{v,z} = 1$ if vendor $v$ is assigned to zone $z$ and $0$ otherwise, such that:
+\begin{enumerate}
+    \item \textbf{Single Assignment:} Each vendor is assigned to at most one zone:
+    \begin{equation}
+        \sum_{z \in \mathcal{Z}_{\text{elig}}} x_{v,z} \le 1, \quad \forall v \in \mathcal{V}_{\text{req}}
+        \label{eq:prob_single}
+    \end{equation}
+    \item \textbf{Capacity Invariant:} Total assigned vendors in zone $z$ plus existing active vendors cannot exceed authorized capacity $C_z$:
+    \begin{equation}
+        \sum_{v \in \mathcal{V}_{\text{req}}} x_{v,z} + \text{ActiveCount}_z \le C_z, \quad \forall z \in \mathcal{Z}_{\text{elig}}
+        \label{eq:prob_capacity}
+    \end{equation}
+    \item \textbf{Statutory Eligibility:} Allocations are restricted strictly to eligible zones:
+    \begin{equation}
+        \mathcal{Z}_{\text{elig}} = \{z \in \mathcal{Z} \mid \text{Type}_z = \text{FREE} \land C_z - \text{ActiveCount}_z > 0\}
+        \label{eq:prob_elig}
+    \end{equation}
+    \item \textbf{Objective Hierarchy:} Maximize total assigned vendors (Stage 1), and lexicographically minimize suitability quality loss, preferred-division displacement, and low evidence coverage (Stage 2).
+    \item \textbf{Micro-Slot Engineering:} For each allocated zone $z$, compute a set of $C_z$ disjoint metric stall polygons $\mathcal{S}_z = \{s_1, s_2, \dots, s_{C_z}\}$ satisfying:
+    \begin{align}
+        s_k &\subset \Omega_z, \quad \text{dim}(s_k) = 2.0\,\text{m} \times 2.0\,\text{m} \\
+        \text{dist}(s_k, s_j) &\ge 0.50\,\text{m}, \quad \forall j \ne k \\
+        s_k \cap \text{Corridor}(\Omega_z, w_{\text{corr}} = 1.2\,\text{m}) &= \emptyset, \quad \forall k
+    \end{align}
+\end{enumerate}
+
+\section{Methodology}
+\label{sec:methodology}
+
+The VendorMap computational architecture is structured into a seven-stage computational pipeline that seamlessly translates municipal policy guidelines into physical stall coordinates:
+
+\subsection{Stage 1: Multi-Source Municipal and Spatial Data Ingestion}
+The system ingests two heterogeneous data streams: official NMC municipal records and OpenStreetMap (OSM) spatial vector layers. NMC records provide vendor demographic profiles, registered business categories, historical survey points, and statutory zone capacities. OpenStreetMap provides road network line strings and point-of-interest (POI) spatial features covering commercial enterprises, transport hubs, and public healthcare/education amenities.
+
+\subsection{Stage 2: Spatial Feature Engineering and Non-linear Transforms}
+Raw geographic indicators exhibit heavy-tailed distributions and cannot be directly aggregated into linear multi-criteria models. VendorMap applies two deterministic non-linear transformations:
+\begin{enumerate}
+    \item \textbf{Logarithmic Saturation Transform:} For count and density metrics where additional units yield diminishing marginal utility beyond a threshold $\beta > 0$:
+    \begin{equation}
+        S(x, \beta) = \min\left(1.0, \frac{\ln(1 + \max(x, 0))}{\ln(1 + \beta)}\right)
+        \label{eq:sat_transform}
+    \end{equation}
+    \item \textbf{Exponential Proximity Decay Transform:} For distance metrics where proximity represents positive utility that decays with physical displacement $d \ge 0$ (in meters):
+    \begin{equation}
+        P(d, \lambda) = \exp\left( -\frac{\max(d, 0)}{\lambda} \right)
+        \label{eq:prox_transform}
+    \end{equation}
+    where $\lambda > 0$ is the characteristic decay distance parameter.
+\end{enumerate}
+
+\subsection{Stage 3: Unsupervised Environmental Typology (K-Means)}
+To discover underlying spatial environments across the 258 usable zone geometries, the 12 normalized spatial features are clustered using $K$-Means clustering ($K=2$ and $K=4$). To protect legal integrity, statutory capacities, legal classifications (FREE vs. RESTRICTED), and vendor counts are strictly excluded from clustering features, ensuring unsupervised clusters reflect purely physical and commercial environments.
+
+\subsection{Stage 4: Missing-Data-Aware Weighted MCDA}
+The multi-criteria suitability engine evaluates six distinct criteria factors: Commercial Density ($f_{\text{com}}$), Accessibility ($f_{\text{acc}}$), Public Facilities ($f_{\text{fac}}$), Business Category Compatibility ($f_{\text{bus}}$), Preference Matching ($f_{\text{pref}}$), and Historical Association Density ($f_{\text{hist}}$).
+
+\noindent \textbf{Empirical Bayes Category Compatibility:} To prevent small-sample distortion when evaluating category $c$ in zone $z$, the system employs Laplace shrinkage with strength $M = 20.0$ and leave-location-group-out cross-validation:
+\begin{equation}
+    \hat{\theta}_{z,c} = \frac{n_{z,c}^{(-g_v)} + M \cdot p_c}{n_z^{(-g_v)} + M}
+    \label{eq:shrinkage_form}
+\end{equation}
+where $p_c$ is the citywide prior share of category $c$. The category lift is $\text{Lift}_{z,c} = \hat{\theta}_{z,c} / p_c$, and the business compatibility factor score $f_{\text{bus}}(z, c)$ scales the lift logarithmically while weighting by sample reliability:
+\begin{equation}
+    R(n_z) = \frac{n_z^{(-g_v)}}{n_z^{(-g_v)} + M}
+\end{equation}
+\begin{equation}
+    f_{\text{bus}}(z, c) = 0.5 + \left( \min\left(1.0, \frac{\ln(1 + \max(\text{Lift}_{z,c}, 0))}{\ln(3)}\right) - 0.5 \right) \cdot R(n_z)
+    \label{eq:fbus_form}
+\end{equation}
+
+\noindent \textbf{Missing-Data Renormalization:} If a candidate zone lacks data for factor $i$, the engine omits factor $i$ and renormalizes the score dynamically across available factors:
+\begin{equation}
+    \text{Score}(v, z) = 100 \times \frac{\sum_{i \in \mathcal{F}} w_i \cdot f_i(v, z) \cdot \mathbb{I}(f_i(v, z) \ne \text{NaN})}{\sum_{i \in \mathcal{F}} w_i \cdot \mathbb{I}(f_i(v, z) \ne \text{NaN})}
+    \label{eq:mcda_norm_form}
+\end{equation}
+
+\subsection{Stage 5: Analytic Hierarchy Process (AHP) Policy Calibration}
+Pairwise comparison matrices $\mathbf{A} \in \mathbb{R}^{6 \times 6}$ are constructed according to Saaty's 1--9 scale. The principal eigenvalue $\lambda_{\max}$ and Consistency Ratio ($CR \le 0.10$) are computed to generate the normalized baseline weights:
+\begin{equation}
+    \mathbf{w}_{\text{base}} = [w_{\text{bus}}=0.25, w_{\text{com}}=0.20, w_{\text{acc}}=0.20, w_{\text{fac}}=0.15, w_{\text{pref}}=0.10, w_{\text{hist}}=0.10]
+\end{equation}
+
+\subsection{Stage 6: Two-Stage Pre-emptive Goal Programming Optimizer}
+To prevent algorithmic over-allocation in high-demand zones, a two-stage Mixed-Integer Linear Program (MILP) is solved via HiGHS:
+\begin{itemize}
+    \item \textbf{Stage 1 (Cardinality Maximization):} Minimize total unassigned vendors:
+    \begin{equation}
+        U^* = \min \sum_{v \in \mathcal{V}} u_v \quad \text{s.t. } \sum_{z \in \mathcal{Z}_{\text{elig}}} x_{v,z} + u_v = 1, \quad \sum_{v \in \mathcal{V}} x_{v,z} \le C_z^{\text{avail}}
+    \end{equation}
+    \item \textbf{Stage 2 (Lexicographic Quality Optimization):} Minimize suitability penalty, division fallback, and low evidence coverage holding $U^*$ fixed:
+    \begin{equation}
+        \min \sum_{v,z} x_{v,z} \left[ (100 - \text{Score}(v, z)) + \alpha_{\text{fb}} \cdot \mathbb{I}(\text{Fallback}_{v,z}) + \alpha_{\text{cov}} \cdot (1 - \text{Coverage}(v, z)) \right]
+    \end{equation}
+    subject to $\sum_{v} u_v = U^*$.
+\end{itemize}
+
+\subsection{Stage 7: Metric Micro-Slot Packing Generator}
+Zone polygons are projected from EPSG:4326 into metric projected coordinates (EPSG:32643 / UTM Zone 43N). Along the dominant axis $\theta^*$ of the minimum rotated rectangle, the generator packs candidate $2.0\,\text{m} \times 2.0\,\text{m}$ square stalls maintaining $\ge 0.5\,\text{m}$ spacing and excluding an uninterrupted $1.2\,\text{m}$ pedestrian clearance corridor.
+
+\section{System Architecture / Block Diagram}
+\label{sec:architecture_diagram}
+
+Fig.~\ref{fig:sys_architecture} presents the comprehensive, multi-tier system architecture of VendorMap, illustrating the data ingestion, spatial intelligence, decision engine, mathematical optimization, and operational delivery tiers.
+
+\begin{figure*}[htbp]
+    \centering
+    \input{figures/architecture/architecture.tex}
+    \caption{Multi-tier system architecture of VendorMap, detailing spatial ingestion, environmental typology, AHP-calibrated MCDA, pre-emptive Goal Programming, and multichannel delivery.}
+    \label{fig:sys_architecture}
+\end{figure*}
+
+\section{Flowchart}
+\label{sec:flowchart}
+
+Fig.~\ref{fig:sys_workflow} illustrates the end-to-end operational flowchart of the VendorMap relocation and allocation workflow, detailing statutory eligibility gating, capacity verification, and fallback handling.
+
+\begin{figure}[htbp]
+    \centering
+    \input{figures/diagrams/workflow.tex}
+    \caption{End-to-end operational flowchart of the VendorMap vendor relocation and micro-slot allocation workflow.}
+    \label{fig:sys_workflow}
+\end{figure}
+
+\section{Algorithm}
+\label{sec:algorithm}
+
+Algorithm~\ref{alg:vendormap_pipeline} formalizes the complete computational execution sequence of the VendorMap allocation engine.
+
+\begin{algorithm}[htbp]
+\caption{End-to-End VendorMap Relocation and Micro-Allocation Pipeline}
+\label{alg:vendormap_pipeline}
+\begin{algorithmic}[1]
+\Require Vendor relocation demand batch $\mathcal{V}_{\text{req}}$, Municipal zone registry $\mathcal{Z}$, Spatial GIS layers $\mathbf{X}_{\text{GIS}}$
+\Ensure Optimal binary allocation matrix $\mathbf{X}^*$ and physical metric slot polygons $\mathcal{S}$
+\State Identify eligible candidate zones: $\mathcal{Z}_{\text{elig}} \gets \{z \in \mathcal{Z} \mid \text{Type}_z = \text{FREE} \land C_z - \text{ActiveCount}_z > 0\}$
+\For{each vendor $v \in \mathcal{V}_{\text{req}}$}
+    \State Extract business category $c_v$ and preferred division $d_v$
+    \For{each zone $z \in \mathcal{Z}_{\text{elig}}$}
+        \State Compute leave-group-out category lift $\text{Lift}_{z,c_v}$ and reliability $R(n_z)$ (Eq.~\ref{eq:shrinkage_form}--\ref{eq:fbus_form})
+        \State Compute non-linear feature scores $f_{\text{com}}, f_{\text{acc}}, f_{\text{fac}}, f_{\text{pref}}, f_{\text{hist}}$ (Eq.~\ref{eq:sat_transform}--\ref{eq:prox_transform})
+        \State Compute normalized suitability score $\text{Score}(v,z)$ and coverage $\text{Coverage}(v,z)$ (Eq.~\ref{eq:mcda_norm_form})
+    \EndFor
+\EndFor
+\State \textbf{// Stage 1: Solve Cardinality MILP via HiGHS Solver}
+\State $U^* \gets \min_{\mathbf{x}, \mathbf{u}} \sum_{v \in \mathcal{V}_{\text{req}}} u_v$ subject to single assignment and live capacity constraints
+\State \textbf{// Stage 2: Solve Lexicographic Quality MILP}
+\State $\mathbf{X}^* \gets \arg\min_{\mathbf{x}} \sum_{v,z} x_{v,z} \Psi(v, z)$ subject to capacity constraints and $\sum_v u_v = U^*$
+\For{each assigned zone $z$ with boundary polygon $\Omega_z$}
+    \State Project $\Omega_z$ into metric coordinates (EPSG:32643 / UTM Zone 43N)
+    \State Determine dominant alignment angle $\theta^* = \arg\max \text{Length}(\text{Edge}(\text{MinRotatedRect}(\Omega_z)))$
+    \State Pack $2.0\,\text{m} \times 2.0\,\text{m}$ slots maintaining $\ge 0.5\,\text{m}$ inter-slot clearance
+    \State Reserve continuous $1.2\,\text{m}$ pedestrian clearance corridor
+    \State Transform validated slot polygons $\mathcal{S}_z$ back to EPSG:4326 for Leaflet map rendering
+\EndFor
+\State \Return $\mathbf{X}^*$ and $\mathcal{S}$
+\end{algorithmic}
+\end{algorithm}

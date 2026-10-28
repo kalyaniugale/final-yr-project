@@ -1,0 +1,71 @@
+% End-to-End Workflow Diagram in TikZ
+\begin{tikzpicture}[
+    node distance=0.8cm,
+    stepbox/.style={
+        rectangle, draw=black!75, fill=gray!8, rounded corners=3pt,
+        text centered, font=\footnotesize, minimum height=0.65cm, inner sep=4pt
+    },
+    decision/.style={
+        diamond, draw=red!70, fill=red!10, text centered, font=\scriptsize\bfseries,
+        inner sep=1.5pt, aspect=1.8
+    },
+    arrow/.style={
+        ->, >=stealth, thick, draw=black!80
+    }
+]
+
+% Steps
+\node[stepbox, text width=7.2cm, fill=blue!10, draw=blue!70] (step1) {
+    \textbf{1. Vendor Application Ingestion}\\
+    \scriptsize Input: Vendor profile ($v$), business category ($c$), division preference ($div$), requested zone
+};
+
+\node[stepbox, text width=7.2cm, below=0.6cm of step1] (step2) {
+    \textbf{2. Statutory \& Operational Eligibility Gate}\\
+    \scriptsize Filter: Exclude RESTRICTED / NO\_VENDING zones; verify active status in database
+};
+
+\node[decision, below=0.5cm of step2] (dec1) {Capacity Available?};
+
+\node[stepbox, text width=7.2cm, below=0.6cm of dec1, fill=teal!10, draw=teal!70] (step3) {
+    \textbf{3. GIS Feature Extraction \& Environmental Scoring}\\
+    \scriptsize Evaluate 12 POI, distance, and density criteria with logarithmic saturation and decay
+};
+
+\node[stepbox, text width=7.2cm, below=0.6cm of step3] (step4) {
+    \textbf{4. Missing-Data-Aware MCDA Aggregation}\\
+    \scriptsize Compute category lift $\text{Lift}_{z,c}$, apply empirical Bayes shrinkage, calculate score $S(v,z) \in [0, 100]$
+};
+
+\node[stepbox, text width=7.2cm, below=0.6cm of step4, fill=purple!10, draw=purple!70] (step5) {
+    \textbf{5. Constrained Pre-emptive Goal Programming}\\
+    \scriptsize Stage 1: Maximize total assigned vendors $\to$ Stage 2: Maximize suitability while obeying $C_z$
+};
+
+\node[stepbox, text width=7.2cm, below=0.6cm of step5] (step6) {
+    \textbf{6. Metric Micro-Slot Assignment \& Corridor Clearance}\\
+    \scriptsize Project into EPSG:32643, assign $2\,\text{m}\times 2\,\text{m}$ slot, verify $0.5\,\text{m}$ spacing and $1.2\,\text{m}$ corridor
+};
+
+\node[stepbox, text width=7.2cm, below=0.6cm of step6, fill=green!10, draw=green!70] (step7) {
+    \textbf{7. Municipal Audit Logging \& Multichannel Dispatch}\\
+    \scriptsize Record atomic SQLite transaction, notify vendor via SMS / WhatsApp, render on Leaflet UI
+};
+
+% Failure Node
+\node[stepbox, text width=2.4cm, fill=red!10, draw=red!70, right=0.8cm of dec1] (reject) {
+    \textbf{Queue for Review}\\
+    \scriptsize Capacity full; flag for relocation or waitlist
+};
+
+% Connectors
+\draw[arrow] (step1) -- (step2);
+\draw[arrow] (step2) -- (dec1);
+\draw[arrow] (dec1) -- node[right, font=\scriptsize] {Yes} (step3);
+\draw[arrow] (dec1) -- node[above, font=\scriptsize] {No} (reject);
+\draw[arrow] (step3) -- (step4);
+\draw[arrow] (step4) -- (step5);
+\draw[arrow] (step5) -- (step6);
+\draw[arrow] (step6) -- (step7);
+
+\end{tikzpicture}

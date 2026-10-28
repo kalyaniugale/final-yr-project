@@ -1,0 +1,135 @@
+% ==============================================================================
+% Chapter 4: Project Requirement Specifications
+% ==============================================================================
+\chapter{Project Requirement Specifications}
+\label{ch:requirements}
+
+This chapter provides a detailed specification of the hardware, software, functional, and non-functional requirements governing the implementation and deployment of VendorMap, alongside critical operational constraints and domain assumptions.
+
+\section{Hardware Requirements}
+\label{sec:hardware_requirements}
+
+The system architecture is engineered to run cost-effectively across standard municipal workstation hardware and commodity cloud servers, while enabling low-resource vendor mobile devices to access platform services.
+
+\subsection{Development and Municipal Server Environment}
+\begin{itemize}
+    \item \textbf{Processor:} Modern x86\_64 multi-core processor (Intel Core i5 / i7 8th Gen or AMD Ryzen 5 / 7, $\ge 4$ physical cores, $2.4\,\text{GHz}$ base clock).
+    \item \textbf{System Memory (RAM):} Minimum 8 GB DDR4 RAM (16 GB recommended for concurrent GIS vector layer manipulation, spatial clustering, and MILP optimization).
+    \item \textbf{Storage:} Minimum 256 GB Solid State Drive (NVMe SSD preferred) to support high-throughput SQLite Write-Ahead Logging (WAL) and spatial GeoPackage I/O.
+    \item \textbf{Network Interface:} Gigabit Ethernet / High-speed Wi-Fi network interface for live Meta WhatsApp Cloud API webhook communication and OpenStreetMap tile streaming.
+\end{itemize}
+
+\subsection{End-User Client Devices (Town-Planning Officers \& Street Vendors)}
+\begin{itemize}
+    \item \textbf{Officer Admin Desktop / Laptop:} Any standard desktop or laptop PC capable of running a modern Chromium-based web browser with WebGL support for interactive React-Leaflet GIS maps.
+    \item \textbf{Vendor Mobile Device (Web Portal):} Any smartphone running Android 8.0+ or iOS 12.0+ with modern browser support (Chrome, Safari, Firefox), minimum 2 GB RAM, and integrated GPS / A-GPS hardware.
+    \item \textbf{Vendor Mobile Device (Conversational WhatsApp):} Any basic smartphone or smart feature phone supporting WhatsApp Messenger with standard 2G/3G/4G/5G mobile cellular connectivity.
+\end{itemize}
+
+\section{Software Requirements}
+\label{sec:software_requirements}
+
+The software stack utilizes production-grade, open-source frameworks and libraries ensuring zero software licensing overhead for municipal deployment:
+
+\subsection{Backend Development and Runtime Environment}
+\begin{itemize}
+    \item \textbf{Operating System:} Microsoft Windows 11 / 10 (64-bit) or Ubuntu Linux 22.04 LTS.
+    \item \textbf{Core Language Runtime:} Python 3.10.12 (managed via isolated virtual environments).
+    \item \textbf{ASGI Web Framework:} FastAPI 0.141.1 with Uvicorn 0.54.0 ASGI server and Pydantic v2 data contract validation.
+    \item \textbf{Persistence Layer:} SQLite 3.39+ with Write-Ahead Logging (WAL) and SQLAlchemy 2.1 Core query abstraction.
+    \item \textbf{Scientific and Spatial Computing:} NumPy 2.5, Pandas 3.0, SciPy 1.18, Scikit-learn 1.9, Shapely 2.1 (computational geometry), and PyProj 3.8 (cartographic transformations).
+    \item \textbf{Mathematical Optimization:} HiGHS MILP Solver~\cite{huang2023highs} integrated natively into \texttt{scipy.optimize.milp}.
+    \item \textbf{Cryptographic Security:} Python \texttt{hmac} and \texttt{hashlib} libraries enforcing HMAC-SHA256 identity obfuscation.
+    \item \textbf{External Integration:} Official Meta WhatsApp Cloud API (Graph API v21.0+) via asynchronous HTTP client (\texttt{httpx}).
+\end{itemize}
+
+\subsection{Frontend Development and User Interface Stack}
+\begin{itemize}
+    \item \textbf{Runtime Environment:} Node.js v18.19.0 LTS and npm 9.x / 10.x package manager.
+    \item \textbf{Build Tool \& Bundler:} Vite 5.x for hot-module replacement and optimized ES module bundling.
+    \item \textbf{UI Framework:} React 18.2 with functional component architecture and custom React hooks.
+    \item \textbf{Geospatial Visualization:} Leaflet 1.9 with React-Leaflet 4.2 for vector polygon rendering, custom tile caching, and real-time GPS geolocation watching.
+    \item \textbf{Styling and Design System:} Clean Vanilla CSS design system utilizing CSS Custom Properties (Tokens) for high-performance rendering without third-party utility bloat.
+    \item \textbf{Internationalization (i18n):} Custom multilingual context provider supporting real-time switching between English (\texttt{en}) and Marathi (\texttt{mr}).
+\end{itemize}
+
+\section{Functional Requirements}
+\label{sec:functional_requirements}
+
+Table~\ref{tab:functional_requirements} summarizes the core functional requirements implemented in VendorMap, categorized by functional module.
+
+\begin{table*}[htbp]
+\caption{Detailed Functional Requirements Matrix}
+\label{tab:functional_requirements}
+\centering
+\small
+\begin{tabularx}{\textwidth}{lp{0.22\textwidth}X}
+\toprule
+\textbf{Req. ID} & \textbf{Module} & \textbf{Functional Requirement Description} \\
+\midrule
+\textbf{FR-01} & Authentication & The system shall authenticate vendors via mobile phone OTP verification without storing plaintext phone numbers, utilizing HMAC-SHA256 identity hashing. \\
+\textbf{FR-02} & Authentication & The system shall support secure administrative login for municipal town-planning officers using environment-configured credentials and HttpOnly session cookies. \\
+\textbf{FR-03} & Vendor Onboarding & The system shall allow unverified vendors to complete a single verified operational profile including full name, business category, and division preference. \\
+\textbf{FR-04} & Zone Registry & The system shall maintain an official registry of 308 municipal vending zones, tracking legal classification, official capacity, active occupants, and available quota. \\
+\textbf{FR-05} & Recommendation & The system shall compute personalized zone suitability scores ($0$--$100$) for any vendor profile using 6-factor MCDA with empirical Bayes category shrinkage ($M=20.0$). \\
+\textbf{FR-06} & Relocation Request & The system shall allow authenticated vendors to submit new zone allocation and relocation requests with automated validation against duplicate pending requests. \\
+\textbf{FR-07} & Batch Optimization & The system shall execute two-stage pre-emptive Goal Programming (MILP via HiGHS) across batches of vendor requests, guaranteeing zero capacity over-allocation. \\
+\textbf{FR-08} & Policy Calibration & The system shall provide officers with an interactive AHP pairwise matrix interface to calibrate factor weights, dynamically validating Consistency Ratio ($CR \le 0.10$). \\
+\textbf{FR-09} & Micro-Slot Packing & The system shall pack $2\,\text{m} \times 2\,\text{m}$ vending stalls within zone boundary polygons in UTM Zone 43N projection, enforcing $\ge 0.5\,\text{m}$ spacing and $1.2\,\text{m}$ corridor clearance. \\
+\textbf{FR-10} & Slot Management & The system shall allow officers to assign, block, or release individual micro-slots with atomic SQLite transaction isolation, preventing concurrent double-booking. \\
+\textbf{FR-11} & Pedestrian Navigation & The system shall provide approved vendors with single-map turn-by-turn walking directions directly from their live GPS location to their assigned micro-slot. \\
+\textbf{FR-12} & WhatsApp Conversational & The system shall support direct Meta WhatsApp Cloud API webhooks with HMAC signature verification, message deduplication, and a multi-turn bilingual state machine. \\
+\textbf{FR-13} & Audit Trail & The system shall log all administrative actions, status transitions, and slot assignments into an immutable SQLite audit log table for civic accountability. \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+\section{Non-Functional Requirements}
+\label{sec:non_functional_requirements}
+
+\begin{enumerate}
+    \item \textbf{Performance and Response Latency:}
+    \begin{itemize}
+        \item Single-vendor MCDA suitability calculation across all 308 municipal zones shall execute in under $150\,\text{milliseconds}$.
+        \item Batch Goal Programming optimization for batches up to 100 vendors shall converge to global optimality in under $2.0\,\text{seconds}$.
+        \item Micro-slot geometric packing generation for boundary polygons shall execute in under $500\,\text{milliseconds}$.
+        \item Interactive Leaflet map panning, zooming, and polygon rendering shall maintain $\ge 60\,\text{frames per second}$ on standard client hardware.
+    \end{itemize}
+    
+    \item \textbf{Data Privacy and Cryptographic Minimization:}
+    \begin{itemize}
+        \item Sensitive Personally Identifiable Information (PII)---specifically vendor telephone numbers and alternate mobile numbers---shall never be stored in plaintext within database tables, server log files, or error dumps.
+        \item Phone numbers shall be normalized to E.164 format and hashed via HMAC-SHA256 using an institutional secret key (\texttt{AUTH\_HMAC\_SECRET}).
+        \item Active session tokens shall be stored in browser cookies configured with \texttt{HttpOnly}, \texttt{SameSite=Lax}, and conditional production \texttt{Secure} flags.
+    \end{itemize}
+    
+    \item \textbf{Reliability and Transactional Integrity:}
+    \begin{itemize}
+        \item All critical state transitions (such as slot status updates, request approvals, and capacity decrements) shall execute within atomic SQLite database transactions with immediate locking.
+        \item Inbound Meta WhatsApp webhook notifications shall enforce idempotent message deduplication using unique Meta \texttt{message\_id} indices.
+    \end{itemize}
+    
+    \item \textbf{Usability and Accessibility:}
+    \begin{itemize}
+        \item The vendor user interface shall be fully internationalized, providing instantaneous language switching between English and Marathi.
+        \item Design tokens shall maintain high contrast ratios ($> 4.5:1$) conforming to WCAG 2.1 AA accessibility guidelines.
+    \end{itemize}
+\end{enumerate}
+
+\section{System Constraints and Assumptions}
+\label{sec:constraints_assumptions}
+
+\subsection{System Constraints}
+\begin{enumerate}
+    \item \textbf{Statutory Regulatory Boundaries:} The system cannot create or dissolve vending zones independently of the official gazetted records of the Nashik Municipal Corporation and Town Vending Committee.
+    \item \textbf{Cartographic Survey Availability:} Of the 308 official zones, 258 possess verified usable spatial reference geometries. The remaining 50 zones lack digitized polygon coordinates and are formally flagged for municipal physical re-survey.
+    \item \textbf{Client GPS Accuracy Constraints:} In dense urban canyon environments or beneath dense tree canopies, mobile GPS accuracy may degrade to $\pm 15$--$30\,\text{meters}$. The navigation interface explicitly labels final approach guidance as approximate.
+    \item \textbf{Single Active Allocation Rule:} A registered vendor is legally permitted to hold at most one active municipal zone allocation and one physical micro-slot at any given time.
+\end{enumerate}
+
+\subsection{Domain Assumptions}
+\begin{enumerate}
+    \item \textbf{Zone Capacity Legitimacy:} Official zone capacities ($C_z$) documented in the NMC municipal gazette are assumed to reflect legally deliberated Town Vending Committee limits.
+    \item \textbf{Spatial OpenStreetMap Coverage:} Road geometries, pedestrian footways, and commercial POIs extracted from OpenStreetMap are assumed to provide a representative proxy for urban commercial vibrancy.
+    \item \textbf{Vendor Mobile Access:} It is assumed that street vendors or a designated family member possess basic smartphone access with SMS receiving capability or WhatsApp messaging functionality.
+\end{enumerate}

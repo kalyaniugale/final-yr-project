@@ -1,0 +1,114 @@
+% ==============================================================================
+% Chapter 2: Literature Review
+% ==============================================================================
+\chapter{Literature Review}
+\label{ch:literature_review}
+
+\section{Related Work Done}
+\label{sec:related_work}
+
+The design and algorithmic architecture of VendorMap build upon extensive interdisciplinary research spanning urban informal economics, Geographic Information Systems (GIS), Multi-Criteria Decision Analysis (MCDA), mathematical facility allocation, and explainable machine learning.
+
+\subsection{Urban Street Vending Governance and Spatial Conflict}
+Street vending is recognized as an essential engine of employment and micro-commerce in developing nations. In a comprehensive review of urban informal trade across Asian economies, Bhowmik~\cite{bhowmik2005street} demonstrated that street vendors represent between 2\% and 3\% of the total urban workforce, providing vital, low-cost supply chains for daily food and consumer commodities. Bromley~\cite{bromley2000street} conducted a global policy review of street vending, analyzing the historical conflict between municipal authorities and street vendors. Bromley noted that municipal regulatory policies have historically oscillated between punitive evictions, total laissez-faire tolerance, and paternalistic containment. Bromley emphasized that purely punitive measures consistently fail because vendors are economically compelled to occupy areas with high pedestrian footfall and transit accessibility.
+
+In India, the statutory framework governing informal commerce was transformed by the enactment of the \textit{Street Vendors (Protection of Livelihood and Regulation of Street Vending) Act, 2014}~\cite{india2014street}. The Act explicitly recognizes street vending as a fundamental constitutional right to livelihood, prohibiting summary evictions without due process. It establishes Town Vending Committees (TVCs) and mandates the formal demarcation of vending zones with legally enforceable carrying capacities ($C_z$). However, urban planning scholars have repeatedly observed that the absence of automated spatial decision-support tools has crippled the practical implementation of the Act, leaving urban local bodies unable to scientifically evaluate zone capacities or manage vendor relocations.
+
+\subsection{GIS-Based Multi-Criteria Decision Analysis (MCDA)}
+Multi-criteria evaluation within a spatial context provides the theoretical foundation for evaluating urban zone suitability. In his seminal textbook, Malczewski~\cite{malczewski1999gis} integrated spatial data layers with multi-attribute utility theory, defining spatial MCDA as a process that transforms and combines geographical data (input criteria) into a resultant decision map. Malczewski~\cite{malczewski2006ordered} further extended this framework by exploring Ordered Weighted Averaging (OWA) operators to model varying degrees of decision-maker risk tolerance. 
+
+Spatial suitability modeling traditionally relies on weighted linear combination (WLC), wherein criterion scores are normalized and multiplied by stakeholder-defined weights. However, conventional GIS suitability models often assume linear utility scaling across spatial criteria. In reality, urban facilities exhibit sharp non-linear saturation (e.g., adding a third public toilet within 200 meters provides diminishing marginal utility) and exponential distance decay. VendorMap directly incorporates these non-linear transformations into its multi-criteria formulation.
+
+\subsection{Analytic Hierarchy Process (AHP) for Criterion Weighting}
+The Analytic Hierarchy Process, formulated by Thomas Saaty~\cite{saaty1980analytic, saaty1990how}, is the internationally established benchmark for establishing objective weights in complex, multi-criteria decision environments. AHP decomposes a decision problem into a hierarchical structure of goals, criteria, and alternatives, utilizing pairwise comparisons based on a standardized 1--9 fundamental scale. Saaty demonstrated that the principal right eigenvector of the pairwise comparison matrix corresponds to the optimal relative priority weights:
+\begin{equation}
+    \mathbf{A} \mathbf{w} = \lambda_{\max} \mathbf{w}
+    \label{eq:lit_ahp}
+\end{equation}
+Crucially, Saaty introduced the Consistency Index ($CI$) and Consistency Ratio ($CR$):
+\begin{equation}
+    CI = \frac{\lambda_{\max} - n}{n - 1}, \quad CR = \frac{CI}{RI(n)}
+    \label{eq:lit_cr}
+\end{equation}
+where $RI(n)$ is the empirical Random Consistency Index for a matrix of order $n$. A pairwise matrix is accepted as transitive and coherent if and only if $CR \le 0.10$. VendorMap implements AHP to provide municipal town-planning officers with an intuitive, mathematically robust mechanism to calibrate policy priorities across commercial, accessibility, and public amenity criteria.
+
+\subsection{Unsupervised Spatial Clustering}
+Unsupervised clustering algorithms partition unlabelled spatial observations into homogeneous groups based on feature similarity. The classical $K$-Means clustering algorithm, introduced by MacQueen~\cite{macqueen1967some} and refined by Lloyd~\cite{lloyd1982least}, seeks to minimize the within-cluster sum of squared Euclidean distances:
+\begin{equation}
+    \mathcal{J} = \sum_{k=1}^K \sum_{\mathbf{x} \in \mathcal{C}_k} \|\mathbf{x} - \mathbf{\mu}_k\|_2^2
+    \label{eq:lit_kmeans}
+\end{equation}
+In municipal geospatial analysis, $K$-Means is frequently applied to classify administrative wards based on demographic density, road network characteristics, or economic indicators. In VendorMap, $K$-Means is utilized strictly to discover underlying environmental typologies across municipal zones without confusing unsupervised clusters with statutory zoning bylaws.
+
+\subsection{Mathematical Optimization and Goal Programming}
+When multiple vendors must be allocated across limited municipal vending zones, independent greedy ranking fails because prime commercial zones become vastly over-subscribed. This necessitates formal constrained mathematical optimization. Goal Programming (GP), pioneered by Charnes and Cooper~\cite{charnes1977goal} and comprehensively detailed by Romero~\cite{romero1991handbook}, is an extension of linear programming designed to handle multiple, often conflicting, operational objectives according to a pre-emptive lexicographic hierarchy. In pre-emptive Goal Programming, higher-priority goals are satisfied before subordinate objectives are considered:
+\begin{equation}
+    \text{Lexicographic Min } \mathbf{a} = \{g_1(\mathbf{n}, \mathbf{p}), g_2(\mathbf{n}, \mathbf{p}), \dots, g_m(\mathbf{n}, \mathbf{p})\}
+    \label{eq:lit_gp}
+\end{equation}
+where $\mathbf{n}$ and $\mathbf{p}$ represent negative and positive deviation variables from targeted goals. VendorMap employs two-stage pre-emptive Mixed-Integer Linear Programming (MILP) solved via the HiGHS dual simplex solver~\cite{huang2023highs} to strictly enforce municipal zone capacities while minimizing unassigned vendors and preferred-division displacement penalties.
+
+\subsection{Supervised Machine Learning and Explainable AI (XAI)}
+Supervised learning algorithms, including Random Forests~\cite{breiman2001random} and Gradient Boosted Trees (XGBoost)~\cite{chen2016xgboost}, offer exceptional non-linear function approximation capabilities in regression and scoring tasks. Open-source scientific platforms such as Scikit-learn~\cite{pedregosa2011scikit} and SciPy~\cite{virtanen2020scipy} provide high-performance implementations of these algorithms. 
+
+However, in civic and municipal decision-making, deploying complex tree-based ensembles as ``black-box'' algorithms creates acute governance hazards, as municipal officers and affected vendors cannot inspect the rationale behind automated scores. To overcome this limitation, Lundberg and Lee~\cite{lundberg2017unified} developed SHAP (SHapley Additive exPlanations), an axiomatic game-theoretic approach that assigns each feature an exact Shapley attribution value for a given prediction:
+\begin{equation}
+    \phi_i(f, x) = \sum_{S \subseteq F \setminus \{i\}} \frac{|S|! (|F| - |S| - 1)!}{|F|!} \left[ f(S \cup \{i\}) - f(S) \right]
+    \label{eq:lit_shap}
+\end{equation}
+TreeSHAP computes exact attributions for tree ensembles in polynomial time, enabling VendorMap to explain model predictions both globally (system-wide feature impact) and locally (zone-specific vendor suitability breakdowns).
+
+\section{Existing Systems}
+\label{sec:existing_systems}
+
+Current municipal vendor management and zoning practices in Indian cities can be classified into four primary modalities:
+
+\begin{enumerate}
+    \item \textbf{Manual Paper-Based and Spreadsheet Registries:} Most urban local bodies maintain static vendor lists in Microsoft Excel or physical logbooks. Zone capacities are recorded as arbitrary target figures established during initial Town Vending Committee meetings without empirical spatial verification. Relocations are handled manually on an ad-hoc basis when specific road-widening or civic projects occur.
+    \item \textbf{Static GIS Cadastral Maps:} Some progressive municipal corporations (e.g., Greater Mumbai, Pune, Ahmedabad) have digitized municipal ward boundaries and arterial road networks into desktop GIS suites such as ESRI ArcGIS or QGIS. While these platforms allow officers to visually inspect zone boundaries, they function as passive mapping archives. They provide no automated decision engine, no vendor-zone suitability scoring, and no capacity-constrained micro-slot packing.
+    \item \textbf{Generic Navigation and Map Applications:} Commercial web services such as Google Maps and MapmyIndia provide high-resolution satellite imagery, commercial POI directories, and consumer turn-by-turn navigation. However, these consumer services have no concept of municipal vending bylaws, statutory zone classifications (FREE vs. NO\_VENDING), Town Vending Committee quotas, or vendor business compatibility.
+    \item \textbf{Unconstrained Machine Learning Recommenders:} Academic prototypes published in recent literature often formulate vendor recommendation as an unconstrained collaborative filtering or supervised ranking problem. These models compute a suitability score for each vendor-zone pair and simply return the top-$K$ scoring zones. In practice, because all vendors in a business category prefer prime commercial transit hubs, such unconstrained recommenders assign hundreds of vendors to the same 5-capacity zone, causing immediate municipal crisis.
+\end{enumerate}
+
+\section{Comparison of Existing Approaches}
+\label{sec:comparison_approaches}
+
+Table~\ref{tab:comparison_approaches} provides a structured comparative evaluation of traditional municipal approaches, commercial GIS mapping platforms, unconstrained machine learning prototypes, and the implemented VendorMap framework.
+
+\begin{table*}[t]
+\caption{Comparative Analysis of Vendor Management and Recommendation Approaches}
+\label{tab:comparison_approaches}
+\centering
+\small
+\begin{tabularx}{\textwidth}{lXXXX}
+\toprule
+\textbf{Feature / Capability} & \textbf{Traditional Manual System} & \textbf{Static Municipal GIS} & \textbf{Unconstrained ML Recommender} & \textbf{VendorMap (Proposed Framework)} \\
+\midrule
+\textbf{Primary Ingestion} & Paper surveys, static spreadsheets & Shapefiles, QGIS / ArcGIS layers & Synthesized feature vectors & Official NMC registry (7,259 vendors, 308 zones) + OSM \\
+\textbf{Zone Suitability Scoring} & None; subjective officer discretion & Visual inspection of ward maps & Black-box regression / neural network & 6-factor MCDA with empirical Bayes shrinkage ($M=20.0$) \\
+\textbf{Policy Weight Calibration} & None & None & Fixed or arbitrary hyperparameter weights & Interactive AHP pairwise matrix with $CR \le 0.10$ validation \\
+\textbf{Capacity Enforcement} & None; informal enforcement drives & Static tabular capacity notes & \textbf{Fails}; causes massive over-allocation & Two-stage pre-emptive Goal Programming (MILP / HiGHS) \\
+\textbf{Micro-Slot Demarcation} & Manual chalk marking on pavement & None & None & Metric packing in EPSG:32643 ($1.87 \times 10^{-9}\text{ m}$ edge error) \\
+\textbf{Pedestrian Clearance} & Ignored; reactive clearance & Not modeled & Not modeled & Continuous $1.2\,\text{m}$ corridor verified \\
+\textbf{Explainability} & Subjective / opaque & None & None (Black-box) & Transparent MCDA breakdown + TreeSHAP attributions \\
+\textbf{Vendor Privacy} & Plaintext mobile numbers exposed & None (GIS only) & Often unaddressed & HMAC-SHA256 one-way hashing keyed by secret \\
+\textbf{Multilingual Access} & Paper notices in regional language & English administrative UI & English-only API & Bilingual (En/Mr) Web Portal + Meta WhatsApp Cloud API \\
+\textbf{Turn-by-Turn Navigation} & None & External third-party maps & None & In-app Leaflet GPS guidance directly to designated slot \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+\section{Research Gaps and Limitations}
+\label{sec:research_gaps}
+
+A rigorous review of academic literature and existing municipal implementations reveals five fundamental technical and governance gaps:
+
+\begin{enumerate}
+    \item \textbf{The Spatial Capacity Paradox in Algorithmic Recommendation:} Existing academic recommendation prototypes evaluate vendor-zone suitability independently for each vendor. In high-demand urban sectors, all vendors in a category share identical preference vectors toward high-footfall commercial zones. Under independent ranking, a single zone with a carrying capacity of $C_z = 5$ receives hundreds of simultaneous top recommendations. Naive unconstrained allocation produces up to 900\% capacity over-allocation, causing catastrophic pedestrian blockage and immediate eviction. Current literature lacks integrated multi-stage optimization that bridges multi-criteria scoring with strict municipal capacity limits.
+    \item \textbf{Small-Sample Statistical Distortion in Category Compatibility:} When evaluating whether a zone suits a specific vending category (e.g., flower vending vs. clothing), raw sample proportions ($n_{z,c} / n_z$) are acutely fragile in zones with small historical vendor samples ($n_z \le 3$). A single historical vendor occurrence can produce an astronomical category lift ($> 15.0$), falsely ranking marginal peripheral zones as top recommendations. Prior work lacks empirical Bayes shrinkage mechanisms calibrated via leave-location-group-out cross-validation to shrink small-sample estimates toward citywide priors.
+    \item \textbf{Metric Inaccuracy in Micro-Scale Spatial Allocation:} Existing urban GIS models operate almost exclusively in geographic coordinate reference systems (e.g., EPSG:4326 / WGS84). While suitable for city-wide macro mapping, degree-based calculations introduce severe latitude-dependent metric distortion when applied to micro-scale pavement engineering. Literature lacks metric projection algorithms (e.g., UTM Zone 43N) capable of packing standardized $2\,\text{m} \times 2\,\text{m}$ vendor pitches inside irregular boundary polygons while guaranteeing statutory pedestrian clearance corridors.
+    \item \textbf{Vulnerability of Personally Identifiable Information (PII):} Informal street vendors constitute an economically vulnerable demographic. Prior municipal software platforms store vendor mobile numbers and family contact details in plaintext relational databases. Storing plaintext PII exposes vendors to predatory micro-lenders, unauthorized commercial spam, and privacy violations. Existing literature lacks cryptographic data minimization protocols tailored for municipal vendor registries.
+    \item \textbf{Linguistic and Digital Accessibility Barriers:} Informal vendors frequently have limited formal education and encounter severe barriers when navigating complex web portals or mobile app stores. Furthermore, most civic portals are published exclusively in English. The literature lacks frameworks integrating official, zero-install conversational messaging interfaces (such as the Meta WhatsApp Cloud API) with persistent, multilingual dialogue state machines for vendor self-service.
+\end{enumerate}
+
+VendorMap is explicitly engineered to address and resolve each of these identified research and operational gaps.

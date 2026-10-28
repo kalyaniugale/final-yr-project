@@ -1,0 +1,83 @@
+% ==============================================================================
+% Chapter 1: Introduction
+% ==============================================================================
+\chapter{Introduction}
+\label{ch:introduction}
+
+\section{Aim and Motivation}
+\label{sec:aim_motivation}
+
+Informal street vending constitutes a fundamental socioeconomic pillar of urban economies throughout the Global South, providing self-employment, micro-entrepreneurial livelihood, and daily sustenance to millions of vulnerable urban residents~\cite{bhowmik2005street}. In fast-growing Indian tier-II metropolitan centres such as Nashik, Maharashtra, street vendors supply affordable daily necessities---including fresh produce, street food, garments, and household staples---directly to consumers within dense residential and commercial neighborhoods.
+
+However, the rapid expansion of informal vending in unplanned urban spaces precipitates acute friction with municipal urban infrastructure~\cite{bromley2000street}. Unregulated clustering of vendors around busy transit intersections, railway stations, and arterial road networks results in severe pedestrian sidewalk encroachment, forced vehicular spillover, public right-of-way bottlenecks, and vehicular congestion. Historically, municipal corporations have responded to these challenges through cyclical, heavy-handed eviction drives. These coercive enforcement methods fail to resolve congestion permanently; evicted vendors invariably return within hours due to lack of viable alternative locations and acute economic necessity.
+
+Recognizing the indispensable economic contribution of street vendors and the systemic failure of punitive evictions, the Parliament of India enacted statutory legislation: the \textit{Street Vendors (Protection of Livelihood and Regulation of Street Vending) Act, 2014}~\cite{india2014street}. The Act mandates that urban local bodies (ULBs):
+\begin{enumerate}
+    \item Conduct periodic biometric surveys to register and issue vending certificates to all informal vendors;
+    \item Demarcate urban jurisdictions into designated \textbf{Free Vending Zones}, \textbf{Restricted Vending Zones}, and strictly demarcated \textbf{No-Vending Zones};
+    \item Formulate Town Vending Committees (TVCs) to establish statutory zone carrying capacities ($C_z$);
+    \item Guarantee that no street vendor is arbitrarily evicted or relocated until suitable alternative accommodation within an authorized vending zone is identified and allotted.
+\end{enumerate}
+
+Despite this statutory mandate, municipal authorities across India---including the Nashik Municipal Corporation (NMC)---face a severe computational and operational void. Town-planning departments continue to manage vendor records using fragmented spreadsheets, isolated PDF municipal gazettes, and subjective manual allocation processes. Crucially, town-planning officers lack objective, data-driven geospatial tools to:
+\begin{itemize}
+    \item Quantitatively evaluate whether a designated municipal zone provides adequate economic footfall, pedestrian accessibility, and public utility infrastructure for specific vending categories;
+    \item Systematically recommend equitable relocation options when high-density zones undergo civil redevelopment or anti-encroachment restructuring;
+    \item Enforce hard capacity constraints during batch relocation to prevent algorithmic over-saturation of popular commercial centres;
+    \item Demarcate metric, physical micro-slots on pedestrian walkways that satisfy urban safety clearance corridors and prevent obstruction of building frontages.
+\end{itemize}
+
+The central aim of \textbf{VendorMap} (UrbanVending AI) is to bridge this critical gap between statutory urban policy and operational civic reality. By fusing Geographic Information Systems (GIS), Multi-Criteria Decision Analysis (MCDA), mathematical Mixed-Integer Linear Programming (MILP), and full-stack software engineering, VendorMap delivers an automated, transparent, and legally compliant decision-support platform for municipal vendor management, equitable relocation, and physical micro-slot demarcation.
+
+\section{Scope of the Project}
+\label{sec:scope}
+
+The operational and research scope of VendorMap encompasses the complete administrative boundary of the Nashik Municipal Corporation (NMC), encompassing six administrative divisions: \textit{Nashik East, Nashik West, Nashik Road, Panchavati, CIDCO, and Satpur}. The project specifically addresses:
+
+\begin{enumerate}
+    \item \textbf{Municipal Registry Ingestion and Data Normalization:} Curating and harmonizing official civic datasets comprising 7,259 registered street vendors and 308 municipal vending zones (categorized into 166 FREE, 59 RESTRICTED, and 83 NO\_VENDING zones).
+    \item \textbf{OpenStreetMap GIS Spatial Feature Extraction:} Engineering 12 multi-scale environmental indicators across 13,988 road vectors and 353 commercial/transit Points-of-Interest (POIs) using logarithmic saturation and exponential proximity decay transformations.
+    \item \textbf{Spatial Environmental Typology:} Employing unsupervised $K$-Means clustering ($K=2$) to establish reproducible macro-typologies across 258 usable zone geometries without confounding statistical clusters with statutory zoning bylaws.
+    \item \textbf{Multi-Criteria Decision Analysis (MCDA):} Developing an operational six-factor decision engine integrating commercial density, accessibility, public amenities, vendor category compatibility, spatial preference matching, and historical vendor concentration.
+    \item \textbf{Empirical Bayes Category Shrinkage:} Implementing leave-location-group-out cross-validated Laplace shrinkage ($M=20.0$) to prevent sample-size distortion and neutralize extreme lift values for rare vendor categories in small zones.
+    \item \textbf{Analytic Hierarchy Process (AHP) Policy Calibration:} Providing town-planning officers with an interactive pairwise comparison interface with real-time eigenvalue decomposition and Consistency Ratio ($CR \le 0.10$) validation.
+    \item \textbf{Pre-emptive Goal Programming Optimizer:} Formulating a two-stage Mixed-Integer Linear Program (MILP) solved via the HiGHS dual simplex solver to eliminate the \textit{Spatial Capacity Paradox} by maximizing placed vendors while strictly respecting municipal zone capacity ceilings.
+    \item \textbf{Metric Micro-Slot Packing Generator:} Developing a sub-millimeter geometric packing engine in UTM Zone 43N projection (EPSG:32643) that generates $2\,\text{m} \times 2\,\text{m}$ vending stalls with $\ge 0.5\,\text{m}$ inter-slot spacing and an uninterrupted $1.2\,\text{m}$ pedestrian clearance corridor, empirically validated on the Lekha Nagar pilot site (Zone NN\_F\_013).
+    \item \textbf{Full-Stack Operational Delivery Platform:} Engineering an authenticated React 18 / FastAPI web application with role-based access control, SQLite Write-Ahead Logging, and in-app turn-by-turn walking navigation.
+    \item \textbf{Privacy-Preserving Vendor Identity Protection:} Eliminating plaintext phone number storage by enforcing HMAC-SHA256 one-way cryptographic hashing keyed by institutional secrets.
+    \item \textbf{Direct Meta WhatsApp Cloud API Integration:} Providing a low-barrier, bilingual (English and Marathi) conversational channel for vendor onboarding, OTP verification, and status inquiry without third-party wrapper dependencies.
+\end{enumerate}
+
+\section{Objectives}
+\label{sec:objectives}
+
+The specific engineering, research, and implementation objectives of the VendorMap project are:
+
+\begin{enumerate}
+    \item \textbf{Objective 1 (Data Integration \& Geospatial Feature Pipeline):} To ingest, clean, and spatialize the official NMC registry of 7,259 vendors and 308 zones, extracting 12 non-linear OpenStreetMap GIS environmental indicators spanning commercial footfall, transit proximity, and public facility infrastructure.
+    \item \textbf{Objective 2 (Environmental Typology Modeling):} To implement unsupervised $K$-Means clustering across usable municipal zones and establish cluster partition stability across multiple random seeds, achieving an Adjusted Rand Index of $ARI \ge 0.95$.
+    \item \textbf{Objective 3 (AHP-Calibrated Multi-Criteria Decision Engine):} To develop a missing-data-aware six-factor MCDA recommendation engine with leave-group-out empirical Bayes shrinkage ($M=20.0$), calibrated via AHP with $CR \le 0.10$, and verify ranking robustness across an extensive sensitivity audit ($\ge 200$ scenarios).
+    \item \textbf{Objective 4 (Constrained Optimization \& Paradox Resolution):} To formulate and implement a two-stage pre-emptive Goal Programming optimizer (MILP) that resolves the Spatial Capacity Paradox, guaranteeing 0\% capacity violation while maximizing total accommodated vendors.
+    \item \textbf{Objective 5 (Sub-Millimeter Micro-Slot Packing):} To design a geometric micro-allocation algorithm in projected coordinates (EPSG:32643) that packs standardized $2\,\text{m} \times 2\,\text{m}$ pitches within arbitrary municipal boundary polygons, preserving $\ge 0.5\,\text{m}$ clearance and a continuous $1.2\,\text{m}$ pedestrian corridor with edge deviations $< 0.002\,\text{m}$.
+    \item \textbf{Objective 6 (Operational Full-Stack Architecture):} To build a production-ready, authenticated web platform using FastAPI and React 18 with SQLite ACID transactions, providing dedicated administrative dashboards for municipal officers and self-service portals for registered vendors.
+    \item \textbf{Objective 7 (Cryptographic Data Minimization):} To design and enforce an end-to-end cryptographic privacy architecture utilizing HMAC-SHA256 identity hashing, ensuring that sensitive vendor contact details are never stored or exposed in plaintext.
+    \item \textbf{Objective 8 (Conversational Multilingual Channel):} To integrate Meta's official WhatsApp Cloud API directly with an asynchronous state machine supporting English and Marathi dialogue for vendor self-service and status tracking.
+    \item \textbf{Objective 9 (In-App Turn-by-Turn Navigation):} To implement single-map vendor walking guidance utilizing browser GPS geolocation and open-source routing providers, directing approved vendors directly to their designated micro-slot coordinates.
+\end{enumerate}
+
+\section{Report Organization}
+\label{sec:report_organization}
+
+The remainder of this Project Stage-II Report is organized into the following eight chapters:
+
+\begin{itemize}
+    \item \textbf{Chapter 2 (Literature Review):} Reviews foundational academic literature on street vending governance, Multi-Criteria Decision Analysis in urban planning, the Analytic Hierarchy Process, spatial clustering, and facility location optimization. Critically evaluates existing municipal practices and identifies technical research gaps.
+    \item \textbf{Chapter 3 (System Architecture):} Formulates the formal mathematical problem statement, presents the end-to-end seven-stage methodology, details the comprehensive multi-tier system block diagram, and provides algorithmic pseudocode for the complete allocation pipeline.
+    \item \textbf{Chapter 4 (Project Requirement Specifications):} Outlines the hardware and software development and operational requirements, enumerates functional and non-functional requirements, and states core system constraints and domain assumptions.
+    \item \textbf{Chapter 5 (High-Level Design):} Presents detailed architectural models including the relational Entity-Relationship Diagram (ERD), Level 0 and Level 1 Data Flow Diagrams (DFDs), and UML diagrams (Use Case, Service Class Architecture, Sequence, and Activity diagrams).
+    \item \textbf{Chapter 6 (Experimental Setup):} Details the official NMC and OpenStreetMap datasets, geometric preprocessing workflows, experimental evaluation protocols, quantitative performance parameters, and computational efficiency considerations.
+    \item \textbf{Chapter 7 (Results and Evaluation):} Reports quantitative findings across spatial clustering, 224-scenario MCDA sensitivity analysis, Goal Programming benchmarks, Lekha Nagar micro-slot geometric validation, supervised regression models with TreeSHAP explainability, automated test case results, GUI module walkthroughs, feature evaluation, and an operational cost analysis.
+    \item \textbf{Chapter 8 (Project Planning):} Details the 16-week Stage-II project execution plan, weekly activity schedule, project milestones, and a comprehensive Gantt chart.
+    \item \textbf{Chapter 9 (Conclusions):} Summarizes the technical contributions and policy implications of the implemented system, identifies current operational limitations, and outlines future research directions.
+    \item \textbf{Back Matter:} Contains the IEEE-formatted Bibliography and Appendices spanning plagiarism report placeholders, base paper analyses, tool inventories, and publication records.
+\end{itemize}

@@ -1,0 +1,248 @@
+% ==============================================================================
+% Final Year B.Tech Project Stage-II Report
+% Department of Information Technology
+% K.K. Wagh Institute of Engineering Education and Research, Nashik-3
+% Academic Year 2026-2027
+% ==============================================================================
+
+\documentclass[12pt,a4paper,oneside]{report}
+
+% ------------------------------------------------------------------------------
+% Document Margins & Geometry (Standard Academic / Institute Guidelines)
+% Left: 1.5 inch (38mm) for binding, Right, Top, Bottom: 1.0 inch (25mm)
+% ------------------------------------------------------------------------------
+\usepackage[
+    top=25mm,
+    bottom=25mm,
+    left=38mm,
+    right=25mm,
+    headheight=15pt,
+    footskip=15mm
+]{geometry}
+
+% ------------------------------------------------------------------------------
+% Core Typography, Encoding & Math Packages
+% ------------------------------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx} % Times New Roman typography
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{setspace}
+\onehalfspacing % 1.5 line spacing as per university guidelines
+
+% ------------------------------------------------------------------------------
+% Graphics, Colors & Tables
+% ------------------------------------------------------------------------------
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+
+% ------------------------------------------------------------------------------
+% TikZ & PGF Vector Graphics
+% ------------------------------------------------------------------------------
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{
+    positioning,
+    shapes.geometric,
+    arrows.meta,
+    calc,
+    fit,
+    shadows,
+    backgrounds,
+    decorations.pathreplacing
+}
+
+% ------------------------------------------------------------------------------
+% Algorithms & Code Pseudocode
+% ------------------------------------------------------------------------------
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% ------------------------------------------------------------------------------
+% Dedicated 'Graph' Environment for Institute Prescribed 'List of Graphs'
+% ------------------------------------------------------------------------------
+\newfloat{graph}{htbp}{log}[chapter]
+\floatname{graph}{Graph}
+\newcommand{\listofgraphs}{\listof{graph}{List of Graphs}}
+
+% ------------------------------------------------------------------------------
+% Reusable Placeholder Box Macro for Missing Images / Outputs
+% ------------------------------------------------------------------------------
+\newcommand{\placeholderbox}[3]{%
+    \begin{center}
+    \begin{tikzpicture}
+        \node[
+            rectangle,
+            draw=black!70,
+            line width=0.9pt,
+            fill=gray!6,
+            rounded corners=4pt,
+            inner sep=12pt,
+            text width=0.88\linewidth,
+            text centered
+        ] {
+            {\bfseries\large\color{black!85} [ PLACEHOLDER: #1 ]}\\[0.25cm]
+            {\normalsize\color{black!80} #2}\\[0.3cm]
+            \begin{tikzpicture}
+                \draw[dashed, black!40, line width=0.5pt] (0,0) -- (0.82\linewidth,0);
+            \end{tikzpicture}\\[0.25cm]
+            {\small\itshape\color{black!70} \textbf{Action Required:} #3}
+        };
+    \end{tikzpicture}
+    \end{center}
+}
+
+% ------------------------------------------------------------------------------
+% Headers and Footers
+% ------------------------------------------------------------------------------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\nouppercase{\leftmark}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Redefine plain page style for chapter first pages
+\fancypagestyle{plain}{%
+    \fancyhf{}
+    \fancyfoot[C]{\thepage}
+    \renewcommand{\headrulewidth}{0pt}
+}
+
+% ------------------------------------------------------------------------------
+% Chapter & Section Heading Styling
+% ------------------------------------------------------------------------------
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+    {\normalfont\Large\bfseries\centering}
+    {\chaptertitlename\ \thechapter}{14pt}{\LARGE\uppercase}
+\titlespacing*{\chapter}{0pt}{10pt}{25pt}
+
+\titleformat{\section}
+    {\normalfont\large\bfseries}{\thesection}{1em}{}
+\titlespacing*{\section}{0pt}{14pt}{8pt}
+
+\titleformat{\subsection}
+    {\normalfont\normalsize\bfseries}{\thesubsection}{1em}{}
+\titlespacing*{\subsection}{0pt}{10pt}{6pt}
+
+% ------------------------------------------------------------------------------
+% Table of Contents & References
+% ------------------------------------------------------------------------------
+\usepackage{tocloft}
+\usepackage{cite}
+\usepackage{url}
+\usepackage[
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=blue!70!black,
+    bookmarks=true,
+    bookmarksnumbered=true
+]{hyperref}
+
+% ==============================================================================
+% DOCUMENT BODY
+% ==============================================================================
+\begin{document}
+
+% ------------------------------------------------------------------------------
+% FRONT MATTER (Roman Numerals)
+% ------------------------------------------------------------------------------
+\pagenumbering{roman}
+
+% 1. Title Page (No page number shown)
+\input{chapters/titlepage.tex}
+\thispagestyle{empty}
+\clearpage
+
+% 2. Certificate
+\addcontentsline{toc}{chapter}{Certificate}
+\input{chapters/certificate.tex}
+\clearpage
+
+% 3. Acknowledgement
+\addcontentsline{toc}{chapter}{Acknowledgement}
+\input{chapters/acknowledgement.tex}
+\clearpage
+
+% Table of Contents
+\addcontentsline{toc}{chapter}{Table of Contents}
+\tableofcontents
+\clearpage
+
+% 4. List of Figures
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures
+\clearpage
+
+% 5. List of Graphs (Dedicated Institute Requirement)
+\addcontentsline{toc}{chapter}{List of Graphs}
+\listofgraphs
+\clearpage
+
+% 6. List of Tables
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables
+\clearpage
+
+% 7. Abstract
+\addcontentsline{toc}{chapter}{Abstract}
+\input{chapters/abstract.tex}
+\clearpage
+
+% ------------------------------------------------------------------------------
+% MAIN REPORT (Arabic Numerals)
+% ------------------------------------------------------------------------------
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+% Chapter 1: Introduction
+\input{chapters/introduction.tex}
+
+% Chapter 2: Literature Review
+\input{chapters/literature_review.tex}
+
+% Chapter 3: System Architecture
+\input{chapters/system_architecture.tex}
+
+% Chapter 4: Project Requirement Specifications
+\input{chapters/requirements.tex}
+
+% Chapter 5: High-Level Design
+\input{chapters/high_level_design.tex}
+
+% Chapter 6: Experimental Setup
+\input{chapters/experimental_setup.tex}
+
+% Chapter 7: Results and Evaluation
+\input{chapters/results_evaluation.tex}
+
+% Chapter 8: Project Planning
+\input{chapters/project_planning.tex}
+
+% Chapter 9: Conclusions
+\input{chapters/conclusion.tex}
+
+% ------------------------------------------------------------------------------
+% BACK MATTER: BIBLIOGRAPHY & APPENDICES
+% ------------------------------------------------------------------------------
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+\clearpage
+
+% Appendices
+\input{chapters/appendices.tex}
+
+\end{document}
